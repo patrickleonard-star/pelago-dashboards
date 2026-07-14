@@ -233,7 +233,7 @@ const // YOY uses main CSM selector
 const expandedYears=new Set();
 
 function renderYoy(){
-  const csm=sf.value;
+  const csm=csmSel.value;
   const data=csm?YOY_DATA.filter(r=>r.csm===csm):YOY_DATA;
   const ymap={};
   data.forEach(r=>{
