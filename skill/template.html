@@ -92,13 +92,8 @@
   <h2>📈 Year-Over-Year by Contract Close Year</h2>
   <p>Grouped by Salesforce Closed Won year · CY = Jan–Jul 2026 · PY = Jan 1–Jul 13, 2025 · ELs = monthly average (Jan–Jul) · Click a year row to expand clients</p>
 </div>
-<div class="controls">
-  <div class="ctrl-group">
-    <label>CSM</label>
-    <select id="yoyCsmFilter" onchange="renderYoy()">
-      <option value="">All CSMs</option>
-    </select>
-  </div>
+<div class="controls" style="background:#f8fafc;">
+  <span style="font-size:12px;color:var(--muted)"><em>Filtered by CSM selection above</em></span>
   <span class="row-count" id="yoyRowCount"></span>
 </div>
 <div class="table-wrap">
@@ -169,8 +164,8 @@ function fmtDIPE(v) {
 const csmSel=document.getElementById('csmFilter');
 CSMS.forEach(c=>{const o=document.createElement('option');o.value=c;o.text=c;csmSel.appendChild(o);});
 
-function onCsmChange(){document.getElementById('backBtn').classList.toggle('visible',!!csmSel.value);render();}
-function clearCsm(){csmSel.value='';document.getElementById('backBtn').classList.remove('visible');render();}
+function onCsmChange(){document.getElementById('backBtn').classList.toggle('visible',!!csmSel.value);render();renderYoy();}
+function clearCsm(){csmSel.value='';document.getElementById('backBtn').classList.remove('visible');render();renderYoy();}
 
 function aggByCsm(rows){
   const m={};
@@ -234,12 +229,11 @@ function render(){
 }
 function drillInto(c){csmSel.value=c;document.getElementById('backBtn').classList.add('visible');render();}
 
-const yoyCsmSel=document.getElementById('yoyCsmFilter');
-CSMS.forEach(c=>{const o=document.createElement('option');o.value=c;o.text=c;yoyCsmSel.appendChild(o);});
+const // YOY uses main CSM selector
 const expandedYears=new Set();
 
 function renderYoy(){
-  const csm=yoyCsmSel.value;
+  const csm=csmSel.value;
   const data=csm?YOY_DATA.filter(r=>r.csm===csm):YOY_DATA;
   const ymap={};
   data.forEach(r=>{
