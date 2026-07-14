@@ -110,7 +110,7 @@
 </div>
 <div class="footnote">
   <strong>IR notes:</strong> BOB IR = full Jan–Jul 2026 per CSM-split billing. YOY CY IR = Jan–Jul 2026 client-level total; PY IR = Jan 1–Jul 13, 2025 (same-period comparison). Both sections exclude ~$580K unattributed billing. 
-  Contract close year from Salesforce Closed Won (dw_marts.account_opportunities, non-governed).
+  Contract close year from Salesforce via Cube (account_opportunities cube, governed).
 </div>
 
 <script>
@@ -226,15 +226,26 @@ function render(){
       `<td><b>${fmt(tot.y1)}</b></td><td><b>${fmt(tot.rnwl)}</b></td><td><b>${fmt(tot.other)}</b></td><td><b>${fmt(tot.total)}</b></td></tr>`;
   }
 }
-function drillInto(c){csmSel.value=c;document.getElementById('backBtn').classList.add('visible');render();}
+function drillInto(c){csmSel.value=c;document.getElementById('backBtn').classList.add('visible');render();renderYoy();}
 
-const yoyCsmSel=document.getElementById('yoyCsmFilter');
-CSMS.forEach(c=>{const o=document.createElement('option');o.value=c;o.text=c;yoyCsmSel.appendChild(o);});
+// YOY section uses main CSM filter (csmSel)
 const expandedYears=new Set();
 
 function renderYoy(){
   const csm=csmSel.value;
-  const data=csm?YOY_DATA.filter(r=>r.csm===csm):YOY_DATA;
+  let data;
+  if(csm){
+    data=YOY_DATA
+      .filter(r=>r.cy_ir_csm&&r.cy_ir_csm[csm]!=null&&r.cy_ir_csm[csm]!==0)
+      .map(r=>Object.assign({},r,{
+        cy_ir:r.cy_ir_csm[csm]||0,
+        cy_ir_per_el:r.cy_el>0?(r.cy_ir_csm[csm]||0)/r.cy_el:null,
+        d_ir:(r.cy_ir_csm[csm]||0)-r.py_ir,
+        d_ir_per_el:(r.cy_el>0&&r.py_el>0)?(((r.cy_ir_csm[csm]||0)/r.cy_el)-(r.py_ir/r.py_el)):null
+      }));
+  }else{
+    data=YOY_DATA;
+  }
   const ymap={};
   data.forEach(r=>{
     const yr=r.close_won_year?String(r.close_won_year):'Unknown';
