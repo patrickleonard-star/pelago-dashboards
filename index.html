@@ -228,8 +228,7 @@ function render(){
 }
 function drillInto(c){csmSel.value=c;document.getElementById('backBtn').classList.add('visible');render();}
 
-const yoyCsmSel=document.getElementById('yoyCsmFilter');
-CSMS.forEach(c=>{const o=document.createElement('option');o.value=c;o.text=c;yoyCsmSel.appendChild(o);});
+// YOY section uses main CSM filter (csmSel)
 const expandedYears=new Set();
 
 function renderYoy(){
