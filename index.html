@@ -11,7 +11,6 @@
   .page-header h1 { font-size: 20px; font-weight: 700; }
   .page-header .context { font-size: 13px; color: rgba(255,255,255,0.75); margin-top: 5px; }
   .page-header .context span { font-weight: 600; color: #fff; }
-
   .controls { display: flex; gap: 16px; padding: 16px 32px; align-items: flex-end; flex-wrap: wrap; background: #fff; border-bottom: 1px solid #e2e8f0; }
   .control-group { display: flex; flex-direction: column; gap: 4px; }
   .control-group label { font-size: 11px; font-weight: 600; color: #718096; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -19,7 +18,6 @@
   .control-group select:focus { outline: none; border-color: #4299e1; box-shadow: 0 0 0 3px rgba(66,153,225,0.15); }
   .reset-btn { font-size: 12px; color: #4299e1; background: none; border: 1px solid #bee3f8; border-radius: 6px; padding: 7px 14px; cursor: pointer; align-self: flex-end; }
   .reset-btn:hover { background: #ebf8ff; }
-
   .kpi-row { display: flex; gap: 12px; padding: 16px 32px; flex-wrap: wrap; }
   .kpi { background: #fff; border-radius: 8px; padding: 14px 18px; flex: 1; min-width: 140px; box-shadow: 0 1px 3px rgba(0,0,0,0.07); border-top: 3px solid #4299e1; }
   .kpi.green  { border-top-color: #48bb78; }
@@ -29,27 +27,22 @@
   .kpi-label  { font-size: 10px; font-weight: 600; color: #718096; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; }
   .kpi-value  { font-size: 21px; font-weight: 700; color: #1a202c; }
   .kpi-sub    { font-size: 10px; color: #a0aec0; margin-top: 2px; }
-
   .table-wrap { padding: 0 32px 24px; overflow-x: auto; }
   table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.08); font-size: 12.5px; }
-
   thead tr.group-row th { padding: 8px 14px; font-size: 10px; font-weight: 700; text-align: center; letter-spacing: 0.5px; text-transform: uppercase; }
   thead tr.group-row th.g-month { background: #2d3748; color: #fff; text-align: left; }
   thead tr.group-row th.g-el    { background: #2b6cb0; color: #fff; }
   thead tr.group-row th.g-act   { background: #276749; color: #fff; }
   thead tr.group-row th.g-ir    { background: #822727; color: #fff; }
-
   thead tr.col-row th { padding: 9px 14px; font-size: 11px; font-weight: 600; white-space: nowrap; border-bottom: 2px solid #e2e8f0; }
   thead tr.col-row th.c-month { background: #f7fafc; color: #4a5568; text-align: left; }
   thead tr.col-row th.c-el    { background: #ebf8ff; color: #2b6cb0; text-align: right; }
   thead tr.col-row th.c-act   { background: #f0fff4; color: #276749; text-align: right; }
   thead tr.col-row th.c-ir    { background: #fff5f5; color: #822727; text-align: right; }
-
   tbody tr:nth-child(even) { background: #f9fafb; }
   tbody tr:hover { background: #ebf8ff !important; }
   tbody tr.total-row { background: #edf2f7 !important; border-top: 2px solid #cbd5e0; }
   tbody tr.total-row td { font-weight: 700; color: #1a202c !important; }
-
   tbody td { padding: 10px 14px; border-bottom: 1px solid #f0f4f8; white-space: nowrap; vertical-align: middle; }
   .td-month  { font-weight: 700; color: #553c9a; font-size: 12px; min-width: 90px; }
   .td-el     { text-align: right; color: #2b6cb0; font-weight: 500; }
@@ -60,17 +53,15 @@
   .td-other  { text-align: right; color: #744210; }
   .td-total  { text-align: right; font-weight: 700; color: #1a202c; }
   .zero      { color: #cbd5e0 !important; font-weight: 400 !important; }
-
-  .table-footer { padding: 8px 32px 28px; font-size: 11px; color: #a0aec0; line-height: 1.6; }
+  .agg-label { font-size: 10px; color: #a0aec0; font-weight: 400; margin-left: 4px; }
+  .table-footer { padding: 8px 32px 28px; font-size: 11px; color: #a0aec0; line-height: 1.8; }
 </style>
 </head>
 <body>
-
 <div class="page-header">
   <h1>&#128202; Book of Business Dashboard</h1>
   <div class="context">Breanna Thompson &nbsp;&middot;&nbsp; Jan &ndash; Jul 2026 &nbsp;&middot;&nbsp; Viewing: <span id="context-label">All Clients (Book of Business)</span></div>
 </div>
-
 <div class="controls">
   <div class="control-group">
     <label>CSM</label>
@@ -82,15 +73,13 @@
   </div>
   <button class="reset-btn" onclick="resetFilters()">&#8635; Reset</button>
 </div>
-
 <div class="kpi-row">
   <div class="kpi"><div class="kpi-label">Total IR (YTD)</div><div class="kpi-value" id="kpi-total-ir">—</div><div class="kpi-sub">All invoiced revenue</div></div>
   <div class="kpi green"><div class="kpi-label">Y1 Case Rate IR</div><div class="kpi-value" id="kpi-y1-ir">—</div><div class="kpi-sub">First-year case rates</div></div>
   <div class="kpi purple"><div class="kpi-label">Renewal IR</div><div class="kpi-value" id="kpi-rnwl-ir">—</div><div class="kpi-sub">Renewal case rates</div></div>
   <div class="kpi orange"><div class="kpi-label">Registrations</div><div class="kpi-value" id="kpi-regs">—</div><div class="kpi-sub">New members YTD</div></div>
-  <div class="kpi teal"><div class="kpi-label">Growth Touchpoints</div><div class="kpi-value" id="kpi-tps">—</div><div class="kpi-sub">Campaign sends YTD</div></div>
+  <div class="kpi teal"><div class="kpi-label">Avg Monthly ELs</div><div class="kpi-value" id="kpi-els">—</div><div class="kpi-sub">Avg eligible lives</div></div>
 </div>
-
 <div class="table-wrap">
   <table>
     <thead>
@@ -114,14 +103,12 @@
     <tbody id="table-body"></tbody>
   </table>
 </div>
-
 <div class="table-footer">
-  Jan&ndash;Jul 2026 &nbsp;&middot;&nbsp;
-  ELs = distinct eligible lives per eligibility file period (Securitas ELs excluded — no standard eligibility file) &nbsp;&middot;&nbsp;
-  July 2026 is partial through Jul&nbsp;13 &nbsp;&middot;&nbsp;
+  Jan&ndash;Jul 2026 &nbsp;&middot;&nbsp; July is partial (through Jul 13)<br>
+  <b>ELs</b>: distinct eligible lives per file period; averaged in total row; Securitas excluded (no standard elig. file)<br>
+  <b>Uniq Touched</b>: monthly rows = per-month distinct; <b>YTD Total = deduplicated across all months</b> (queried from Cube)<br>
   &#9888;&#65039; BCBS MN Plan not confirmed on Breanna's Salesforce book
 </div>
-
 <script>
 // [csm, key, client, sub, month, els, gtp, uniq, regs, y1, rnwl, other, total]
 const D = [
@@ -190,16 +177,29 @@ const D = [
   ["Breanna Thompson","e2ef524f","U.S. Venture",null,"Jul 2026",7159,10229,4723,7,18621,0,0,18621],
 ];
 
+// Deduplicated YTD Unique Touched — queried from Cube (not derivable from monthly sums)
+const DEDUP_UNIQ = {
+  "__BOB__":      472445,
+  "3M":           100581,
+  "Amazon":            4,
+  "BCBS MN Plan":  27191,
+  "Corning":       36362,
+  "GE Appliances": 36740,
+  "KKR":               0,
+  "Securitas":    248913,
+  "U.S. Venture":  22654,
+};
+
 const MONTHS = ["Jan 2026","Feb 2026","Mar 2026","Apr 2026","May 2026","Jun 2026","Jul 2026"];
 
 function n(v, prefix) {
   if (v === null || v === undefined) return '<span style="color:#e2e8f0">—</span>';
   if (v === 0) return '<span class="zero">' + (prefix||"") + '0</span>';
-  return (prefix||"") + v.toLocaleString("en-US", {maximumFractionDigits:0});
+  return (prefix||"") + Math.round(v).toLocaleString("en-US");
 }
 
 function populateDropdowns() {
-  const csms = [...new Set(D.map(r=>r[0]))].sort();
+  const csms    = [...new Set(D.map(r=>r[0]))].sort();
   const clients = [...new Set(D.map(r=>r[2]))].sort();
   const s1 = document.getElementById("csm-filter");
   const s2 = document.getElementById("client-filter");
@@ -212,39 +212,51 @@ function applyFilters() {
   const cli = document.getElementById("client-filter").value;
   const filtered = D.filter(r => (!csm || r[0]===csm) && (!cli || r[2]===cli));
 
-  // Update context label
-  const clients = [...new Set(filtered.map(r=>r[2]))];
+  // Context label
+  const clientSet = [...new Set(filtered.map(r=>r[2]))];
   const lbl = document.getElementById("context-label");
   if (!cli) {
-    lbl.textContent = "All Clients — Book of Business (" + clients.length + " clients)";
+    lbl.textContent = "All Clients — Book of Business (" + clientSet.length + " clients)";
   } else {
     const subs = [...new Set(filtered.map(r=>r[3]).filter(Boolean))];
     lbl.textContent = cli + (subs.length ? " (" + subs.join(", ") + ")" : "");
   }
 
-  // Aggregate by month
+  // Monthly rows: aggregate per month across filtered clients
   const rows = MONTHS.map(month => {
     const mrs = filtered.filter(r => r[4] === month);
-    const hasEls = mrs.some(r => r[5] !== null);
+    const elVals = mrs.map(r=>r[5]).filter(v=>v!==null);
     return {
       month,
-      els:   hasEls ? mrs.reduce((a,r) => a+(r[5]||0),0) : null,
-      gtp:   mrs.reduce((a,r) => a+(r[6]||0),0),
-      uniq:  mrs.reduce((a,r) => a+(r[7]||0),0),
-      regs:  mrs.reduce((a,r) => a+(r[8]||0),0),
-      y1:    mrs.reduce((a,r) => a+(r[9]||0),0),
-      rnwl:  mrs.reduce((a,r) => a+(r[10]||0),0),
-      other: mrs.reduce((a,r) => a+(r[11]||0),0),
-      total: mrs.reduce((a,r) => a+(r[12]||0),0),
+      els:   elVals.length > 0 ? elVals.reduce((a,v)=>a+v,0) : null,
+      gtp:   mrs.reduce((a,r)=>a+(r[6]||0),0),
+      uniq:  mrs.reduce((a,r)=>a+(r[7]||0),0),
+      regs:  mrs.reduce((a,r)=>a+(r[8]||0),0),
+      y1:    mrs.reduce((a,r)=>a+(r[9]||0),0),
+      rnwl:  mrs.reduce((a,r)=>a+(r[10]||0),0),
+      other: mrs.reduce((a,r)=>a+(r[11]||0),0),
+      total: mrs.reduce((a,r)=>a+(r[12]||0),0),
     };
   });
 
-  // Totals row
+  // YTD Total row
+  // ELs: average of non-null monthly values
+  const elMonths = rows.filter(r=>r.els!==null);
+  const elAvg = elMonths.length > 0
+    ? Math.round(elMonths.reduce((a,r)=>a+r.els,0) / elMonths.length)
+    : null;
+
+  // Unique Touched: deduplicated from pre-computed Cube values
+  const dedupKey = cli || "__BOB__";
+  const dedupUniq = DEDUP_UNIQ[dedupKey] !== undefined ? DEDUP_UNIQ[dedupKey] : null;
+
   const tot = {
     month: "YTD Total",
-    els:   rows.some(r=>r.els!==null) ? rows.reduce((a,r)=>a+(r.els||0),0) : null,
+    els:   elAvg,
+    elIsAvg: true,
     gtp:   rows.reduce((a,r)=>a+r.gtp,0),
-    uniq:  rows.reduce((a,r)=>a+r.uniq,0),
+    uniq:  dedupUniq,
+    uniqIsDedup: true,
     regs:  rows.reduce((a,r)=>a+r.regs,0),
     y1:    rows.reduce((a,r)=>a+r.y1,0),
     rnwl:  rows.reduce((a,r)=>a+r.rnwl,0),
@@ -252,33 +264,53 @@ function applyFilters() {
     total: rows.reduce((a,r)=>a+r.total,0),
   };
 
-  renderTable([...rows, tot]);
-  renderKPIs(tot);
+  renderTable(rows, tot);
+  renderKPIs(tot, elMonths.length);
 }
 
-function renderKPIs(tot) {
+function renderKPIs(tot, elMonthCount) {
   document.getElementById("kpi-total-ir").textContent = "$" + (tot.total||0).toLocaleString("en-US",{maximumFractionDigits:0});
   document.getElementById("kpi-y1-ir").textContent    = "$" + (tot.y1||0).toLocaleString("en-US",{maximumFractionDigits:0});
   document.getElementById("kpi-rnwl-ir").textContent  = "$" + (tot.rnwl||0).toLocaleString("en-US",{maximumFractionDigits:0});
   document.getElementById("kpi-regs").textContent     = (tot.regs||0).toLocaleString("en-US");
-  document.getElementById("kpi-tps").textContent      = (tot.gtp||0).toLocaleString("en-US");
+  document.getElementById("kpi-els").textContent      = tot.els !== null
+    ? Math.round(tot.els).toLocaleString("en-US")
+    : "—";
 }
 
-function renderTable(rows) {
-  document.getElementById("table-body").innerHTML = rows.map((r, i) => {
-    const isTotal = i === rows.length - 1;
-    return `<tr class="${isTotal ? "total-row" : ""}">
-      <td class="td-month">${r.month}</td>
-      <td class="td-el">${n(r.els)}</td>
-      <td class="td-act">${n(r.gtp)}</td>
-      <td class="td-act">${n(r.uniq)}</td>
-      <td class="td-reg">${n(r.regs)}</td>
-      <td class="td-y1">${n(r.y1,"$")}</td>
-      <td class="td-rnwl">${n(r.rnwl,"$")}</td>
-      <td class="td-other">${n(r.other,"$")}</td>
-      <td class="td-total">${n(r.total,"$")}</td>
-    </tr>`;
-  }).join("");
+function nTot(v, prefix, label) {
+  if (v === null || v === undefined) return '<span style="color:#a0aec0">—</span>';
+  if (v === 0) return '<span class="zero">' + (prefix||"") + '0</span>';
+  const base = (prefix||"") + Math.round(v).toLocaleString("en-US");
+  return label ? base + '<span class="agg-label">' + label + '</span>' : base;
+}
+
+function renderTable(rows, tot) {
+  const bodyRows = rows.map(r => `<tr>
+    <td class="td-month">${r.month}</td>
+    <td class="td-el">${n(r.els)}</td>
+    <td class="td-act">${n(r.gtp)}</td>
+    <td class="td-act">${n(r.uniq)}</td>
+    <td class="td-reg">${n(r.regs)}</td>
+    <td class="td-y1">${n(r.y1,"$")}</td>
+    <td class="td-rnwl">${n(r.rnwl,"$")}</td>
+    <td class="td-other">${n(r.other,"$")}</td>
+    <td class="td-total">${n(r.total,"$")}</td>
+  </tr>`).join("");
+
+  const totRow = `<tr class="total-row">
+    <td class="td-month">YTD Total</td>
+    <td class="td-el">${nTot(tot.els,  null, "avg")}</td>
+    <td class="td-act">${nTot(tot.gtp,  null, "sum")}</td>
+    <td class="td-act">${nTot(tot.uniq, null, "dedup")}</td>
+    <td class="td-reg">${nTot(tot.regs, null, "sum")}</td>
+    <td class="td-y1">${nTot(tot.y1,   "$",  "sum")}</td>
+    <td class="td-rnwl">${nTot(tot.rnwl,"$",  "sum")}</td>
+    <td class="td-other">${nTot(tot.other,"$", "sum")}</td>
+    <td class="td-total">${nTot(tot.total,"$", "sum")}</td>
+  </tr>`;
+
+  document.getElementById("table-body").innerHTML = bodyRows + totRow;
 }
 
 function resetFilters() {
