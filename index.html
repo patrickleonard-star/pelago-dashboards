@@ -92,8 +92,7 @@
   <h2>📈 Year-Over-Year by Contract Close Year</h2>
   <p>Grouped by Salesforce Closed Won year · CY = Jan–Jul 2026 · PY = Jan 1–Jul 13, 2025 · ELs = monthly average (Jan–Jul) · Click a year row to expand clients</p>
 </div>
-<div class="controls" style="background:#f8fafc;">
-  <span style="font-size:12px;color:var(--muted)"><em>Filtered by CSM selection above</em></span>
+<div class="controls" style="background:#f8fafc;"><span style="font-size:12px;color:var(--muted);font-style:italic;">CSM filter applies to both sections</span><span class="row-count" id="yoyRowCount"></span></div>
   <span class="row-count" id="yoyRowCount"></span>
 </div>
 <div class="table-wrap">
@@ -229,7 +228,8 @@ function render(){
 }
 function drillInto(c){csmSel.value=c;document.getElementById('backBtn').classList.add('visible');render();}
 
-const // YOY uses main CSM selector
+const yoyCsmSel=document.getElementById('yoyCsmFilter');
+CSMS.forEach(c=>{const o=document.createElement('option');o.value=c;o.text=c;yoyCsmSel.appendChild(o);});
 const expandedYears=new Set();
 
 function renderYoy(){
