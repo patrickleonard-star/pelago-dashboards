@@ -18,12 +18,17 @@
   .header { background: linear-gradient(135deg, var(--pelago-blue), var(--pelago-purple)); color: white; padding: 20px 24px; }
   .header h1 { font-size: 22px; font-weight: 700; }
   .header p { opacity: 0.85; font-size: 13px; margin-top: 4px; }
-  .controls { background: white; padding: 12px 24px; border-bottom: 1px solid var(--border); display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
-  .controls label { font-size: 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
-  select { border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; font-size: 13px; background: white; color: var(--text); min-width: 200px; cursor: pointer; }
+  .controls { background: white; padding: 12px 24px; border-bottom: 1px solid var(--border); display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .ctrl-group { display: flex; align-items: center; gap: 8px; }
+  label { font-size: 11px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
+  select { border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; font-size: 13px; background: white; color: var(--text); min-width: 180px; cursor: pointer; }
   select:focus { outline: 2px solid var(--pelago-blue); outline-offset: 1px; }
-  .kpi-row { display: flex; gap: 12px; padding: 12px 24px; background: white; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
-  .kpi { flex: 1; min-width: 130px; background: var(--pelago-light); border-radius: 8px; padding: 10px 14px; }
+  .row-count { font-size: 12px; color: var(--muted); margin-left: auto; }
+  .breadcrumb { font-size: 12px; color: var(--muted); margin-left: auto; display: flex; align-items: center; gap: 6px; }
+  .breadcrumb .crumb { color: var(--pelago-blue); font-weight: 600; cursor: pointer; }
+  .breadcrumb .crumb:hover { text-decoration: underline; }
+  .kpi-row { display: flex; gap: 10px; padding: 12px 24px; background: white; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+  .kpi { flex: 1; min-width: 120px; background: var(--pelago-light); border-radius: 8px; padding: 10px 14px; }
   .kpi-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
   .kpi-value { font-size: 20px; font-weight: 700; color: var(--pelago-blue); margin-top: 2px; }
   .table-wrap { padding: 16px 24px; overflow-x: auto; }
@@ -34,38 +39,37 @@
   td.left { text-align: left; }
   tr:last-child td { border-bottom: none; }
   tr:hover td { background: #f0f4ff; }
-  .csm-badge { display: inline-block; padding: 2px 6px; border-radius: 10px; font-size: 10px; font-weight: 600; background: var(--pelago-light); color: var(--pelago-blue); white-space: nowrap; }
-  .total-row td { background: #f8fafc; font-weight: 700; border-top: 2px solid var(--pelago-blue); }
-  .total-row:hover td { background: #f0f4ff; }
+  tr.clickable { cursor: pointer; }
+  tr.clickable:hover td { background: #e8eeff; }
+  .csm-name { font-weight: 600; color: var(--pelago-blue); }
+  .drill-hint { font-size: 10px; color: var(--muted); margin-left: 6px; opacity: 0; transition: opacity 0.15s; }
+  tr.clickable:hover .drill-hint { opacity: 1; }
   .null-cell { color: #c0c9d8; }
-  .search-box { border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; font-size: 13px; min-width: 200px; }
-  .row-count { font-size: 12px; color: var(--muted); margin-left: auto; }
+  .total-row td { background: #f1f5ff; font-weight: 700; border-top: 2px solid var(--pelago-blue); border-bottom: none; }
+  .total-row:hover td { background: #e8eeff; }
+  .view-label { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+  .view-csm { background: #e0e7ff; color: #3730a3; }
+  .view-client { background: #dcfce7; color: #166534; }
+  .back-btn { display: none; align-items: center; gap: 4px; padding: 5px 10px; border: 1px solid var(--border); border-radius: 6px; background: white; font-size: 12px; cursor: pointer; color: var(--pelago-blue); font-weight: 600; }
+  .back-btn:hover { background: var(--pelago-light); }
+  .back-btn.visible { display: flex; }
   .header-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 10px; font-size: 11px; margin-left: 8px; }
 </style>
 </head>
 <body>
 <div class="header">
   <h1>Pelago CS Book of Business <span class="header-badge">YTD 2026 · Jan–Jul</span></h1>
-  <p>All CSMs &amp; clients · Eligible Lives, Growth Activity, and Invoiced Revenue</p>
+  <p>All CSMs &amp; clients · Eligible Lives, Growth Activity &amp; Invoiced Revenue</p>
 </div>
 
 <div class="controls">
-  <div style="display:flex;align-items:center;gap:8px;">
+  <div class="ctrl-group">
     <label>CSM</label>
-    <select id="csmFilter" onchange="applyFilters()">
+    <select id="csmFilter" onchange="onCsmChange()">
       <option value="">All CSMs</option>
     </select>
   </div>
-  <div style="display:flex;align-items:center;gap:8px;">
-    <label>Client</label>
-    <select id="clientFilter" onchange="applyFilters()">
-      <option value="">All Clients</option>
-    </select>
-  </div>
-  <div style="display:flex;align-items:center;gap:8px;">
-    <label>Search</label>
-    <input type="text" class="search-box" id="searchBox" placeholder="Client name..." oninput="applyFilters()">
-  </div>
+  <button class="back-btn" id="backBtn" onclick="clearCsm()">&#8592; All CSMs</button>
   <span class="row-count" id="rowCount"></span>
 </div>
 
@@ -73,21 +77,7 @@
 
 <div class="table-wrap">
 <table id="mainTable">
-<thead>
-<tr>
-  <th class="left">CSM</th>
-  <th class="left">Client</th>
-  <th class="left">Sub-Client</th>
-  <th>Avg ELs</th>
-  <th>Regs YTD</th>
-  <th>Growth TPs YTD</th>
-  <th>Unique Touched YTD</th>
-  <th>Y1 Case Rate IR</th>
-  <th>Renewal Case Rate IR</th>
-  <th>Other IR</th>
-  <th>Total IR</th>
-</tr>
-</thead>
+<thead id="tableHead"></thead>
 <tbody id="tableBody"></tbody>
 </table>
 </div>
@@ -100,12 +90,12 @@ function fmt(v, isDollar=true) {
   if (!v || v === 0) return '<span class="null-cell">—</span>';
   const absV = Math.abs(v);
   if (isDollar) {
-    if (absV >= 1e6) return '$' + (v/1e6).toFixed(1) + 'M';
-    if (absV >= 1000) return '$' + Math.round(v/1000) + 'K';
+    if (absV >= 1e6) return '$' + (v/1e6).toFixed(2) + 'M';
+    if (absV >= 1000) return '$' + (v/1000).toFixed(0) + 'K';
     return '$' + Math.round(v).toLocaleString();
   } else {
     if (absV >= 1e6) return (v/1e6).toFixed(1) + 'M';
-    if (absV >= 1000) return Math.round(v/1000) + 'K';
+    if (absV >= 1000) return (v/1000).toFixed(0) + 'K';
     return Math.round(v).toLocaleString();
   }
 }
@@ -118,84 +108,168 @@ CSMS.forEach(c => {
   csmSel.appendChild(opt);
 });
 
-function getFilteredRows() {
-  const csm = document.getElementById('csmFilter').value;
-  const client = document.getElementById('clientFilter').value;
-  const search = document.getElementById('searchBox').value.toLowerCase();
-  return ALL_ROWS.filter(r => {
-    if (csm && r.csm !== csm) return false;
-    if (client && r.ck !== client) return false;
-    if (search && !r.display.toLowerCase().includes(search) && !r.csm.toLowerCase().includes(search)) return false;
-    return true;
+function onCsmChange() {
+  const csm = csmSel.value;
+  document.getElementById('backBtn').classList.toggle('visible', !!csm);
+  render();
+}
+
+function clearCsm() {
+  csmSel.value = '';
+  document.getElementById('backBtn').classList.remove('visible');
+  render();
+}
+
+// Aggregate rows by CSM
+function aggregateByCsm(rows) {
+  const map = {};
+  rows.forEach(r => {
+    if (!map[r.csm]) map[r.csm] = {csm: r.csm, avg_els: 0, regs: 0, tps: 0, unique_touched: 0, y1: 0, rnwl: 0, other: 0, total: 0, client_count: 0};
+    const m = map[r.csm];
+    m.avg_els += r.avg_els || 0;
+    m.regs += r.regs || 0;
+    m.tps += r.tps || 0;
+    m.unique_touched += r.unique_touched || 0;
+    m.y1 += r.y1 || 0;
+    m.rnwl += r.rnwl || 0;
+    m.other += r.other || 0;
+    m.total += r.total || 0;
+    m.client_count++;
   });
+  return Object.values(map).sort((a,b) => (b.total||0) - (a.total||0));
 }
 
-function updateClientDropdown() {
-  const csm = document.getElementById('csmFilter').value;
-  const clientSel = document.getElementById('clientFilter');
-  const prev = clientSel.value;
-  clientSel.innerHTML = '<option value="">All Clients</option>';
-  const seen = new Set();
-  ALL_ROWS.filter(r => !csm || r.csm === csm).forEach(r => {
-    if (!seen.has(r.ck)) {
-      seen.add(r.ck);
-      const opt = document.createElement('option');
-      opt.value = r.ck; opt.text = r.display;
-      clientSel.appendChild(opt);
-    }
-  });
-  if ([...clientSel.options].some(o => o.value === prev)) clientSel.value = prev;
-}
-
-function applyFilters() {
-  updateClientDropdown();
-  const rows = getFilteredRows();
-  renderTable(rows);
-  renderKPIs(rows);
-  document.getElementById('rowCount').textContent = rows.length + ' client-rows';
-}
-
-function renderKPIs(rows) {
+function renderKPIs(rows, isCsm) {
   const totELs = rows.reduce((s,r)=>s+(r.avg_els||0), 0);
   const totRegs = rows.reduce((s,r)=>s+(r.regs||0), 0);
   const totTPs = rows.reduce((s,r)=>s+(r.tps||0), 0);
   const totIR = rows.reduce((s,r)=>s+(r.total||0), 0);
   const totY1 = rows.reduce((s,r)=>s+(r.y1||0), 0);
   const totRnwl = rows.reduce((s,r)=>s+(r.rnwl||0), 0);
-  const nClients = new Set(rows.map(r=>r.ck)).size;
+  const nClients = isCsm ? new Set(rows.map(r=>r.ck)).size : rows.length;
   document.getElementById('kpiRow').innerHTML = `
     <div class="kpi"><div class="kpi-label">Clients</div><div class="kpi-value">${nClients}</div></div>
     <div class="kpi"><div class="kpi-label">Total IR YTD</div><div class="kpi-value">${fmt(totIR)}</div></div>
     <div class="kpi"><div class="kpi-label">Y1 Case Rate IR</div><div class="kpi-value">${fmt(totY1)}</div></div>
     <div class="kpi"><div class="kpi-label">Renewal IR</div><div class="kpi-value">${fmt(totRnwl)}</div></div>
-    <div class="kpi"><div class="kpi-label">Growth TPs YTD</div><div class="kpi-value">${fmt(totTPs, false)}</div></div>
-    <div class="kpi"><div class="kpi-label">Regs YTD</div><div class="kpi-value">${fmt(totRegs, false)}</div></div>
+    <div class="kpi"><div class="kpi-label">Growth TPs</div><div class="kpi-value">${fmt(totTPs, false)}</div></div>
+    <div class="kpi"><div class="kpi-label">Regs</div><div class="kpi-value">${fmt(totRegs, false)}</div></div>
   `;
 }
 
-function renderTable(rows) {
-  const sorted = [...rows].sort((a,b) => (b.total||0) - (a.total||0));
-  const body = document.getElementById('tableBody');
-  body.innerHTML = sorted.map(r => `
-    <tr>
-      <td class="left"><span class="csm-badge">${r.csm.split(' ')[0]}</span></td>
-      <td class="left">${r.client_name}</td>
-      <td class="left">${r.sub_client || '<span class="null-cell">—</span>'}</td>
-      <td>${fmt(r.avg_els, false)}</td>
-      <td>${fmt(r.regs, false)}</td>
-      <td>${fmt(r.tps, false)}</td>
-      <td>${fmt(r.unique_touched, false)}</td>
-      <td>${fmt(r.y1)}</td>
-      <td>${fmt(r.rnwl)}</td>
-      <td>${fmt(r.other)}</td>
-      <td><b>${fmt(r.total)}</b></td>
-    </tr>
-  `).join('');
+function render() {
+  const csm = csmSel.value;
+
+  if (!csm) {
+    // ── CSM-aggregated view ──
+    const agg = aggregateByCsm(ALL_ROWS);
+    renderKPIs(ALL_ROWS, false);
+    document.getElementById('rowCount').textContent = agg.length + ' CSMs · click to drill in';
+
+    document.getElementById('tableHead').innerHTML = `
+      <tr>
+        <th class="left">CSM</th>
+        <th># Clients</th>
+        <th>Avg ELs</th>
+        <th>Regs YTD</th>
+        <th>Growth TPs</th>
+        <th>Unique Touched</th>
+        <th>Y1 Case Rate IR</th>
+        <th>Renewal IR</th>
+        <th>Other IR</th>
+        <th>Total IR</th>
+      </tr>`;
+
+    const totals = agg.reduce((t,r)=>{t.avg_els+=r.avg_els;t.regs+=r.regs;t.tps+=r.tps;t.unique_touched+=r.unique_touched;t.y1+=r.y1;t.rnwl+=r.rnwl;t.other+=r.other;t.total+=r.total;t.client_count+=r.client_count;return t;},{avg_els:0,regs:0,tps:0,unique_touched:0,y1:0,rnwl:0,other:0,total:0,client_count:0});
+
+    document.getElementById('tableBody').innerHTML =
+      agg.map(r => `
+        <tr class="clickable" onclick="drillInto('${r.csm.replace(/'/g,"\\'")}')">
+          <td class="left"><span class="csm-name">${r.csm}</span><span class="drill-hint">▶ expand</span></td>
+          <td>${r.client_count}</td>
+          <td>${fmt(r.avg_els, false)}</td>
+          <td>${fmt(r.regs, false)}</td>
+          <td>${fmt(r.tps, false)}</td>
+          <td>${fmt(r.unique_touched, false)}</td>
+          <td>${fmt(r.y1)}</td>
+          <td>${fmt(r.rnwl)}</td>
+          <td>${fmt(r.other)}</td>
+          <td><b>${fmt(r.total)}</b></td>
+        </tr>
+      `).join('') +
+      `<tr class="total-row">
+        <td class="left"><b>Total</b></td>
+        <td><b>${totals.client_count}</b></td>
+        <td><b>${fmt(totals.avg_els, false)}</b></td>
+        <td><b>${fmt(totals.regs, false)}</b></td>
+        <td><b>${fmt(totals.tps, false)}</b></td>
+        <td><b>${fmt(totals.unique_touched, false)}</b></td>
+        <td><b>${fmt(totals.y1)}</b></td>
+        <td><b>${fmt(totals.rnwl)}</b></td>
+        <td><b>${fmt(totals.other)}</b></td>
+        <td><b>${fmt(totals.total)}</b></td>
+      </tr>`;
+
+  } else {
+    // ── Client-expanded view for selected CSM ──
+    const filtered = ALL_ROWS.filter(r => r.csm === csm).sort((a,b) => (b.total||0) - (a.total||0));
+    renderKPIs(filtered, true);
+    document.getElementById('rowCount').textContent = filtered.length + ' clients';
+
+    document.getElementById('tableHead').innerHTML = `
+      <tr>
+        <th class="left">Client</th>
+        <th class="left">Sub-Client</th>
+        <th>Avg ELs</th>
+        <th>Regs YTD</th>
+        <th>Growth TPs</th>
+        <th>Unique Touched</th>
+        <th>Y1 Case Rate IR</th>
+        <th>Renewal IR</th>
+        <th>Other IR</th>
+        <th>Total IR</th>
+      </tr>`;
+
+    const totals = filtered.reduce((t,r)=>{t.avg_els+=r.avg_els||0;t.regs+=r.regs||0;t.tps+=r.tps||0;t.unique_touched+=r.unique_touched||0;t.y1+=r.y1||0;t.rnwl+=r.rnwl||0;t.other+=r.other||0;t.total+=r.total||0;return t;},{avg_els:0,regs:0,tps:0,unique_touched:0,y1:0,rnwl:0,other:0,total:0});
+
+    document.getElementById('tableBody').innerHTML =
+      filtered.map(r => `
+        <tr>
+          <td class="left">${r.client_name}</td>
+          <td class="left">${r.sub_client || '<span class="null-cell">—</span>'}</td>
+          <td>${fmt(r.avg_els, false)}</td>
+          <td>${fmt(r.regs, false)}</td>
+          <td>${fmt(r.tps, false)}</td>
+          <td>${fmt(r.unique_touched, false)}</td>
+          <td>${fmt(r.y1)}</td>
+          <td>${fmt(r.rnwl)}</td>
+          <td>${fmt(r.other)}</td>
+          <td><b>${fmt(r.total)}</b></td>
+        </tr>
+      `).join('') +
+      `<tr class="total-row">
+        <td class="left"><b>Total</b></td>
+        <td></td>
+        <td><b>${fmt(totals.avg_els, false)}</b></td>
+        <td><b>${fmt(totals.regs, false)}</b></td>
+        <td><b>${fmt(totals.tps, false)}</b></td>
+        <td><b>${fmt(totals.unique_touched, false)}</b></td>
+        <td><b>${fmt(totals.y1)}</b></td>
+        <td><b>${fmt(totals.rnwl)}</b></td>
+        <td><b>${fmt(totals.other)}</b></td>
+        <td><b>${fmt(totals.total)}</b></td>
+      </tr>`;
+  }
 }
 
-// Initialize
-updateClientDropdown();
-applyFilters();
+function drillInto(csmName) {
+  csmSel.value = csmName;
+  document.getElementById('backBtn').classList.add('visible');
+  render();
+}
+
+// Init
+render();
 </script>
 </body>
 </html>
