@@ -6,60 +6,74 @@
 <title>Pelago CS Book of Business — YTD 2026</title>
 <style>
   :root {
-    --pelago-blue: #1B4FCC;
-    --pelago-purple: #6B3FA0;
-    --pelago-light: #F0F4FF;
-    --border: #DDE3EF;
-    --text: #1a1a2e;
-    --muted: #6b7280;
+    --blue:#1B4FCC; --purple:#6B3FA0; --light:#F0F4FF;
+    --border:#DDE3EF; --text:#1a1a2e; --muted:#6b7280;
+    --green:#16a34a; --red:#dc2626; --yellow:#d97706;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8fafc; color: var(--text); font-size: 13px; }
-  .header { background: linear-gradient(135deg, var(--pelago-blue), var(--pelago-purple)); color: white; padding: 20px 24px; }
-  .header h1 { font-size: 22px; font-weight: 700; }
-  .header p { opacity: 0.85; font-size: 13px; margin-top: 4px; }
-  .controls { background: white; padding: 12px 24px; border-bottom: 1px solid var(--border); display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
-  .ctrl-group { display: flex; align-items: center; gap: 8px; }
-  label { font-size: 11px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; white-space: nowrap; }
-  select { border: 1px solid var(--border); border-radius: 6px; padding: 6px 10px; font-size: 13px; background: white; color: var(--text); min-width: 180px; cursor: pointer; }
-  select:focus { outline: 2px solid var(--pelago-blue); outline-offset: 1px; }
-  .row-count { font-size: 12px; color: var(--muted); margin-left: auto; }
-  .breadcrumb { font-size: 12px; color: var(--muted); margin-left: auto; display: flex; align-items: center; gap: 6px; }
-  .breadcrumb .crumb { color: var(--pelago-blue); font-weight: 600; cursor: pointer; }
-  .breadcrumb .crumb:hover { text-decoration: underline; }
-  .kpi-row { display: flex; gap: 10px; padding: 12px 24px; background: white; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
-  .kpi { flex: 1; min-width: 120px; background: var(--pelago-light); border-radius: 8px; padding: 10px 14px; }
-  .kpi-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
-  .kpi-value { font-size: 20px; font-weight: 700; color: var(--pelago-blue); margin-top: 2px; }
-  .table-wrap { padding: 16px 24px; overflow-x: auto; }
-  table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.06); font-size: 12px; }
-  th { background: #1B4FCC; color: white; padding: 8px 10px; text-align: right; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; white-space: nowrap; }
-  th.left { text-align: left; }
-  td { padding: 7px 10px; border-bottom: 1px solid var(--border); text-align: right; color: var(--text); }
-  td.left { text-align: left; }
-  tr:last-child td { border-bottom: none; }
-  tr:hover td { background: #f0f4ff; }
-  tr.clickable { cursor: pointer; }
-  tr.clickable:hover td { background: #e8eeff; }
-  .csm-name { font-weight: 600; color: var(--pelago-blue); }
-  .drill-hint { font-size: 10px; color: var(--muted); margin-left: 6px; opacity: 0; transition: opacity 0.15s; }
-  tr.clickable:hover .drill-hint { opacity: 1; }
-  .null-cell { color: #c0c9d8; }
-  .total-row td { background: #f1f5ff; font-weight: 700; border-top: 2px solid var(--pelago-blue); border-bottom: none; }
-  .total-row:hover td { background: #e8eeff; }
-  .view-label { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; }
-  .view-csm { background: #e0e7ff; color: #3730a3; }
-  .view-client { background: #dcfce7; color: #166534; }
-  .back-btn { display: none; align-items: center; gap: 4px; padding: 5px 10px; border: 1px solid var(--border); border-radius: 6px; background: white; font-size: 12px; cursor: pointer; color: var(--pelago-blue); font-weight: 600; }
-  .back-btn:hover { background: var(--pelago-light); }
-  .back-btn.visible { display: flex; }
-  .header-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 10px; font-size: 11px; margin-left: 8px; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; background:#f8fafc; color:var(--text); font-size:13px; }
+  .header { background:linear-gradient(135deg,var(--blue),var(--purple)); color:white; padding:20px 24px; }
+  .header h1 { font-size:22px; font-weight:700; }
+  .header p { opacity:0.85; font-size:13px; margin-top:4px; }
+  .section-header { background:white; padding:12px 24px 0; border-top:3px solid var(--blue); margin-top:24px; }
+  .section-header h2 { font-size:16px; font-weight:700; color:var(--blue); padding-bottom:8px; }
+  .section-header p { font-size:12px; color:var(--muted); padding-bottom:12px; }
+  .controls { background:white; padding:12px 24px; border-bottom:1px solid var(--border); display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+  .ctrl-group { display:flex; align-items:center; gap:8px; }
+  label { font-size:11px; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:0.05em; white-space:nowrap; }
+  select { border:1px solid var(--border); border-radius:6px; padding:6px 10px; font-size:13px; background:white; color:var(--text); min-width:180px; cursor:pointer; }
+  select:focus { outline:2px solid var(--blue); outline-offset:1px; }
+  .row-count { font-size:12px; color:var(--muted); margin-left:auto; }
+  .kpi-row { display:flex; gap:10px; padding:12px 24px; background:white; border-bottom:1px solid var(--border); flex-wrap:wrap; }
+  .kpi { flex:1; min-width:120px; background:var(--light); border-radius:8px; padding:10px 14px; }
+  .kpi-label { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; font-weight:600; }
+  .kpi-value { font-size:20px; font-weight:700; color:var(--blue); margin-top:2px; }
+  .table-wrap { padding:16px 24px; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; background:white; border-radius:8px; overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,.06); font-size:12px; }
+  th { background:#1B4FCC; color:white; padding:8px 10px; text-align:right; font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:.04em; white-space:nowrap; }
+  th.left { text-align:left; }
+  td { padding:7px 10px; border-bottom:1px solid var(--border); text-align:right; }
+  td.left { text-align:left; }
+  tr:last-child td { border-bottom:none; }
+  tr:hover td { background:#f0f4ff; }
+  tr.clickable { cursor:pointer; }
+  tr.clickable:hover td { background:#e8eeff; }
+  .csm-name { font-weight:600; color:var(--blue); }
+  .drill-hint { font-size:10px; color:var(--muted); margin-left:6px; opacity:0; transition:opacity .15s; }
+  tr.clickable:hover .drill-hint { opacity:1; }
+  .null-cell { color:#c0c9d8; }
+  .total-row td { background:#f1f5ff; font-weight:700; border-top:2px solid var(--blue); border-bottom:none; }
+  .total-row:hover td { background:#e8eeff; }
+  .back-btn { display:none; align-items:center; gap:4px; padding:5px 10px; border:1px solid var(--border); border-radius:6px; background:white; font-size:12px; cursor:pointer; color:var(--blue); font-weight:600; }
+  .back-btn:hover { background:var(--light); }
+  .back-btn.visible { display:flex; }
+  .header-badge { display:inline-block; background:rgba(255,255,255,.2); padding:2px 8px; border-radius:10px; font-size:11px; margin-left:8px; }
+  /* YOY table */
+  .yoy-section { margin-top:0; }
+  .yoy-controls { background:white; padding:12px 24px; border-bottom:1px solid var(--border); display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+  th.yr-group { background:#374151; }
+  th.yr-cy { background:#1a5276; }
+  th.yr-py { background:#1e3a5f; }
+  th.yr-delta { background:#2d4159; }
+  .delta-pos { color:var(--green); font-weight:600; }
+  .delta-neg { color:var(--red); font-weight:600; }
+  .delta-zero { color:var(--muted); }
+  .yr-badge { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:700; background:#e0e7ff; color:#3730a3; }
+  .footnote { padding:8px 24px 16px; font-size:11px; color:var(--muted); background:white; }
+  .footnote strong { color:var(--text); }
 </style>
 </head>
 <body>
+
 <div class="header">
   <h1>Pelago CS Book of Business <span class="header-badge">YTD 2026 · Jan–Jul</span></h1>
   <p>All CSMs &amp; clients · Eligible Lives, Growth Activity &amp; Invoiced Revenue</p>
+</div>
+
+<!-- ═══ SECTION 1: CURRENT BOOK ═══ -->
+<div class="section-header">
+  <h2>📊 Current Book of Business</h2>
+  <p>YTD 2026 (Jan–Jul) · ELs = monthly average · IR = full YTD · Click a CSM row to expand clients</p>
 </div>
 
 <div class="controls">
@@ -72,204 +86,290 @@
   <button class="back-btn" id="backBtn" onclick="clearCsm()">&#8592; All CSMs</button>
   <span class="row-count" id="rowCount"></span>
 </div>
-
 <div class="kpi-row" id="kpiRow"></div>
+<div class="table-wrap">
+  <table id="mainTable">
+    <thead id="tableHead"></thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+</div>
+
+<!-- ═══ SECTION 2: YOY ═══ -->
+<div class="section-header yoy-section">
+  <h2>📈 Year-Over-Year by Go-Live Cohort</h2>
+  <p>CY = Jan 1–Jul 13, 2026 (periods through Jul 13 available as of today) · PY = Jan 1–Jul 13, 2025 · ELs = monthly average (Jan–Jul) · Source: <strong>dw_marts.client_profile</strong> for go-live year (non-governed)</p>
+</div>
+
+<div class="yoy-controls">
+  <div class="ctrl-group">
+    <label>CSM</label>
+    <select id="yoyCsmFilter" onchange="renderYoy()">
+      <option value="">All CSMs</option>
+    </select>
+  </div>
+  <span class="row-count" id="yoyRowCount"></span>
+</div>
 
 <div class="table-wrap">
-<table id="mainTable">
-<thead id="tableHead"></thead>
-<tbody id="tableBody"></tbody>
-</table>
+  <table id="yoyTable">
+    <thead>
+      <tr>
+        <th class="left yr-group" style="min-width:180px">Go-Live Year / Client</th>
+        <th class="yr-cy">CY ELs</th>
+        <th class="yr-cy">CY IR</th>
+        <th class="yr-cy">CY IR / EL</th>
+        <th class="yr-py">PY ELs</th>
+        <th class="yr-py">PY IR</th>
+        <th class="yr-py">PY IR / EL</th>
+        <th class="yr-delta">Δ ELs</th>
+        <th class="yr-delta">Δ IR</th>
+        <th class="yr-delta">Δ IR / EL</th>
+      </tr>
+    </thead>
+    <tbody id="yoyBody"></tbody>
+  </table>
+</div>
+<div class="footnote">
+  IR comparison: Jan 1–Jul 13, 2026 vs. Jan 1–Jul 13, 2025 (same period offset; July 2026 captures in-progress billing through Jul 13 · July 2025 is fully historical). 
+  Clients with go-live year = 2026 will have no prior-year data — this is expected.
 </div>
 
 <script>
 const ALL_ROWS = [{"csm": "Amy Nguyen", "ck": "b53b3a3d6ab90ce0268229151c9bde11", "client_name": "Alight", "sub_client": "AT&T", "display": "Alight \u2014 AT&T", "avg_els": 590413, "regs": 129, "tps": 71, "unique_touched": 0, "y1": 14000.0, "rnwl": 11441.16, "other": 5975.97, "total": 31417.13}, {"csm": "Amy Nguyen", "ck": "5fd0b37cd7dbbb00f97ba6ce92bf5add", "client_name": "Alight", "sub_client": "BD", "display": "Alight \u2014 BD", "avg_els": 46537, "regs": 62, "tps": 21033, "unique_touched": 20833, "y1": 151695.0, "rnwl": 33435.0, "other": 1124.46, "total": 186254.46}, {"csm": "Amy Nguyen", "ck": "33e75ff09dd601bbe69f351039152189", "client_name": "Beacon Health", "sub_client": "", "display": "Beacon Health", "avg_els": 23226, "regs": 228, "tps": 377263, "unique_touched": 56743, "y1": 572799.0, "rnwl": 130305.0, "other": 1557.18, "total": 704661.18}, {"csm": "Amy Nguyen", "ck": "f457c545a9ded88f18ecee47145a72c0", "client_name": "Dollar Tree", "sub_client": "", "display": "Dollar Tree", "avg_els": 19344, "regs": 293, "tps": 128064, "unique_touched": 53952, "y1": 510489.0, "rnwl": 135784.0, "other": 3797.05, "total": 650070.05}, {"csm": "Amy Nguyen", "ck": "1afa34a7f984eeabdbb0a7d494132ee5", "client_name": "Gray Television", "sub_client": "", "display": "Gray Television", "avg_els": 11234, "regs": 37, "tps": 15302, "unique_touched": 15133, "y1": 55385.0, "rnwl": 1770.0, "other": 0.0, "total": 57155.0}, {"csm": "Amy Nguyen", "ck": "b6d767d2f8ed5d21a44b0e5886680cb9", "client_name": "HPE", "sub_client": "", "display": "HPE", "avg_els": 63859, "regs": 181, "tps": 7551, "unique_touched": 3368, "y1": 478947.0, "rnwl": 266908.0, "other": 970.31, "total": 746825.31}, {"csm": "Amy Nguyen", "ck": "642e92efb79421734881b53e1e1b18b6", "client_name": "Lumen", "sub_client": "", "display": "Lumen", "avg_els": 36616, "regs": 196, "tps": 376148, "unique_touched": 81873, "y1": 456689.0, "rnwl": 894765.0, "other": 3048.55, "total": 1354502.55}, {"csm": "Amy Nguyen", "ck": "202cb962ac59075b964b07152d234b70", "client_name": "MPI", "sub_client": "MPI-Alcohol", "display": "MPI \u2014 MPI-Alcohol", "avg_els": 75303, "regs": 138, "tps": 32518, "unique_touched": 32356, "y1": 80865.0, "rnwl": 17970.0, "other": 204.0, "total": 99039.0}, {"csm": "Amy Nguyen", "ck": "17e62166fc8586dfa4d1bc0e1742c08b", "client_name": "MPI", "sub_client": "MPI-Tobacco", "display": "MPI \u2014 MPI-Tobacco", "avg_els": 113868, "regs": 12, "tps": 298, "unique_touched": 0, "y1": 1668.42, "rnwl": 711.76, "other": 324.27, "total": 2704.45}, {"csm": "Amy Nguyen", "ck": "9872ed9fc22fc182d371c3e9ed316094", "client_name": "Perdue Farms", "sub_client": "", "display": "Perdue Farms", "avg_els": 19950, "regs": 116, "tps": 279723, "unique_touched": 67247, "y1": 256530.0, "rnwl": 0.0, "other": 199.02, "total": 256729.02}, {"csm": "Amy Nguyen", "ck": "19ca14e7ea6328a42e0eb13d585e4c22", "client_name": "Philips", "sub_client": "", "display": "Philips", "avg_els": 23042, "regs": 265, "tps": 466867, "unique_touched": 61307, "y1": 679059.0, "rnwl": 543873.0, "other": 625.17, "total": 1223557.17}, {"csm": "Amy Nguyen", "ck": "8d5e957f297893487bd98fa830fa6413", "client_name": "SPX", "sub_client": "", "display": "SPX", "avg_els": 6156, "regs": 101, "tps": 102008, "unique_touched": 20254, "y1": 99914.0, "rnwl": 6490.0, "other": 55.48, "total": 106459.48}, {"csm": "Amy Nguyen", "ck": "903ce9225fca3e988c2af215d4e544d3", "client_name": "Schreiber Foods", "sub_client": "", "display": "Schreiber Foods", "avg_els": 13746, "regs": 27, "tps": 76104, "unique_touched": 18626, "y1": 43805.0, "rnwl": 18970.0, "other": 304.53, "total": 63079.53}, {"csm": "Amy Nguyen", "ck": "6974ce5ac660610b44d9b9fed0ff9548", "client_name": "Southern Company", "sub_client": "", "display": "Southern Company", "avg_els": 59799, "regs": 272, "tps": 96120, "unique_touched": 89702, "y1": 542484.48, "rnwl": 26427.18, "other": 2513.28, "total": 571424.94}, {"csm": "Amy Nguyen", "ck": "3988c7f88ebcb58c6ce932b957b6f332", "client_name": "Stanley Black & Decker", "sub_client": "", "display": "Stanley Black & Decker", "avg_els": 27807, "regs": 73, "tps": 110703, "unique_touched": 14059, "y1": 133411.0, "rnwl": 16440.0, "other": 1011.69, "total": 150862.69}, {"csm": "Amy Nguyen", "ck": "6ea9ab1baa0efb9e19094440c317e21b", "client_name": "Tractor Supply Company", "sub_client": "", "display": "Tractor Supply Company", "avg_els": 47683, "regs": 141, "tps": 36315, "unique_touched": 18601, "y1": 89320.5, "rnwl": 9637.5, "other": 3037.5, "total": 101995.5}, {"csm": "Amy Nguyen", "ck": "65ded5353c5ee48d0b7d48c591b8f430", "client_name": "Wellstar", "sub_client": "", "display": "Wellstar", "avg_els": 1107, "regs": 37, "tps": 10017, "unique_touched": 2019, "y1": 3960.0, "rnwl": 5940.0, "other": 0.0, "total": 9900.0}, {"csm": "Blake Bueltel", "ck": "2a79ea27c279e471f4d180b08d62b00a", "client_name": "7-Eleven", "sub_client": "", "display": "7-Eleven", "avg_els": 22869, "regs": 190, "tps": 312409, "unique_touched": 39492, "y1": 354700.0, "rnwl": 75700.0, "other": 2039.36, "total": 432439.36}, {"csm": "Blake Bueltel", "ck": "eb160de1de89d9058fcb0b968dbbbd68", "client_name": "ADUSA Services", "sub_client": "ADUSA - Limited", "display": "ADUSA Services \u2014 ADUSA - Limited", "avg_els": 172913, "regs": 32, "tps": 92967, "unique_touched": 45367, "y1": 13920.0, "rnwl": 2175.0, "other": 645.12, "total": 16740.12}, {"csm": "Blake Bueltel", "ck": "5ef059938ba799aaa845e1c2e8a762bd", "client_name": "ADUSA Services", "sub_client": "ADUSA - Multi", "display": "ADUSA Services \u2014 ADUSA - Multi", "avg_els": 70146, "regs": 75, "tps": 2429648, "unique_touched": 48854, "y1": 111521.0, "rnwl": 36120.0, "other": 593.77, "total": 148234.77}, {"csm": "Blake Bueltel", "ck": "96da2f590cd7246bbde0051047b0d6f7", "client_name": "Aetna", "sub_client": "Builders FirstSource", "display": "Aetna \u2014 Builders FirstSource", "avg_els": 36418, "regs": 33, "tps": 16426, "unique_touched": 16424, "y1": 80835.0, "rnwl": 0.0, "other": 0.0, "total": 80835.0}, {"csm": "Blake Bueltel", "ck": "f7e6c85504ce6e82442c770f7c8606f0", "client_name": "Aetna", "sub_client": "Costco Wholesale", "display": "Aetna \u2014 Costco Wholesale", "avg_els": 388299, "regs": 855, "tps": 262159, "unique_touched": 261428, "y1": 2302620.0, "rnwl": 0.0, "other": 262.5, "total": 2302882.5}, {"csm": "Blake Bueltel", "ck": "82161242827b703e6acf9c726942a1e4", "client_name": "Aetna", "sub_client": "Panasonic", "display": "Aetna \u2014 Panasonic", "avg_els": 17624, "regs": 77, "tps": 45579, "unique_touched": 45299, "y1": 96330.0, "rnwl": 0.0, "other": 0.0, "total": 96330.0}, {"csm": "Blake Bueltel", "ck": "013d407166ec4fa56eb1e1f8cbe183b9", "client_name": "Alight", "sub_client": "Maximus", "display": "Alight \u2014 Maximus", "avg_els": 28071, "regs": 115, "tps": 51218, "unique_touched": 50917, "y1": 248092.0, "rnwl": 12787.0, "other": 0.0, "total": 260879.0}, {"csm": "Blake Bueltel", "ck": "0336dcbab05b9d5ad24f4333c7658a0e", "client_name": "CVS Health", "sub_client": "Archer Daniels Midland", "display": "CVS Health \u2014 Archer Daniels Midland", "avg_els": 27740, "regs": 382, "tps": 361688, "unique_touched": 73563, "y1": 966407.0, "rnwl": 0.0, "other": 1939.32, "total": 968346.32}, {"csm": "Blake Bueltel", "ck": "cedebb6e872f539bef8c3f919874e9d7", "client_name": "CVS Health", "sub_client": "Chicago Public Schools", "display": "CVS Health \u2014 Chicago Public Schools", "avg_els": 71710, "regs": 470, "tps": 375625, "unique_touched": 164890, "y1": 1379939.0, "rnwl": 0.0, "other": 781.48, "total": 1380720.48}, {"csm": "Blake Bueltel", "ck": "9766527f2b5d3e95d4a733fcfb77bd7e", "client_name": "CVS Health", "sub_client": "Fidelity National Financial", "display": "CVS Health \u2014 Fidelity National Financial", "avg_els": 23909, "regs": 265, "tps": 364666, "unique_touched": 75062, "y1": 752983.0, "rnwl": 6990.0, "other": 435.51, "total": 760408.51}, {"csm": "Blake Bueltel", "ck": "006f52e9102a8d3be2fe5614f42ba989", "client_name": "CVS Health", "sub_client": "Sprouts Farmers Market", "display": "CVS Health \u2014 Sprouts Farmers Market", "avg_els": 29235, "regs": 3, "tps": 61, "unique_touched": 0, "y1": 8985.0, "rnwl": 0.0, "other": 0.0, "total": 8985.0}, {"csm": "Blake Bueltel", "ck": "1ff8a7b5dc7a7d1f0ed65aaa29c04b1e", "client_name": "Family Dollar", "sub_client": "", "display": "Family Dollar", "avg_els": 12596, "regs": 217, "tps": 73482, "unique_touched": 31171, "y1": 405661.0, "rnwl": 139339.0, "other": 2574.03, "total": 547574.03}, {"csm": "Blake Bueltel", "ck": "45c48cce2e2d7fbdea1afc51c7c6ad26", "client_name": "GE Appliances", "sub_client": "", "display": "GE Appliances", "avg_els": 20370, "regs": 120, "tps": 253411, "unique_touched": 36740, "y1": 53895.0, "rnwl": 15095.0, "other": 474.66, "total": 69464.66}, {"csm": "Blake Bueltel", "ck": "4e732ced3463d06de0ca9a15b6153677", "client_name": "K&L Gates", "sub_client": "K&L Gates US", "display": "K&L Gates \u2014 K&L Gates US", "avg_els": 3614, "regs": 7, "tps": 7646, "unique_touched": 7620, "y1": 5990.0, "rnwl": 16782.0, "other": 306.35, "total": 23078.35}, {"csm": "Blake Bueltel", "ck": "e00da03b685a0dd18fb6a08af0923de0", "client_name": "Kraft Heinz", "sub_client": "", "display": "Kraft Heinz", "avg_els": 22575, "regs": 492, "tps": 272776, "unique_touched": 57637, "y1": 1141125.0, "rnwl": 14950.0, "other": 203.09, "total": 1156278.09}, {"csm": "Blake Bueltel", "ck": "202cb962ac59075b964b07152d234b70", "client_name": "MPI", "sub_client": "MPI-Alcohol", "display": "MPI \u2014 MPI-Alcohol", "avg_els": 75303, "regs": 138, "tps": 32518, "unique_touched": 32356, "y1": 68885.0, "rnwl": 8985.0, "other": 204.0, "total": 78074.0}, {"csm": "Blake Bueltel", "ck": "17e62166fc8586dfa4d1bc0e1742c08b", "client_name": "MPI", "sub_client": "MPI-Tobacco", "display": "MPI \u2014 MPI-Tobacco", "avg_els": 113868, "regs": 12, "tps": 298, "unique_touched": 0, "y1": 556.14, "rnwl": 254.2, "other": 223.5, "total": 1033.84}, {"csm": "Blake Bueltel", "ck": "ac627ab1ccbdb62ec96e702f07f6425b", "client_name": "Southcoast Health", "sub_client": "", "display": "Southcoast Health", "avg_els": 8167, "regs": 103, "tps": 169013, "unique_touched": 24949, "y1": 72865.0, "rnwl": 12970.0, "other": 0.0, "total": 85835.0}, {"csm": "Blake Bueltel", "ck": "0f28b5d49b3020afeecd95b4009adf4c", "client_name": "Toyoda Gosei", "sub_client": "", "display": "Toyoda Gosei", "avg_els": 8170, "regs": 111, "tps": 147344, "unique_touched": 27200, "y1": 29390.0, "rnwl": 8965.0, "other": 286.2, "total": 38641.2}, {"csm": "Blake Bueltel", "ck": "c0c7c76d30bd3dcaefc96f40275bdc0a", "client_name": "Yanfeng", "sub_client": "", "display": "Yanfeng", "avg_els": 9006, "regs": 56, "tps": 52320, "unique_touched": 7513, "y1": 10965.0, "rnwl": 995.0, "other": 72.87, "total": 12032.87}, {"csm": "Breanna Thompson", "ck": "bd686fd640be98efaae0091fa301e613", "client_name": "3M", "sub_client": "3M - BCBSMN", "display": "3M \u2014 3M - BCBSMN", "avg_els": 21467, "regs": 124, "tps": 188903, "unique_touched": 53023, "y1": 316000.0, "rnwl": 0.0, "other": 0.0, "total": 316000.0}, {"csm": "Breanna Thompson", "ck": "58a2fc6ed39fd083f55d4182bf88826d", "client_name": "3M", "sub_client": "3M - Health Partner", "display": "3M \u2014 3M - Health Partner", "avg_els": 19202, "regs": 123, "tps": 172034, "unique_touched": 47558, "y1": 351542.0, "rnwl": 0.0, "other": 0.0, "total": 351542.0}, {"csm": "Breanna Thompson", "ck": "02522a2b2726fb0a03bb19f2d8d9524d", "client_name": "Amazon", "sub_client": "", "display": "Amazon", "avg_els": 1016429, "regs": 377, "tps": 4, "unique_touched": 4, "y1": 782814.0, "rnwl": 64078.0, "other": 15168.06, "total": 862060.06}, {"csm": "Breanna Thompson", "ck": "fc221309746013ac554571fbd180e1c8", "client_name": "Blue Cross and Blue Shield of Minnesota Plan", "sub_client": "Blue Cross and Blue Shield of Minnesota", "display": "Blue Cross and Blue Shield of Minnesota Plan \u2014 Blue Cross and Blue Shield of Minnesota", "avg_els": 12989, "regs": 93, "tps": 136140, "unique_touched": 27191, "y1": 2995.0, "rnwl": 0.0, "other": 0.0, "total": 2995.0}, {"csm": "Breanna Thompson", "ck": "fc221309746013ac554571fbd180e1c8", "client_name": "Blue Cross and Blue Shield of Minnesota Plan", "sub_client": "Polaris", "display": "Blue Cross and Blue Shield of Minnesota Plan \u2014 Polaris", "avg_els": 12989, "regs": 93, "tps": 136140, "unique_touched": 27191, "y1": 234570.0, "rnwl": 0.0, "other": 0.0, "total": 234570.0}, {"csm": "Breanna Thompson", "ck": "a87ff679a2f3e71d9181a67b7542122c", "client_name": "Corning", "sub_client": "", "display": "Corning", "avg_els": 28582, "regs": 282, "tps": 204037, "unique_touched": 36362, "y1": 388541.61, "rnwl": 181582.13, "other": 336.2, "total": 570459.94}, {"csm": "Breanna Thompson", "ck": "45c48cce2e2d7fbdea1afc51c7c6ad26", "client_name": "GE Appliances", "sub_client": "", "display": "GE Appliances", "avg_els": 20370, "regs": 120, "tps": 253411, "unique_touched": 36740, "y1": 180715.0, "rnwl": 121319.0, "other": 1828.75, "total": 303862.75}, {"csm": "Breanna Thompson", "ck": "73278a4a86960eeb576a8fd4c9ec6997", "client_name": "KKR", "sub_client": "", "display": "KKR", "avg_els": 4090, "regs": 6, "tps": 3, "unique_touched": 0, "y1": 15975.0, "rnwl": 33940.0, "other": 0.0, "total": 49915.0}, {"csm": "Breanna Thompson", "ck": "a1d0c6e83f027327d8461063f4ac58a6", "client_name": "Securitas", "sub_client": "", "display": "Securitas", "avg_els": 0, "regs": 495, "tps": 1574655, "unique_touched": 248913, "y1": 193060.8, "rnwl": 784.8, "other": 1771.25, "total": 195616.85}, {"csm": "Breanna Thompson", "ck": "7f39f831b763f0140b1b4a2aaeace6a7", "client_name": "Spring Health", "sub_client": "", "display": "Spring Health", "avg_els": 0, "regs": 0, "tps": 0, "unique_touched": 0, "y1": 0.0, "rnwl": 0.0, "other": 0.0, "total": 0.0}, {"csm": "Breanna Thompson", "ck": "e2ef524fbf3d9fe611d5a8e90fefdc9c", "client_name": "U.S. Venture", "sub_client": "", "display": "U.S. Venture", "avg_els": 8745, "regs": 169, "tps": 144338, "unique_touched": 22654, "y1": 421779.0, "rnwl": 24440.0, "other": 601.43, "total": 446820.43}, {"csm": "Caitlin Kimball", "ck": "0777d5c17d4066b82ab86dff8a46af6f", "client_name": "Alight", "sub_client": "KnitWell Group", "display": "Alight \u2014 KnitWell Group", "avg_els": 9853, "regs": 75, "tps": 185684, "unique_touched": 24489, "y1": 100386.5, "rnwl": 470.25, "other": 536.68, "total": 101393.43}, {"csm": "Caitlin Kimball", "ck": "2b44928ae11fb9384c4cf38708677c48", "client_name": "CNH Industrial", "sub_client": "", "display": "CNH Industrial", "avg_els": 35056, "regs": 182, "tps": 235363, "unique_touched": 51745, "y1": 375279.0, "rnwl": 176912.0, "other": 0.0, "total": 552191.0}, {"csm": "Caitlin Kimball", "ck": "8f85517967795eeef66c225f7883bdcb", "client_name": "CVS Health", "sub_client": "Hubbell CVS", "display": "CVS Health \u2014 Hubbell CVS", "avg_els": 11571, "regs": 195, "tps": 237269, "unique_touched": 38232, "y1": 495494.0, "rnwl": 0.0, "other": 66.48, "total": 495560.48}, {"csm": "Caitlin Kimball", "ck": "698d51a19d8a121ce581499d7b701668", "client_name": "Cambia", "sub_client": "Fortive", "display": "Cambia \u2014 Fortive", "avg_els": 8022, "regs": 1, "tps": 0, "unique_touched": 0, "y1": 377.5, "rnwl": 294.96, "other": 0.0, "total": 672.46}, {"csm": "Caitlin Kimball", "ck": "2b24d495052a8ce66358eb576b8912c8", "client_name": "Cambia", "sub_client": "Litehouse Inc", "display": "Cambia \u2014 Litehouse Inc", "avg_els": 1575, "regs": 4, "tps": 2, "unique_touched": 0, "y1": 1510.0, "rnwl": 147.48, "other": 0.0, "total": 1657.48}, {"csm": "Caitlin Kimball", "ck": "a4a042cf4fd6bfb47701cbc8a1653ada", "client_name": "Cambia", "sub_client": "Ralliant Corporation", "display": "Cambia \u2014 Ralliant Corporation", "avg_els": 5361, "regs": 9, "tps": 0, "unique_touched": 0, "y1": 3397.5, "rnwl": 122.9, "other": 0.0, "total": 3520.4}, {"csm": "Caitlin Kimball", "ck": "149e9677a5989fd342ae44213df68868", "client_name": "Cambia", "sub_client": "Small Mine Development", "display": "Cambia \u2014 Small Mine Development", "avg_els": 862, "regs": 1, "tps": 0, "unique_touched": 0, "y1": 377.5, "rnwl": 0.0, "other": 0.0, "total": 377.5}, {"csm": "Caitlin Kimball", "ck": "a5e00132373a7031000fd987a3c9f87b", "client_name": "Cambia", "sub_client": "Washington State Health Care Authority", "display": "Cambia \u2014 Washington State Health Care Authority", "avg_els": 325074, "regs": 22, "tps": 0, "unique_touched": 0, "y1": 8305.0, "rnwl": 196.64, "other": 0.0, "total": 8501.64}, {"csm": "Caitlin Kimball", "ck": "da4fb5c6e93e74d3df8527599fa62642", "client_name": "Cambia", "sub_client": "Weyerhaeuser", "display": "Cambia \u2014 Weyerhaeuser", "avg_els": 0, "regs": 2, "tps": 0, "unique_touched": 0, "y1": 755.0, "rnwl": 0.0, "other": 0.0, "total": 755.0}, {"csm": "Caitlin Kimball", "ck": "1c383cd30b7c298ab50293adfecb7b18", "client_name": "Carters", "sub_client": "", "display": "Carters", "avg_els": 3421, "regs": 32, "tps": 69387, "unique_touched": 10177, "y1": 80340.0, "rnwl": 33405.0, "other": 0.0, "total": 113745.0}, {"csm": "Caitlin Kimball", "ck": "3416a75f4cea9109507cacd8e2f2aefc", "client_name": "Cheesecake Factory", "sub_client": "", "display": "Cheesecake Factory", "avg_els": 15069, "regs": 53, "tps": 108478, "unique_touched": 20737, "y1": 145770.0, "rnwl": 164891.0, "other": 216.17, "total": 310877.17}, {"csm": "Caitlin Kimball", "ck": "cfecdb276f634854f3ef915e2e980c31", "client_name": "Cobalt Benefits Group", "sub_client": "SharkNinja", "display": "Cobalt Benefits Group \u2014 SharkNinja", "avg_els": 3507, "regs": 21, "tps": 27887, "unique_touched": 7505, "y1": 49405.0, "rnwl": 0.0, "other": 41.2, "total": 49446.2}, {"csm": "Caitlin Kimball", "ck": "38af86134b65d0f10fe33d30dd76442e", "client_name": "Guitar Center", "sub_client": "", "display": "Guitar Center", "avg_els": 6424, "regs": 95, "tps": 34646, "unique_touched": 11406, "y1": 249762.0, "rnwl": 0.0, "other": 1325.06, "total": 251087.06}, {"csm": "Caitlin Kimball", "ck": "a684eceee76fc522773286a895bc8436", "client_name": "Hubbell", "sub_client": "", "display": "Hubbell", "avg_els": 507, "regs": 19, "tps": 14729, "unique_touched": 1980, "y1": 19850.0, "rnwl": 990.0, "other": 0.0, "total": 20840.0}, {"csm": "Caitlin Kimball", "ck": "b73ce398c39f506af761d2277d853a92", "client_name": "Hunter Douglas", "sub_client": "", "display": "Hunter Douglas", "avg_els": 5604, "regs": 72, "tps": 154947, "unique_touched": 26618, "y1": 176588.0, "rnwl": 0.0, "other": 434.91, "total": 177022.91}, {"csm": "Caitlin Kimball", "ck": "a97da629b098b75c294dffdc3e463904", "client_name": "Live Nation", "sub_client": "", "display": "Live Nation", "avg_els": 23976, "regs": 215, "tps": 63509, "unique_touched": 63113, "y1": 557551.0, "rnwl": 28312.0, "other": 552.81, "total": 586415.81}, {"csm": "Caitlin Kimball", "ck": "a597e50502f5ff68e3e25b9114205d4a", "client_name": "Loews Hotels", "sub_client": "", "display": "Loews Hotels", "avg_els": 7656, "regs": 320, "tps": 139087, "unique_touched": 31191, "y1": 964395.0, "rnwl": 0.0, "other": 407.51, "total": 964802.51}, {"csm": "Caitlin Kimball", "ck": "fa7cdfad1a5aaf8370ebeda47a1ff1c3", "client_name": "Personify", "sub_client": "City of Minneapolis", "display": "Personify \u2014 City of Minneapolis", "avg_els": 9072, "regs": 214, "tps": 98486, "unique_touched": 23632, "y1": 569904.0, "rnwl": 495.0, "other": 74.08, "total": 570473.08}, {"csm": "Caitlin Kimball", "ck": "2723d092b63885e0d7c260cc007e8b9d", "client_name": "RPM International", "sub_client": "", "display": "RPM International", "avg_els": 20301, "regs": 92, "tps": 45361, "unique_touched": 45142, "y1": 217011.0, "rnwl": 117356.0, "other": 432.31, "total": 334799.31}, {"csm": "Caitlin Kimball", "ck": "eecca5b6365d9607ee5a9d336962c534", "client_name": "SRS Distribution", "sub_client": "", "display": "SRS Distribution", "avg_els": 46791, "regs": 88, "tps": 63876, "unique_touched": 51439, "y1": 162650.0, "rnwl": 0.0, "other": 478.65, "total": 163128.65}, {"csm": "Caitlin Kimball", "ck": "182be0c5cdcd5072bb1864cdee4d3d6e", "client_name": "Silgan Containers", "sub_client": "", "display": "Silgan Containers", "avg_els": 3522, "regs": 111, "tps": 55573, "unique_touched": 11027, "y1": 164762.0, "rnwl": 48540.0, "other": 1816.67, "total": 215118.67}, {"csm": "Jorie Stavropoulos", "ck": "072b030ba126b2f4b2374f342be9ed44", "client_name": "Sequoia Multiprogram", "sub_client": "", "display": "Sequoia Multiprogram", "avg_els": 997, "regs": 2, "tps": 0, "unique_touched": 0, "y1": 0.0, "rnwl": 0.0, "other": 0.0, "total": 7372.2}, {"csm": "Leslie Esch", "ck": "b53b3a3d6ab90ce0268229151c9bde11", "client_name": "Alight", "sub_client": "AT&T", "display": "Alight \u2014 AT&T", "avg_els": 590413, "regs": 129, "tps": 71, "unique_touched": 0, "y1": 625.0, "rnwl": 802.34, "other": 214.03, "total": 1641.37}, {"csm": "Leslie Esch", "ck": "5fd0b37cd7dbbb00f97ba6ce92bf5add", "client_name": "Alight", "sub_client": "BD", "display": "Alight \u2014 BD", "avg_els": 46537, "regs": 62, "tps": 21033, "unique_touched": 20833, "y1": 2995.0, "rnwl": 6490.0, "other": 0.0, "total": 9485.0}, {"csm": "Leslie Esch", "ck": "33e75ff09dd601bbe69f351039152189", "client_name": "Beacon Health", "sub_client": "", "display": "Beacon Health", "avg_els": 23226, "regs": 228, "tps": 377263, "unique_touched": 56743, "y1": 24455.0, "rnwl": 3255.0, "other": 88.29, "total": 27798.29}, {"csm": "Leslie Esch", "ck": "19ca14e7ea6328a42e0eb13d585e4c22", "client_name": "Philips", "sub_client": "", "display": "Philips", "avg_els": 23042, "regs": 265, "tps": 466867, "unique_touched": 61307, "y1": 34430.0, "rnwl": 3490.0, "other": 95.34, "total": 38015.34}, {"csm": "Ryan Wallace", "ck": "045117b0e0a11a242b9765e79cbf113f", "client_name": "Alight", "sub_client": "Alcon", "display": "Alight \u2014 Alcon", "avg_els": 18605, "regs": 19, "tps": 2, "unique_touched": 0, "y1": 38405.0, "rnwl": 0.0, "other": 0.0, "total": 38405.0}, {"csm": "Ryan Wallace", "ck": "4c5bde74a8f110656874902f07378009", "client_name": "Alight", "sub_client": "Alex Lee", "display": "Alight \u2014 Alex Lee", "avg_els": 29947, "regs": 23, "tps": 38962, "unique_touched": 15457, "y1": 60885.0, "rnwl": 0.0, "other": 66.34, "total": 60951.34}, {"csm": "Ryan Wallace", "ck": "bf8229696f7a3bb4700cfddef19fa23f", "client_name": "Alight", "sub_client": "Sanofi", "display": "Alight \u2014 Sanofi", "avg_els": 41425, "regs": 274, "tps": 49231, "unique_touched": 47422, "y1": 717397.25, "rnwl": 0.0, "other": 1235.97, "total": 718633.22}, {"csm": "Ryan Wallace", "ck": "38b3eff8baf56627478ec76a704e9b52", "client_name": "Bimbo Bakeries USA (BBU, Inc.)", "sub_client": "", "display": "Bimbo Bakeries USA (BBU, Inc.)", "avg_els": 32935, "regs": 13, "tps": 38713, "unique_touched": 4306, "y1": 21940.0, "rnwl": 0.0, "other": 131.02, "total": 22071.02}, {"csm": "Ryan Wallace", "ck": "14bfa6bb14875e45bba028a21ed38046", "client_name": "CACI", "sub_client": "", "display": "CACI", "avg_els": 38333, "regs": 86, "tps": 241330, "unique_touched": 44230, "y1": 225080.0, "rnwl": 478.0, "other": 260.0, "total": 279405.25}, {"csm": "Ryan Wallace", "ck": "f457c545a9ded88f18ecee47145a72c0", "client_name": "Dollar Tree", "sub_client": "", "display": "Dollar Tree", "avg_els": 19344, "regs": 293, "tps": 128064, "unique_touched": 53952, "y1": 3985.0, "rnwl": 495.0, "other": 120.62, "total": 4600.62}, {"csm": "Ryan Wallace", "ck": "37a749d808e46495a8da1e5352d03cae", "client_name": "Express Scripts", "sub_client": "B&G Foods", "display": "Express Scripts \u2014 B&G Foods", "avg_els": 2098, "regs": 8, "tps": 23635, "unique_touched": 5885, "y1": 20391.75, "rnwl": 470.25, "other": 0.0, "total": 20862.0}, {"csm": "Ryan Wallace", "ck": "c7e1249ffc03eb9ded908c236bd1996d", "client_name": "Express Scripts", "sub_client": "Benjamin Moore", "display": "Express Scripts \u2014 Benjamin Moore", "avg_els": 2477, "regs": 20, "tps": 7323, "unique_touched": 2443, "y1": 9405.0, "rnwl": 25393.5, "other": 862.07, "total": 35660.57}, {"csm": "Ryan Wallace", "ck": "ec8956637a99787bd197eacd77acce5e", "client_name": "Express Scripts", "sub_client": "Carpenters H&W Trust Fund", "display": "Express Scripts \u2014 Carpenters H&W Trust Fund", "avg_els": 63274, "regs": 81, "tps": 324340, "unique_touched": 79182, "y1": 78056.75, "rnwl": 25887.5, "other": 0.0, "total": 103944.25}, {"csm": "Ryan Wallace", "ck": "a2557a7b2e94197ff767970b67041697", "client_name": "Express Scripts", "sub_client": "Cascade Drilling", "display": "Express Scripts \u2014 Cascade Drilling", "avg_els": 1107, "regs": 12, "tps": 7712, "unique_touched": 2920, "y1": 14207.25, "rnwl": 0.0, "other": 90.98, "total": 14298.23}, {"csm": "Ryan Wallace", "ck": "3ef815416f775098fe977004015c6193", "client_name": "Express Scripts", "sub_client": "Christian Brothers", "display": "Express Scripts \u2014 Christian Brothers", "avg_els": 40243, "regs": 3, "tps": 248, "unique_touched": 0, "y1": 1542.78, "rnwl": 171.42, "other": 0.0, "total": 1714.2}, {"csm": "Ryan Wallace", "ck": "9fc3d7152ba9336a670e36d0ed79bc43", "client_name": "Express Scripts", "sub_client": "Cincinnati Children's", "display": "Express Scripts \u2014 Cincinnati Children's", "avg_els": 26139, "regs": 2, "tps": 0, "unique_touched": 1, "y1": 1260.0, "rnwl": 280.0, "other": 48.75, "total": 1588.75}, {"csm": "Ryan Wallace", "ck": "a8baa56554f96369ab93e4f3bb068c22", "client_name": "Express Scripts", "sub_client": "Dick's Sporting Goods", "display": "Express Scripts \u2014 Dick's Sporting Goods", "avg_els": 20564, "regs": 178, "tps": 91665, "unique_touched": 31080, "y1": 425416.67, "rnwl": 122768.5, "other": 345.33, "total": 548530.5}, {"csm": "Ryan Wallace", "ck": "9778d5d219c5080b9a6a17bef029331c", "client_name": "Express Scripts", "sub_client": "Gerdau", "display": "Express Scripts \u2014 Gerdau", "avg_els": 8183, "regs": 11, "tps": 20129, "unique_touched": 7672, "y1": 13247.75, "rnwl": 25065.75, "other": 45.49, "total": 38358.99}, {"csm": "Ryan Wallace", "ck": "ad61ab143223efbc24c7d2583be69251", "client_name": "Express Scripts", "sub_client": "JM Huber", "display": "Express Scripts \u2014 JM Huber", "avg_els": 4264, "regs": 50, "tps": 71504, "unique_touched": 12735, "y1": 106191.25, "rnwl": 38375.5, "other": 0.0, "total": 144566.75}, {"csm": "Ryan Wallace", "ck": "d09bf41544a3365a46c9077ebb5e35c3", "client_name": "Express Scripts", "sub_client": "MetLife", "display": "Express Scripts \u2014 MetLife", "avg_els": 22837, "regs": 200, "tps": 349471, "unique_touched": 62502, "y1": 468857.09, "rnwl": 81486.0, "other": 451.39, "total": 550794.48}, {"csm": "Ryan Wallace", "ck": "31fefc0e570cb3860f2a6d4b38c6490d", "client_name": "Express Scripts", "sub_client": "Micron", "display": "Express Scripts \u2014 Micron", "avg_els": 0, "regs": 2, "tps": 0, "unique_touched": 0, "y1": 2845.25, "rnwl": 0.0, "other": 0.0, "total": 2845.25}, {"csm": "Ryan Wallace", "ck": "68d30a9594728bc39aa24be94b319d21", "client_name": "Express Scripts", "sub_client": "New Balance", "display": "Express Scripts \u2014 New Balance", "avg_els": 5061, "regs": 32, "tps": 16241, "unique_touched": 16080, "y1": 73007.75, "rnwl": 9476.25, "other": 0.0, "total": 82484.0}, {"csm": "Ryan Wallace", "ck": "812b4ba287f5ee0bc9d43bbf5bbe87fb", "client_name": "Express Scripts", "sub_client": "OPEH&W", "display": "Express Scripts \u2014 OPEH&W", "avg_els": 5557, "regs": 31, "tps": 59559, "unique_touched": 20356, "y1": 58736.75, "rnwl": 13708.5, "other": 202.95, "total": 72648.2}, {"csm": "Ryan Wallace", "ck": "06409663226af2f3114485aa4e0a23b4", "client_name": "Express Scripts", "sub_client": "Piedmont Healthcare", "display": "Express Scripts \u2014 Piedmont Healthcare", "avg_els": 39574, "regs": 203, "tps": 36, "unique_touched": 6, "y1": 504108.25, "rnwl": 6165.5, "other": 320.03, "total": 510593.78}, {"csm": "Ryan Wallace", "ck": "a8f15eda80c50adb0e71943adc8015cf", "client_name": "Express Scripts", "sub_client": "Red Bull", "display": "Express Scripts \u2014 Red Bull", "avg_els": 10126, "regs": 128, "tps": 20418, "unique_touched": 7274, "y1": 292258.18, "rnwl": 48777.75, "other": 554.9, "total": 341590.83}, {"csm": "Ryan Wallace", "ck": "7647966b7343c29048673252e490f736", "client_name": "Express Scripts", "sub_client": "Redner's Markets", "display": "Express Scripts \u2014 Redner's Markets", "avg_els": 1904, "regs": 19, "tps": 32350, "unique_touched": 7827, "y1": 31288.25, "rnwl": 23702.5, "other": 0.0, "total": 54990.75}, {"csm": "Ryan Wallace", "ck": "28dd2c7955ce926456240b2ff0100bde", "client_name": "Express Scripts", "sub_client": "Solvay", "display": "Express Scripts \u2014 Solvay", "avg_els": 9406, "regs": 4, "tps": 8, "unique_touched": 0, "y1": 3785.75, "rnwl": 5643.0, "other": 0.0, "total": 9428.75}, {"csm": "Ryan Wallace", "ck": "2a38a4a9316c49e5a833517c45d31070", "client_name": "Express Scripts", "sub_client": "SugarCreek", "display": "Express Scripts \u2014 SugarCreek", "avg_els": 2307, "regs": 28, "tps": 24114, "unique_touched": 7566, "y1": 59320.5, "rnwl": 41244.5, "other": 20.99, "total": 100585.99}, {"csm": "Ryan Wallace", "ck": "7ef605fc8dba5425d6965fbd4c8fbe1f", "client_name": "Express Scripts", "sub_client": "TTEC", "display": "Express Scripts \u2014 TTEC", "avg_els": 8490, "regs": 194, "tps": 78777, "unique_touched": 26280, "y1": 300880.09, "rnwl": 15119.25, "other": 1916.27, "total": 317915.61}, {"csm": "Ryan Wallace", "ck": "f2217062e9a397a1dca429e7d70bc6ca", "client_name": "Express Scripts", "sub_client": "The Doe Run Company", "display": "Express Scripts \u2014 The Doe Run Company", "avg_els": 2084, "regs": 7, "tps": 5301, "unique_touched": 5301, "y1": 16116.75, "rnwl": 0.0, "other": 45.49, "total": 16162.24}, {"csm": "Ryan Wallace", "ck": "9dcb88e0137649590b755372b040afad", "client_name": "Express Scripts", "sub_client": "VNS Health", "display": "Express Scripts \u2014 VNS Health", "avg_els": 3974, "regs": 45, "tps": 56219, "unique_touched": 14842, "y1": 91029.0, "rnwl": 0.0, "other": 0.0, "total": 91029.0}, {"csm": "Ryan Wallace", "ck": "a0a080f42e6f13b3a2df133f073095dd", "client_name": "Express Scripts", "sub_client": "Windstream", "display": "Express Scripts \u2014 Windstream", "avg_els": 11519, "regs": 51, "tps": 105252, "unique_touched": 21116, "y1": 80545.75, "rnwl": 12226.5, "other": 20.99, "total": 92793.24}, {"csm": "Ryan Wallace", "ck": "c74d97b01eae257e44aa9d5bade97baf", "client_name": "Express Scripts", "sub_client": "Yokohama", "display": "Express Scripts \u2014 Yokohama", "avg_els": 2903, "regs": 11, "tps": 10926, "unique_touched": 1273, "y1": 27027.5, "rnwl": 940.5, "other": 0.0, "total": 27968.0}, {"csm": "Ryan Wallace", "ck": "b6d767d2f8ed5d21a44b0e5886680cb9", "client_name": "HPE", "sub_client": "", "display": "HPE", "avg_els": 63859, "regs": 181, "tps": 7551, "unique_touched": 3368, "y1": 6158.0, "rnwl": 3313.0, "other": 0.0, "total": 9471.0}, {"csm": "Ryan Wallace", "ck": "642e92efb79421734881b53e1e1b18b6", "client_name": "Lumen", "sub_client": "", "display": "Lumen", "avg_els": 36616, "regs": 196, "tps": 376148, "unique_touched": 81873, "y1": 15958.0, "rnwl": 3931.0, "other": 0.0, "total": 19889.0}, {"csm": "Ryan Wallace", "ck": "6974ce5ac660610b44d9b9fed0ff9548", "client_name": "Southern Company", "sub_client": "", "display": "Southern Company", "avg_els": 59799, "regs": 272, "tps": 96120, "unique_touched": 89702, "y1": 35548.8, "rnwl": 5127.06, "other": 110.78, "total": 40786.64}, {"csm": "Ryan Wallace", "ck": "3988c7f88ebcb58c6ce932b957b6f332", "client_name": "Stanley Black & Decker", "sub_client": "", "display": "Stanley Black & Decker", "avg_els": 27807, "regs": 73, "tps": 110703, "unique_touched": 14059, "y1": 0.0, "rnwl": 0.0, "other": 29.39, "total": 29.39}, {"csm": "Ryan Wallace", "ck": "6ea9ab1baa0efb9e19094440c317e21b", "client_name": "Tractor Supply Company", "sub_client": "", "display": "Tractor Supply Company", "avg_els": 47683, "regs": 141, "tps": 36315, "unique_touched": 18601, "y1": 5526.5, "rnwl": 1257.5, "other": 33.75, "total": 6817.75}, {"csm": "Steven White", "ck": "76dc611d6ebaafc66cc0879c71b5db5c", "client_name": "Independence", "sub_client": "AmeriHealth", "display": "Independence \u2014 AmeriHealth", "avg_els": 0, "regs": 8, "tps": 23, "unique_touched": 0, "y1": 3495.0, "rnwl": 0.0, "other": 0.0, "total": 3495.0}, {"csm": "Taylor Lutcher", "ck": "82161242827b703e6acf9c726942a1e4", "client_name": "Aetna", "sub_client": "Panasonic", "display": "Aetna \u2014 Panasonic", "avg_els": 17624, "regs": 77, "tps": 45579, "unique_touched": 45299, "y1": 110785.0, "rnwl": 0.0, "other": 0.0, "total": 110785.0}, {"csm": "Taylor Lutcher", "ck": "1afa34a7f984eeabdbb0a7d494132ee5", "client_name": "Gray Television", "sub_client": "", "display": "Gray Television", "avg_els": 11234, "regs": 37, "tps": 15302, "unique_touched": 15133, "y1": 11930.0, "rnwl": 156.0, "other": 276.09, "total": 12362.09}, {"csm": "Taylor Lutcher", "ck": "4e732ced3463d06de0ca9a15b6153677", "client_name": "K&L Gates", "sub_client": "K&L Gates US", "display": "K&L Gates \u2014 K&L Gates US", "avg_els": 3614, "regs": 7, "tps": 7646, "unique_touched": 7620, "y1": 14975.0, "rnwl": 42059.0, "other": 1155.0, "total": 58189.0}, {"csm": "Taylor Lutcher", "ck": "202cb962ac59075b964b07152d234b70", "client_name": "MPI", "sub_client": "MPI-Alcohol", "display": "MPI \u2014 MPI-Alcohol", "avg_els": 75303, "regs": 138, "tps": 32518, "unique_touched": 32356, "y1": 242595.0, "rnwl": 41930.0, "other": 68.0, "total": 284593.0}, {"csm": "Taylor Lutcher", "ck": "17e62166fc8586dfa4d1bc0e1742c08b", "client_name": "MPI", "sub_client": "MPI-Tobacco", "display": "MPI \u2014 MPI-Tobacco", "avg_els": 113868, "regs": 12, "tps": 298, "unique_touched": 0, "y1": 834.21, "rnwl": 406.72, "other": 289.96, "total": 1530.89}, {"csm": "Taylor Lutcher", "ck": "9872ed9fc22fc182d371c3e9ed316094", "client_name": "Perdue Farms", "sub_client": "", "display": "Perdue Farms", "avg_els": 19950, "regs": 116, "tps": 279723, "unique_touched": 67247, "y1": 49905.0, "rnwl": 0.0, "other": 62.18, "total": 49967.18}, {"csm": "Taylor Lutcher", "ck": "8d5e957f297893487bd98fa830fa6413", "client_name": "SPX", "sub_client": "", "display": "SPX", "avg_els": 6156, "regs": 101, "tps": 102008, "unique_touched": 20254, "y1": 153841.0, "rnwl": 35895.0, "other": 41.56, "total": 189777.56}, {"csm": "Taylor Lutcher", "ck": "903ce9225fca3e988c2af215d4e544d3", "client_name": "Schreiber Foods", "sub_client": "", "display": "Schreiber Foods", "avg_els": 13746, "regs": 27, "tps": 76104, "unique_touched": 18626, "y1": 19460.0, "rnwl": 6646.0, "other": 0.0, "total": 26106.0}, {"csm": "Taylor Lutcher", "ck": "ac627ab1ccbdb62ec96e702f07f6425b", "client_name": "Southcoast Health", "sub_client": "", "display": "Southcoast Health", "avg_els": 8167, "regs": 103, "tps": 169013, "unique_touched": 24949, "y1": 211130.0, "rnwl": 213075.0, "other": 0.0, "total": 424205.0}, {"csm": "Taylor Lutcher", "ck": "0f28b5d49b3020afeecd95b4009adf4c", "client_name": "Toyoda Gosei", "sub_client": "", "display": "Toyoda Gosei", "avg_els": 8170, "regs": 111, "tps": 147344, "unique_touched": 27200, "y1": 185574.0, "rnwl": 30840.0, "other": 344.54, "total": 216758.54}, {"csm": "Taylor Lutcher", "ck": "6c4b761a28b734fe93831e3fb400ce87", "client_name": "Under Armour", "sub_client": "", "display": "Under Armour", "avg_els": 4655, "regs": 15, "tps": 71971, "unique_touched": 2582, "y1": 29440.0, "rnwl": 2995.0, "other": 65.49, "total": 32500.49}, {"csm": "Taylor Lutcher", "ck": "65ded5353c5ee48d0b7d48c591b8f430", "client_name": "Wellstar", "sub_client": "", "display": "Wellstar", "avg_els": 1107, "regs": 37, "tps": 10017, "unique_touched": 2019, "y1": 12375.0, "rnwl": 26235.0, "other": 0.0, "total": 38610.0}, {"csm": "Taylor Lutcher", "ck": "c0c7c76d30bd3dcaefc96f40275bdc0a", "client_name": "Yanfeng", "sub_client": "", "display": "Yanfeng", "avg_els": 9006, "regs": 56, "tps": 52320, "unique_touched": 7513, "y1": 128755.0, "rnwl": 92822.0, "other": 238.94, "total": 221815.94}, {"csm": "Trisha Kes", "ck": "b3e3e393c77e35a4a3f3cbd1e429b5dc", "client_name": "Blue Cross & Blue Shield of Rhode Island", "sub_client": "", "display": "Blue Cross & Blue Shield of Rhode Island", "avg_els": 11666, "regs": 55, "tps": 68388, "unique_touched": 7183, "y1": 158740.0, "rnwl": 0.0, "other": 0.0, "total": 158740.0}, {"csm": "Trisha Kes", "ck": "140f6969d5213fd0ece03148e62e461e", "client_name": "Blue Cross and Blue Shield of Minnesota Plan", "sub_client": "Blue Cross and Blue Shield of Minnesota", "display": "Blue Cross and Blue Shield of Minnesota Plan \u2014 Blue Cross and Blue Shield of Minnesota", "avg_els": 0, "regs": 33, "tps": 54, "unique_touched": 0, "y1": 89355.0, "rnwl": 0.0, "other": 0.0, "total": 89355.0}, {"csm": "Trisha Kes", "ck": "069059b7ef840f0c74a814ec9237b6ec", "client_name": "Curative", "sub_client": "", "display": "Curative", "avg_els": 201574, "regs": 281, "tps": 259364, "unique_touched": 87871, "y1": 716615.0, "rnwl": 75365.0, "other": 0.0, "total": 791980.0}, {"csm": "Trisha Kes", "ck": "6c8349cc7260ae62e3b1396831a8398f", "client_name": "Evry Health", "sub_client": "", "display": "Evry Health", "avg_els": 10487, "regs": 124, "tps": 88945, "unique_touched": 11423, "y1": 323322.8, "rnwl": 0.0, "other": 0.0, "total": 323322.8}, {"csm": "Trisha Kes", "ck": "1d7f7abc18fcb43975065399b0d1e48e", "client_name": "HealthPartners Plan", "sub_client": "HealthPartners", "display": "HealthPartners Plan \u2014 HealthPartners", "avg_els": 0, "regs": 6, "tps": 0, "unique_touched": 0, "y1": 14376.0, "rnwl": 0.0, "other": 0.0, "total": 14376.0}, {"csm": "Trisha Kes", "ck": "757b505cfd34c64c85ca5b5690ee5293", "client_name": "Independence", "sub_client": "BlueLink", "display": "Independence \u2014 BlueLink", "avg_els": 0, "regs": 3, "tps": 0, "unique_touched": 0, "y1": 3495.0, "rnwl": 0.0, "other": 0.0, "total": 3495.0}, {"csm": "Trisha Kes", "ck": "854d6fae5ee42911677c739ee1734486", "client_name": "Independence", "sub_client": "Independence Administrators", "display": "Independence \u2014 Independence Administrators", "avg_els": 0, "regs": 1, "tps": 115, "unique_touched": 0, "y1": 2995.0, "rnwl": 0.0, "other": 0.0, "total": 2995.0}, {"csm": "Trisha Kes", "ck": "ec5decca5ed3d6b8079e2e7e7bacc9f2", "client_name": "Independence", "sub_client": "Independence Blue Cross", "display": "Independence \u2014 Independence Blue Cross", "avg_els": 0, "regs": 42, "tps": 0, "unique_touched": 0, "y1": 70890.0, "rnwl": 0.0, "other": 0.0, "total": 70890.0}, {"csm": "Trisha Kes", "ck": "ec5decca5ed3d6b8079e2e7e7bacc9f2", "client_name": "Independence Blue Cross", "sub_client": "", "display": "Independence Blue Cross", "avg_els": 0, "regs": 42, "tps": 0, "unique_touched": 0, "y1": 64400.0, "rnwl": 0.0, "other": 0.0, "total": 64400.0}];
 const CSMS = ["Amy Nguyen", "Blake Bueltel", "Breanna Thompson", "Caitlin Kimball", "Jorie Stavropoulos", "Leslie Esch", "Ryan Wallace", "Steven White", "Taylor Lutcher", "Trisha Kes"];
+const YOY_DATA = [{"ck": "a597e50502f5ff68e3e25b9114205d4a", "csm": "Caitlin Kimball", "client_name": "Loews Hotels", "sub_client": "", "display": "Loews Hotels", "go_live_year": 2026, "cy_el": 7656, "py_el": 0, "cy_ir": 878897.12, "py_ir": 0.0, "cy_ir_per_el": 114.79847439916405, "py_ir_per_el": null, "d_el": 7656, "d_ir": 878897.12, "d_ir_per_el": null}, {"ck": "45c48cce2e2d7fbdea1afc51c7c6ad26", "csm": "Blake Bueltel", "client_name": "GE Appliances", "sub_client": "", "display": "GE Appliances", "go_live_year": 2022, "cy_el": 20370, "py_el": 20757, "cy_ir": 354597.41, "py_ir": 251902.52, "cy_ir_per_el": 17.40782572410407, "py_ir_per_el": 12.135786481668834, "d_el": -387, "d_ir": 102694.88999999998, "d_ir_per_el": 5.272039242435238}, {"ck": "1c383cd30b7c298ab50293adfecb7b18", "csm": "Caitlin Kimball", "client_name": "Carters", "sub_client": "", "display": "Carters", "go_live_year": 2022, "cy_el": 3421, "py_el": 3764, "cy_ir": 110750.0, "py_ir": 52380.0, "cy_ir_per_el": 32.37357497807658, "py_ir_per_el": 13.91604675876727, "d_el": -343, "d_ir": 58370.0, "d_ir_per_el": 18.457528219309314}, {"ck": "cfecdb276f634854f3ef915e2e980c31", "csm": "Caitlin Kimball", "client_name": "Cobalt Benefits Group", "sub_client": "SharkNinja", "display": "Cobalt Benefits Group \u2014 SharkNinja", "go_live_year": 2026, "cy_el": 3507, "py_el": 0, "cy_ir": 49446.2, "py_ir": 0.0, "cy_ir_per_el": 14.099287140005702, "py_ir_per_el": null, "d_el": 3507, "d_ir": 49446.2, "d_ir_per_el": null}, {"ck": "31fefc0e570cb3860f2a6d4b38c6490d", "csm": "Ryan Wallace", "client_name": "Express Scripts", "sub_client": "Micron", "display": "Express Scripts \u2014 Micron", "go_live_year": 2026, "cy_el": 0, "py_el": 0, "cy_ir": 2845.25, "py_ir": 0.0, "cy_ir_per_el": null, "py_ir_per_el": null, "d_el": null, "d_ir": 2845.25, "d_ir_per_el": null}, {"ck": "a8f15eda80c50adb0e71943adc8015cf", "csm": "Ryan Wallace", "client_name": "Express Scripts", "sub_client": "Red Bull", "display": "Express Scripts \u2014 Red Bull", "go_live_year": 2025, "cy_el": 10126, "py_el": 9551, "cy_ir": 331123.84, "py_ir": 129412.98, "cy_ir_per_el": 32.70035947066957, "py_ir_per_el": 13.549678567689247, "d_el": 575, "d_ir": 201710.86000000004, "d_ir_per_el": 19.15068090298032}, {"ck": "76dc611d6ebaafc66cc0879c71b5db5c", "csm": "Steven White", "client_name": "Independence", "sub_client": "AmeriHealth", "display": "Independence \u2014 AmeriHealth", "go_live_year": 2026, "cy_el": 0, "py_el": 0, "cy_ir": 0.0, "py_ir": 0.0, "cy_ir_per_el": null, "py_ir_per_el": null, "d_el": null, "d_ir": null, "d_ir_per_el": null}, {"ck": "854d6fae5ee42911677c739ee1734486", "csm": "Trisha Kes", "client_name": "Independence", "sub_client": "Independence Administrators", "display": "Independence \u2014 Independence Administrators", "go_live_year": 2026, "cy_el": 0, "py_el": 0, "cy_ir": 0.0, "py_ir": 0.0, "cy_ir_per_el": null, "py_ir_per_el": null, "d_el": null, "d_ir": null, "d_ir_per_el": null}, {"ck": "6c4b761a28b734fe93831e3fb400ce87", "csm": "Taylor Lutcher", "client_name": "Under Armour", "sub_client": "", "display": "Under Armour", "go_live_year": 2025, "cy_el": 4655, "py_el": 4914, "cy_ir": 23515.49, "py_ir": 37938.47, "cy_ir_per_el": 5.051662728249195, "py_ir_per_el": 7.720486365486366, "d_el": -259, "d_ir": -14422.98, "d_ir_per_el": -2.668823637237171}, {"ck": "013d407166ec4fa56eb1e1f8cbe183b9", "csm": "Blake Bueltel", "client_name": "Alight", "sub_client": "Maximus", "display": "Alight \u2014 Maximus", "go_live_year": 2025, "cy_el": 28071, "py_el": 29739, "cy_ir": 238795.0, "py_ir": 270400.0, "cy_ir_per_el": 8.506821987104129, "py_ir_per_el": 9.092437539930732, "d_el": -1668, "d_ir": -31605.0, "d_ir_per_el": -0.5856155528266029}, {"ck": "ec8956637a99787bd197eacd77acce5e", "csm": "Ryan Wallace", "client_name": "Express Scripts", "sub_client": "Carpenters H&W Trust Fund", "display": "Express Scripts \u2014 Carpenters H&W Trust Fund", "go_live_year": 2023, "cy_el": 63274, "py_el": 32620, "cy_ir": 77415.5, "py_ir": 5285.0, "cy_ir_per_el": 1.223496222777128, "py_ir_per_el": 0.16201716738197425, "d_el": 30654, "d_ir": 72130.5, "d_ir_per_el": 1.0614790553951536}, {"ck": "bd686fd640be98efaae0091fa301e613", "csm": "Breanna Thompson", "client_name": "3M", "sub_client": "3M - BCBSMN", "display": "3M \u2014 3M - BCBSMN", "go_live_year": 2026, "cy_el": 21467, "py_el": 0, "cy_ir": 306515.0, "py_ir": 0.0, "cy_ir_per_el": 14.278427353612521, "py_ir_per_el": null, "d_el": 21467, "d_ir": 306515.0, "d_ir_per_el": null}, {"ck": "b53b3a3d6ab90ce0268229151c9bde11", "csm": "Amy Nguyen", "client_name": "Alight", "sub_client": "AT&T", "display": "Alight \u2014 AT&T", "go_live_year": 2023, "cy_el": 590413, "py_el": 611347, "cy_ir": 31417.13, "py_ir": 24952.48, "cy_ir_per_el": 0.053212124394279935, "py_ir_per_el": 0.04081557609671758, "d_el": -20934, "d_ir": 6464.6500000000015, "d_ir_per_el": 0.012396548297562357}, {"ck": "b73ce398c39f506af761d2277d853a92", "csm": "Caitlin Kimball", "client_name": "Hunter Douglas", "sub_client": "", "display": "Hunter Douglas", "go_live_year": 2025, "cy_el": 5604, "py_el": 5832, "cy_ir": 155509.02, "py_ir": 119290.0, "cy_ir_per_el": 27.74964668094218, "py_ir_per_el": 20.454389574759944, "d_el": -228, "d_ir": 36219.01999999999, "d_ir_per_el": 7.2952571061822375}, {"ck": "1d7f7abc18fcb43975065399b0d1e48e", "csm": "Trisha Kes", "client_name": "HealthPartners Plan", "sub_client": "HealthPartners", "display": "HealthPartners Plan \u2014 HealthPartners", "go_live_year": 2025, "cy_el": 0, "py_el": 0, "cy_ir": 13178.0, "py_ir": 9485.0, "cy_ir_per_el": null, "py_ir_per_el": null, "d_el": null, "d_ir": 3693.0, "d_ir_per_el": null}, {"ck": "14bfa6bb14875e45bba028a21ed38046", "csm": "Ryan Wallace", "client_name": "CACI", "sub_client": "", "display": "CACI", "go_live_year": 2022, "cy_el": 38333, "py_el": 31204, "cy_ir": 235562.5, "py_ir": 13580.0, "cy_ir_per_el": 6.145162131844625, "py_ir_per_el": 0.43520061530573, "d_el": 7129, "d_ir": 221982.5, "d_ir_per_el": 5.709961516538895}, {"ck": "5fd0b37cd7dbbb00f97ba6ce92bf5add", "csm": "Amy Nguyen", "client_name": "Alight", "sub_client": "BD", "display": "Alight \u2014 BD", "go_live_year": 2024, "cy_el": 46537, "py_el": 46016, "cy_ir": 186254.46, "py_ir": 100665.4, "cy_ir_per_el": 4.002287642091239, "py_ir_per_el": 2.187617350486787, "d_el": 521, "d_ir": 85589.06, "d_ir_per_el": 1.8146702916044517}, {"ck": "5ef059938ba799aaa845e1c2e8a762bd", "csm": "Blake Bueltel", "client_name": "ADUSA Services", "sub_client": "ADUSA - Multi", "display": "ADUSA Services \u2014 ADUSA - Multi", "go_live_year": 2024, "cy_el": 70146, "py_el": 70669, "cy_ir": 137418.79, "py_ir": 633606.95, "cy_ir_per_el": 1.9590395746015454, "py_ir_per_el": 8.965840043017447, "d_el": -523, "d_ir": -496188.1599999999, "d_ir_per_el": -7.006800468415902}, {"ck": "28dd2c7955ce926456240b2ff0100bde", "csm": "Ryan Wallace", "client_name": "Express Scripts", "sub_client": "Solvay", "display": "Express Scripts \u2014 Solvay", "go_live_year": 2022, "cy_el": 9406, "py_el": 9883, "cy_ir": 9428.75, "py_ir": 3500.0, "cy_ir_per_el": 1.0024186689347225, "py_ir_per_el": 0.3541434787007994, "d_el": -477, "d_ir": 5928.75, "d_ir_per_el": 0.6482751902339232}, {"ck": "f7e6c85504ce6e82442c770f7c8606f0", "csm": "Blake Bueltel", "client_name": "Aetna", "sub_client": "Costco Wholesale", "display": "Aetna \u2014 Costco Wholesale", "go_live_year": 2025, "cy_el": 388299, "py_el": 0, "cy_ir": 2160625.0, "py_ir": 0.0, "cy_ir_per_el": 5.564333155635219, "py_ir_per_el": null, "d_el": 388299, "d_ir": 2160625.0, "d_ir_per_el": null}, {"ck": "1ff8a7b5dc7a7d1f0ed65aaa29c04b1e", "csm": "Blake Bueltel", "client_name": "Family Dollar", "sub_client": "", "display": "Family Dollar", "go_live_year": 2023, "cy_el": 12596, "py_el": 12771, "cy_ir": 544423.03, "py_ir": 0.0, "cy_ir_per_el": 43.221898221657675, "py_ir_per_el": 0.0, "d_el": -175, "d_ir": 544423.03, "d_ir_per_el": 43.221898221657675}, {"ck": "cedebb6e872f539bef8c3f919874e9d7", "csm": "Blake Bueltel", "client_name": "CVS Health", "sub_client": "Chicago Public Schools", "display": "CVS Health \u2014 Chicago Public Schools", "go_live_year": 2026, "cy_el": 71710, "py_el": 0, "cy_ir": 1266115.99, "py_ir": 0.0, "cy_ir_per_el": 17.6560589875889, "py_ir_per_el": null, "d_el": 71710, "d_ir": 1266115.99, "d_ir_per_el": null}, {"ck": "6c8349cc7260ae62e3b1396831a8398f", "csm": "Trisha Kes", "client_name": "Evry Health", "sub_client": "", "display": "Evry Health", "go_live_year": 2022, "cy_el": 10487, "py_el": 12548, "cy_ir": 278407.8, "py_ir": 3497.4, "cy_ir_per_el": 26.54789739677696, "py_ir_per_el": 0.2787217086388269, "d_el": -2061, "d_ir": 274910.39999999997, "d_ir_per_el": 26.269175688138134}, {"ck": "9872ed9fc22fc182d371c3e9ed316094", "csm": "Amy Nguyen", "client_name": "Perdue Farms", "sub_client": "", "display": "Perdue Farms", "go_live_year": 2026, "cy_el": 19950, "py_el": 0, "cy_ir": 297711.2, "py_ir": 0.0, "cy_ir_per_el": 14.9228671679198, "py_ir_per_el": null, "d_el": 19950, "d_ir": 297711.2, "d_ir_per_el": null}, {"ck": "3ef815416f775098fe977004015c6193", "csm": "Ryan Wallace", "client_name": "Express Scripts", "sub_client": "Christian Brothers", "display": "Express Scripts \u2014 Christian Brothers", "go_live_year": 2022, "cy_el": 40243, "py_el": 43460, "cy_ir": 1514.21, "py_ir": 5522.06, "cy_ir_per_el": 0.037626667991948914, "py_ir_per_el": 0.12706074551311553, "d_el": -3217, "d_ir": -4007.8500000000004, "d_ir_per_el": -0.08943407752116661}, {"ck": "da4fb5c6e93e74d3df8527599fa62642", "csm": "Caitlin Kimball", "client_name": "Cambia", "sub_client": "Weyerhaeuser", "display": "Cambia \u2014 Weyerhaeuser", "go_live_year": 2024, "cy_el": 0, "py_el": 637, "cy_ir": 755.0, "py_ir": 637.0, "cy_ir_per_el": null, "py_ir_per_el": 1.0, "d_el": -637, "d_ir": 118.0, "d_ir_per_el": null}, {"ck": "19ca14e7ea6328a42e0eb13d585e4c22", "csm": "Amy Nguyen", "client_name": "Philips", "sub_client": "", "display": "Philips", "go_live_year": 2022, "cy_el": 23042, "py_el": 24585, "cy_ir": 1223557.17, "py_ir": 661826.2, "cy_ir_per_el": 53.10117047131325, "py_ir_per_el": 26.919918649583078, "d_el": -1543, "d_ir": 561730.97, "d_ir_per_el": 26.181251821730175}, {"ck": "0f28b5d49b3020afeecd95b4009adf4c", "csm": "Blake Bueltel", "client_name": "Toyoda Gosei", "sub_client": "", "display": "Toyoda Gosei", "go_live_year": 2025, "cy_el": 8170, "py_el": 8122, "cy_ir": 230424.17, "py_ir": 299121.43, "cy_ir_per_el": 28.203692778457775, "py_ir_per_el": 36.82854346220143, "d_el": 48, "d_ir": -68697.25999999998, "d_ir_per_el": -8.624850683743656}, {"ck": "17e62166fc8586dfa4d1bc0e1742c08b", "csm": "Amy Nguyen", "client_name": "MPI", "sub_client": "MPI-Tobacco", "display": "MPI \u2014 MPI-Tobacco", "go_live_year": 2022, "cy_el": 113868, "py_el": 119239, "cy_ir": 5142.08, "py_ir": 9509.82, "cy_ir_per_el": 0.045158253416236346, "py_ir_per_el": 0.07975427502746585, "d_el": -5371, "d_ir": -4367.74, "d_ir_per_el": -0.0345960216112295}, {"ck": "c0c7c76d30bd3dcaefc96f40275bdc0a", "csm": "Blake Bueltel", "client_name": "Yanfeng", "sub_client": "", "display": "Yanfeng", "go_live_year": 2022, "cy_el": 9006, "py_el": 9588, "cy_ir": 222813.42, "py_ir": 161626.77, "cy_ir_per_el": 24.74055296469021, "py_ir_per_el": 16.857193366708383, "d_el": -582, "d_ir": 61186.65000000002, "d_ir_per_el": 7.883359597981826}, {"ck": "2b24d495052a8ce66358eb576b8912c8", "csm": "Caitlin Kimball", "client_name": "Cambia", "sub_client": "Litehouse Inc", "display": "Cambia \u2014 Litehouse Inc", "go_live_year": 2025, "cy_el": 1575, "py_el": 1573, "cy_ir": 1632.9, "py_ir": 3822.0, "cy_ir_per_el": 1.0367619047619048, "py_ir_per_el": 2.4297520661157024, "d_el": 2, "d_ir": -2189.1, "d_ir_per_el": -1.3929901613537976}, {"ck": "3988c7f88ebcb58c6ce932b957b6f332", "csm": "Amy Nguyen", "client_name": "Stanley Black & Decker", "sub_client": "", "display": "Stanley Black & Decker", "go_live_year": 2025, "cy_el": 27807, "py_el": 29891, "cy_ir": 150862.69, "py_ir": 339343.28, "cy_ir_per_el": 5.425349372460172, "py_ir_per_el": 11.352690776487908, "d_el": -2084, "d_ir": -188480.59000000003, "d_ir_per_el": -5.927341404027736}, {"ck": "fa7cdfad1a5aaf8370ebeda47a1ff1c3", "csm": "Caitlin Kimball", "client_name": "Personify", "sub_client": "City of Minneapolis", "display": "Personify \u2014 City of Minneapolis", "go_live_year": 2025, "cy_el": 9072, "py_el": 8596, "cy_ir": 478286.58, "py_ir": 66380.0, "cy_ir_per_el": 52.72118386243386, "py_ir_per_el": 7.7221963704048395, "d_el": 476, "d_ir": 411906.58, "d_ir_per_el": 44.99898749202902}, {"ck": "8d5e957f297893487bd98fa830fa6413", "csm": "Amy Nguyen", "client_name": "SPX", "sub_client": "", "display": "SPX", "go_live_year": 2025, "cy_el": 6156, "py_el": 5163, "cy_ir": 276757.04, "py_ir": 185476.0, "cy_ir_per_el": 44.95728395061728, "py_ir_per_el": 35.924075150106525, "d_el": 993, "d_ir": 91281.03999999998, "d_ir_per_el": 9.033208800510756}, {"ck": "069059b7ef840f0c74a814ec9237b6ec", "csm": "Trisha Kes", "client_name": "Curative", "sub_client": "", "display": "Curative", "go_live_year": 2024, "cy_el": 201574, "py_el": 221077, "cy_ir": 784995.0, "py_ir": 407590.0, "cy_ir_per_el": 3.8943266492702433, "py_ir_per_el": 1.8436562826526504, "d_el": -19503, "d_ir": 377405.0, "d_ir_per_el": 2.050670366617593}, {"ck": "37a749d808e46495a8da1e5352d03cae", "csm": "Ryan Wallace", "client_name": "Express Scripts", "sub_client": "B&G Foods", "display": "Express Scripts \u2014 B&G Foods", "go_live_year": 2025, "cy_el": 2098, "py_el": 2255, "cy_ir": 20862.0, "py_ir": 6863.88, "cy_ir_per_el": 9.943755958055291, "py_ir_per_el": 3.043849223946785, "d_el": -157, "d_ir": 13998.119999999999, "d_ir_per_el": 6.899906734108507}, {"ck": "82161242827b703e6acf9c726942a1e4", "csm": "Blake Bueltel", "client_name": "Aetna", "sub_client": "Panasonic", "display": "Aetna \u2014 Panasonic", "go_live_year": 2026, "cy_el": 17624, "py_el": 0, "cy_ir": 203625.0, "py_ir": 0.0, "cy_ir_per_el": 11.55384702678166, "py_ir_per_el": null, "d_el": 17624, "d_ir": 203625.0, "d_ir_per_el": null}, {"ck": "9fc3d7152ba9336a670e36d0ed79bc43", "csm": "Ryan Wallace", "client_name": "Express Scripts", "sub_client": "Cincinnati Children's", "display": "Express Scripts \u2014 Cincinnati Children's", "go_live_year": 2024, "cy_el": 26139, "py_el": 26256, "cy_ir": 1588.75, "py_ir": 3070.0, "cy_ir_per_el": 0.06078082558628869, "py_ir_per_el": 0.11692565508836075, "d_el": -117, "d_ir": -1481.25, "d_ir_per_el": -0.056144829502072065}, {"ck": "c7e1249ffc03eb9ded908c236bd1996d", "csm": "Ryan Wallace", "client_name": "Express Scripts", "sub_client": "Benjamin Moore", "display": "Express Scripts \u2014 Benjamin Moore", "go_live_year": 2023, "cy_el": 2477, "py_el": 2625, "cy_ir": 32207.85, "py_ir": 7157.5, "cy_ir_per_el": 13.002765442067016, "py_ir_per_el": 2.7266666666666666, "d_el": -148, "d_ir": 25050.35, "d_ir_per_el": 10.27609877540035}, {"ck": "02522a2b2726fb0a03bb19f2d8d9524d", "csm": "Breanna Thompson", "client_name": "Amazon", "sub_client": "", "display": "Amazon", "go_live_year": 2024, "cy_el": 1016429, "py_el": 1013476, "cy_ir": 810607.64, "py_ir": 923182.06, "cy_ir_per_el": 0.7975054233989782, "py_ir_per_el": 0.9109066815593069, "d_el": 2953, "d_ir": -112574.42000000004, "d_ir_per_el": -0.11340125816032864}, {"ck": "38b3eff8baf56627478ec76a704e9b52", "csm": "Ryan Wallace", "client_name": "Bimbo Bakeries USA (BBU, Inc.)", "sub_client": "", "display": "Bimbo Bakeries USA (BBU, Inc.)", "go_live_year": 2023, "cy_el": 32935, "py_el": 34002, "cy_ir": 22071.02, "py_ir": 36937.13, "cy_ir_per_el": 0.6701387581600121, "py_ir_per_el": 1.0863222751602846, "d_el": -1067, "d_ir": -14866.109999999997, "d_ir_per_el": -0.41618351700027245}, {"ck": "698d51a19d8a121ce581499d7b701668", "csm": "Caitlin Kimball", "client_name": "Cambia", "sub_client": "Fortive", "display": "Cambia \u2014 Fortive", "go_live_year": 2024, "cy_el": 8022, "py_el": 13812, "cy_ir": 245.8, "py_ir": 3881.01, "cy_ir_per_el": 0.030640737970580905, "py_ir_per_el": 0.280988271068636, "d_el": -5790, "d_ir": -3635.21, "d_ir_per_el": -0.2503475330980551}, {"ck": "e2ef524fbf3d9fe611d5a8e90fefdc9c", "csm": "Breanna Thompson", "client_name": "U.S. Venture", "sub_client": "", "display": "U.S. Venture", "go_live_year": 2023, "cy_el": 8745, "py_el": 7641, "cy_ir": 428199.43, "py_ir": 260635.08, "cy_ir_per_el": 48.96505774728416, "py_ir_per_el": 34.11007459756576, "d_el": 1104, "d_ir": 167564.35, "d_ir_per_el": 14.8549831497184}, {"ck": "06409663226af2f3114485aa4e0a23b4", "csm": "Ryan Wallace", "client_name": "Express Scripts", "sub_client": "Piedmont Healthcare", "display": "Express Scripts \u2014 Piedmont Healthcare", "go_live_year": 2025, "cy_el": 39574, "py_el": 36576, "cy_ir": 496166.04, "py_ir": 16688.23, "cy_ir_per_el": 12.537677262849344, "py_ir_per_el": 0.4562617563429571, "d_el": 2998, "d_ir": 479477.81, "d_ir_per_el": 12.081415506506387}, {"ck": "a0a080f42e6f13b3a2df133f073095dd", "csm": "Ryan Wallace", "client_name": "Express Scripts", "sub_client": "Windstream", "display": "Express Scripts \u2014 Windstream", "go_live_year": 2024, "cy_el": 11519, "py_el": 11292, "cy_ir": 86632.49, "py_ir": 3574.41, "cy_ir_per_el": 7.52083427380849, "py_ir_per_el": 0.3165435706695005, "d_el": 227, "d_ir": 83058.08, "d_ir_per_el": 7.20429070313899}, {"ck": "ec5decca5ed3d6b8079e2e7e7bacc9f2", "csm": "Trisha Kes", "client_name": "Independence", "sub_client": "Independence Blue Cross", "display": "Independence \u2014 Independence Blue Cross", "go_live_year": 2024, "cy_el": 0, "py_el": 0, "cy_ir": 112325.0, "py_ir": 150760.0, "cy_ir_per_el": null, "py_ir_per_el": null, "d_el": null, "d_ir": -38435.0, "d_ir_per_el": null}, {"ck": "bf8229696f7a3bb4700cfddef19fa23f", "csm": "Ryan Wallace", "client_name": "Alight", "sub_client": "Sanofi", "display": "Alight \u2014 Sanofi", "go_live_year": 2025, "cy_el": 41425, "py_el": 0, "cy_ir": 703466.47, "py_ir": 0.0, "cy_ir_per_el": 16.98168907664454, "py_ir_per_el": null, "d_el": 41425, "d_ir": 703466.47, "d_ir_per_el": null}, {"ck": "6974ce5ac660610b44d9b9fed0ff9548", "csm": "Amy Nguyen", "client_name": "Southern Company", "sub_client": "", "display": "Southern Company", "go_live_year": 2023, "cy_el": 59799, "py_el": 58931, "cy_ir": 571424.94, "py_ir": 670759.46, "cy_ir_per_el": 9.555760798675562, "py_ir_per_el": 11.382115694625918, "d_el": 868, "d_ir": -99334.52000000002, "d_ir_per_el": -1.826354895950356}, {"ck": "d09bf41544a3365a46c9077ebb5e35c3", "csm": "Ryan Wallace", "client_name": "Express Scripts", "sub_client": "MetLife", "display": "Express Scripts \u2014 MetLife", "go_live_year": 2021, "cy_el": 22837, "py_el": 23172, "cy_ir": 530023.34, "py_ir": 101457.39, "cy_ir_per_el": 23.208974033366903, "py_ir_per_el": 4.378447695494563, "d_el": -335, "d_ir": 428565.94999999995, "d_ir_per_el": 18.830526337872342}, {"ck": "7ef605fc8dba5425d6965fbd4c8fbe1f", "csm": "Ryan Wallace", "client_name": "Express Scripts", "sub_client": "TTEC", "display": "Express Scripts \u2014 TTEC", "go_live_year": 2025, "cy_el": 8490, "py_el": 11099, "cy_ir": 295784.12, "py_ir": 256546.14, "cy_ir_per_el": 34.839118963486456, "py_ir_per_el": 23.114347238489955, "d_el": -2609, "d_ir": 39237.97999999998, "d_ir_per_el": 11.7247717249965}, {"ck": "149e9677a5989fd342ae44213df68868", "csm": "Caitlin Kimball", "client_name": "Cambia", "sub_client": "Small Mine Development", "display": "Cambia \u2014 Small Mine Development", "go_live_year": 2025, "cy_el": 862, "py_el": 729, "cy_ir": 377.5, "py_ir": 0.0, "cy_ir_per_el": 0.43793503480278423, "py_ir_per_el": 0.0, "d_el": 133, "d_ir": 377.5, "d_ir_per_el": 0.43793503480278423}, {"ck": "f457c545a9ded88f18ecee47145a72c0", "csm": "Amy Nguyen", "client_name": "Dollar Tree", "sub_client": "", "display": "Dollar Tree", "go_live_year": 2023, "cy_el": 19344, "py_el": 19388, "cy_ir": 650070.05, "py_ir": 539036.69, "cy_ir_per_el": 33.60577181555004, "py_ir_per_el": 27.80259387249845, "d_el": -44, "d_ir": 111033.3600000001, "d_ir_per_el": 5.803177943051594}, {"ck": "b3e3e393c77e35a4a3f3cbd1e429b5dc", "csm": "Trisha Kes", "client_name": "Blue Cross & Blue Shield of Rhode Island", "sub_client": "", "display": "Blue Cross & Blue Shield of Rhode Island", "go_live_year": 2025, "cy_el": 11666, "py_el": 6585, "cy_ir": 130785.0, "py_ir": 43930.0, "cy_ir_per_el": 11.210783473341333, "py_ir_per_el": 6.671222475322703, "d_el": 5081, "d_ir": 86855.0, "d_ir_per_el": 4.53956099801863}, {"ck": "3416a75f4cea9109507cacd8e2f2aefc", "csm": "Caitlin Kimball", "client_name": "Cheesecake Factory", "sub_client": "", "display": "Cheesecake Factory", "go_live_year": 2022, "cy_el": 15069, "py_el": 14979, "cy_ir": 303731.17, "py_ir": 82415.0, "cy_ir_per_el": 20.156026942730108, "py_ir_per_el": 5.502036183990921, "d_el": 90, "d_ir": 221316.16999999998, "d_ir_per_el": 14.653990758739187}, {"ck": "045117b0e0a11a242b9765e79cbf113f", "csm": "Ryan Wallace", "client_name": "Alight", "sub_client": "Alcon", "display": "Alight \u2014 Alcon", "go_live_year": 2026, "cy_el": 18605, "py_el": 0, "cy_ir": 38405.0, "py_ir": 0.0, "cy_ir_per_el": 2.0642300456866436, "py_ir_per_el": null, "d_el": 18605, "d_ir": 38405.0, "d_ir_per_el": null}, {"ck": "2a38a4a9316c49e5a833517c45d31070", "csm": "Ryan Wallace", "client_name": "Express Scripts", "sub_client": "SugarCreek", "display": "Express Scripts \u2014 SugarCreek", "go_live_year": 2023, "cy_el": 2307, "py_el": 2039, "cy_ir": 96514.24, "py_ir": 33047.48, "cy_ir_per_el": 41.83538794971825, "py_ir_per_el": 16.207690044139287, "d_el": 268, "d_ir": 63466.76, "d_ir_per_el": 25.627697905578966}, {"ck": "a1d0c6e83f027327d8461063f4ac58a6", "csm": "Breanna Thompson", "client_name": "Securitas", "sub_client": "", "display": "Securitas", "go_live_year": 2022, "cy_el": 0, "py_el": 99288, "cy_ir": 174362.05, "py_ir": 128506.6, "cy_ir_per_el": null, "py_ir_per_el": 1.2942812827330594, "d_el": -99288, "d_ir": 45855.44999999998, "d_ir_per_el": null}, {"ck": "ad61ab143223efbc24c7d2583be69251", "csm": "Ryan Wallace", "client_name": "Express Scripts", "sub_client": "JM Huber", "display": "Express Scripts \u2014 JM Huber", "go_live_year": 2022, "cy_el": 4264, "py_el": 4699, "cy_ir": 136031.0, "py_ir": 71009.63, "cy_ir_per_el": 31.90220450281426, "py_ir_per_el": 15.111647158969994, "d_el": -435, "d_ir": 65021.369999999995, "d_ir_per_el": 16.790557343844267}, {"ck": "33e75ff09dd601bbe69f351039152189", "csm": "Amy Nguyen", "client_name": "Beacon Health", "sub_client": "", "display": "Beacon Health", "go_live_year": 2021, "cy_el": 23226, "py_el": 17068, "cy_ir": 704661.18, "py_ir": 285107.4, "cy_ir_per_el": 30.339325755618706, "py_ir_per_el": 16.70420670260136, "d_el": 6158, "d_ir": 419553.78, "d_ir_per_el": 13.635119053017345}, {"ck": "072b030ba126b2f4b2374f342be9ed44", "csm": "Jorie Stavropoulos", "client_name": "Sequoia Multiprogram", "sub_client": "", "display": "Sequoia Multiprogram", "go_live_year": 2020, "cy_el": 997, "py_el": 1733, "cy_ir": 7372.2, "py_ir": 23849.1, "cy_ir_per_el": 7.394383149448345, "py_ir_per_el": 13.761742642815925, "d_el": -736, "d_ir": -16476.899999999998, "d_ir_per_el": -6.36735949336758}, {"ck": "58a2fc6ed39fd083f55d4182bf88826d", "csm": "Breanna Thompson", "client_name": "3M", "sub_client": "3M - Health Partner", "display": "3M \u2014 3M - Health Partner", "go_live_year": 2026, "cy_el": 19202, "py_el": 0, "cy_ir": 319593.0, "py_ir": 0.0, "cy_ir_per_el": 16.64373502760129, "py_ir_per_el": null, "d_el": 19202, "d_ir": 319593.0, "d_ir_per_el": null}, {"ck": "812b4ba287f5ee0bc9d43bbf5bbe87fb", "csm": "Ryan Wallace", "client_name": "Express Scripts", "sub_client": "OPEH&W", "display": "Express Scripts \u2014 OPEH&W", "go_live_year": 2023, "cy_el": 5557, "py_el": 5036, "cy_ir": 66912.21, "py_ir": 40690.96, "cy_ir_per_el": 12.041067122548139, "py_ir_per_el": 8.08001588562351, "d_el": 521, "d_ir": 26221.250000000007, "d_ir_per_el": 3.9610512369246287}, {"ck": "9778d5d219c5080b9a6a17bef029331c", "csm": "Ryan Wallace", "client_name": "Express Scripts", "sub_client": "Gerdau", "display": "Express Scripts \u2014 Gerdau", "go_live_year": 2022, "cy_el": 8183, "py_el": 8057, "cy_ir": 38358.99, "py_ir": 11725.78, "cy_ir_per_el": 4.687643895881706, "py_ir_per_el": 1.455353109097679, "d_el": 126, "d_ir": 26633.21, "d_ir_per_el": 3.232290786784027}, {"ck": "38af86134b65d0f10fe33d30dd76442e", "csm": "Caitlin Kimball", "client_name": "Guitar Center", "sub_client": "", "display": "Guitar Center", "go_live_year": 2026, "cy_el": 6424, "py_el": 0, "cy_ir": 245067.67, "py_ir": 0.0, "cy_ir_per_el": 38.14876556662516, "py_ir_per_el": null, "d_el": 6424, "d_ir": 245067.67, "d_ir_per_el": null}, {"ck": "2a79ea27c279e471f4d180b08d62b00a", "csm": "Blake Bueltel", "client_name": "7-Eleven", "sub_client": "", "display": "7-Eleven", "go_live_year": 2025, "cy_el": 22869, "py_el": 28226, "cy_ir": 423361.74, "py_ir": 532455.65, "cy_ir_per_el": 18.512472779745508, "py_ir_per_el": 18.8640136753348, "d_el": -5357, "d_ir": -109093.91000000003, "d_ir_per_el": -0.3515408955892916}, {"ck": "ac627ab1ccbdb62ec96e702f07f6425b", "csm": "Blake Bueltel", "client_name": "Southcoast Health", "sub_client": "", "display": "Southcoast Health", "go_live_year": 2023, "cy_el": 8167, "py_el": 7811, "cy_ir": 492070.0, "py_ir": 293602.0, "cy_ir_per_el": 60.2510101628505, "py_ir_per_el": 37.58827294840609, "d_el": 356, "d_ir": 198468.0, "d_ir_per_el": 22.662737214444405}, {"ck": "a5e00132373a7031000fd987a3c9f87b", "csm": "Caitlin Kimball", "client_name": "Cambia", "sub_client": "Washington State Health Care Authority", "display": "Cambia \u2014 Washington State Health Care Authority", "go_live_year": 2025, "cy_el": 325074, "py_el": 326132, "cy_ir": 8099.56, "py_ir": 4140.5, "cy_ir_per_el": 0.024916049884026407, "py_ir_per_el": 0.012695779622974747, "d_el": -1058, "d_ir": 3959.0600000000004, "d_ir_per_el": 0.01222027026105166}, {"ck": "0777d5c17d4066b82ab86dff8a46af6f", "csm": "Caitlin Kimball", "client_name": "Alight", "sub_client": "KnitWell Group", "display": "Alight \u2014 KnitWell Group", "go_live_year": 2025, "cy_el": 9853, "py_el": 6282, "cy_ir": 90012.43, "py_ir": 21875.85, "cy_ir_per_el": 9.13553536993809, "py_ir_per_el": 3.4823065902578794, "d_el": 3571, "d_ir": 68136.57999999999, "d_ir_per_el": 5.6532287796802105}, {"ck": "eb160de1de89d9058fcb0b968dbbbd68", "csm": "Blake Bueltel", "client_name": "ADUSA Services", "sub_client": "ADUSA - Limited", "display": "ADUSA Services \u2014 ADUSA - Limited", "go_live_year": 2024, "cy_el": 172913, "py_el": 187463, "cy_ir": 16740.12, "py_ir": 99617.35, "cy_ir_per_el": 0.09681238541925707, "py_ir_per_el": 0.5313973957527619, "d_el": -14550, "d_ir": -82877.23000000001, "d_ir_per_el": -0.43458501033350483}, {"ck": "4c5bde74a8f110656874902f07378009", "csm": "Ryan Wallace", "client_name": "Alight", "sub_client": "Alex Lee", "display": "Alight \u2014 Alex Lee", "go_live_year": 2026, "cy_el": 29947, "py_el": 0, "cy_ir": 60951.34, "py_ir": 0.0, "cy_ir_per_el": 2.0353070424416466, "py_ir_per_el": null, "d_el": 29947, "d_ir": 60951.34, "d_ir_per_el": null}, {"ck": "f2217062e9a397a1dca429e7d70bc6ca", "csm": "Ryan Wallace", "client_name": "Express Scripts", "sub_client": "The Doe Run Company", "display": "Express Scripts \u2014 The Doe Run Company", "go_live_year": 2025, "cy_el": 2084, "py_el": 2231, "cy_ir": 16162.24, "py_ir": 6351.25, "cy_ir_per_el": 7.755393474088292, "py_ir_per_el": 2.846817570596145, "d_el": -147, "d_ir": 9810.99, "d_ir_per_el": 4.908575903492147}, {"ck": "a4a042cf4fd6bfb47701cbc8a1653ada", "csm": "Caitlin Kimball", "client_name": "Cambia", "sub_client": "Ralliant Corporation", "display": "Cambia \u2014 Ralliant Corporation", "go_live_year": 2025, "cy_el": 5361, "py_el": 5005, "cy_ir": 3495.82, "py_ir": 0.0, "cy_ir_per_el": 0.6520835664987876, "py_ir_per_el": 0.0, "d_el": 356, "d_ir": 3495.82, "d_ir_per_el": 0.6520835664987876}, {"ck": "fc221309746013ac554571fbd180e1c8", "csm": "Breanna Thompson", "client_name": "Blue Cross and Blue Shield of Minnesota Plan", "sub_client": "Blue Cross and Blue Shield of Minnesota", "display": "Blue Cross and Blue Shield of Minnesota Plan \u2014 Blue Cross and Blue Shield of Minnesota", "go_live_year": 2026, "cy_el": 12989, "py_el": 0, "cy_ir": 225585.0, "py_ir": 0.0, "cy_ir_per_el": 17.367387789668182, "py_ir_per_el": null, "d_el": 12989, "d_ir": 225585.0, "d_ir_per_el": null}, {"ck": "a87ff679a2f3e71d9181a67b7542122c", "csm": "Breanna Thompson", "client_name": "Corning", "sub_client": "", "display": "Corning", "go_live_year": 2020, "cy_el": 28582, "py_el": 26307, "cy_ir": 507385.03, "py_ir": 224544.55, "cy_ir_per_el": 17.751907844097683, "py_ir_per_el": 8.53554377161972, "d_el": 2275, "d_ir": 282840.48000000004, "d_ir_per_el": 9.216364072477964}, {"ck": "9766527f2b5d3e95d4a733fcfb77bd7e", "csm": "Blake Bueltel", "client_name": "CVS Health", "sub_client": "Fidelity National Financial", "display": "CVS Health \u2014 Fidelity National Financial", "go_live_year": 2025, "cy_el": 23909, "py_el": 20720, "cy_ir": 645069.53, "py_ir": 0.0, "cy_ir_per_el": 26.98019699694676, "py_ir_per_el": 0.0, "d_el": 3189, "d_ir": 645069.53, "d_ir_per_el": 26.98019699694676}, {"ck": "006f52e9102a8d3be2fe5614f42ba989", "csm": "Blake Bueltel", "client_name": "CVS Health", "sub_client": "Sprouts Farmers Market", "display": "CVS Health \u2014 Sprouts Farmers Market", "go_live_year": 2025, "cy_el": 29235, "py_el": 12581, "cy_ir": 8985.0, "py_ir": 0.0, "cy_ir_per_el": 0.3073370959466393, "py_ir_per_el": 0.0, "d_el": 16654, "d_ir": 8985.0, "d_ir_per_el": 0.3073370959466393}, {"ck": "65ded5353c5ee48d0b7d48c591b8f430", "csm": "Amy Nguyen", "client_name": "Wellstar", "sub_client": "", "display": "Wellstar", "go_live_year": 2024, "cy_el": 1107, "py_el": 1530, "cy_ir": 47025.0, "py_ir": 175725.0, "cy_ir_per_el": 42.479674796747965, "py_ir_per_el": 114.8529411764706, "d_el": -423, "d_ir": -128700.0, "d_ir_per_el": -72.37326637972262}, {"ck": "9dcb88e0137649590b755372b040afad", "csm": "Ryan Wallace", "client_name": "Express Scripts", "sub_client": "VNS Health", "display": "Express Scripts \u2014 VNS Health", "go_live_year": 2026, "cy_el": 3974, "py_el": 0, "cy_ir": 84863.5, "py_ir": 0.0, "cy_ir_per_el": 21.35468042274786, "py_ir_per_el": null, "d_el": 3974, "d_ir": 84863.5, "d_ir_per_el": null}, {"ck": "140f6969d5213fd0ece03148e62e461e", "csm": "Trisha Kes", "client_name": "Blue Cross and Blue Shield of Minnesota Plan", "sub_client": "Blue Cross and Blue Shield of Minnesota", "display": "Blue Cross and Blue Shield of Minnesota Plan \u2014 Blue Cross and Blue Shield of Minnesota", "go_live_year": 2025, "cy_el": 0, "py_el": 0, "cy_ir": 73880.0, "py_ir": 5990.0, "cy_ir_per_el": null, "py_ir_per_el": null, "d_el": null, "d_ir": 67890.0, "d_ir_per_el": null}, {"ck": "e00da03b685a0dd18fb6a08af0923de0", "csm": "Blake Bueltel", "client_name": "Kraft Heinz", "sub_client": "", "display": "Kraft Heinz", "go_live_year": 2024, "cy_el": 22575, "py_el": 21354, "cy_ir": 1034023.09, "py_ir": 146025.0, "cy_ir_per_el": 45.80390210409745, "py_ir_per_el": 6.838297274515313, "d_el": 1221, "d_ir": 887998.09, "d_ir_per_el": 38.96560482958214}, {"ck": "642e92efb79421734881b53e1e1b18b6", "csm": "Amy Nguyen", "client_name": "Lumen", "sub_client": "", "display": "Lumen", "go_live_year": 2022, "cy_el": 36616, "py_el": 38797, "cy_ir": 1354502.55, "py_ir": 862830.68, "cy_ir_per_el": 36.99209498579856, "py_ir_per_el": 22.239623682243472, "d_el": -2181, "d_ir": 491671.87, "d_ir_per_el": 14.752471303555087}, {"ck": "1afa34a7f984eeabdbb0a7d494132ee5", "csm": "Amy Nguyen", "client_name": "Gray Television", "sub_client": "", "display": "Gray Television", "go_live_year": 2024, "cy_el": 11234, "py_el": 9539, "cy_ir": 65935.51, "py_ir": 43651.82, "cy_ir_per_el": 5.869281645006231, "py_ir_per_el": 4.5761421532655415, "d_el": 1695, "d_ir": 22283.689999999995, "d_ir_per_el": 1.293139491740689}, {"ck": "4e732ced3463d06de0ca9a15b6153677", "csm": "Blake Bueltel", "client_name": "K&L Gates", "sub_client": "K&L Gates US", "display": "K&L Gates \u2014 K&L Gates US", "go_live_year": 2021, "cy_el": 3614, "py_el": 3820, "cy_ir": 80981.35, "py_ir": 101760.75, "cy_ir_per_el": 22.40767847260653, "py_ir_per_el": 26.638939790575915, "d_el": -206, "d_ir": -20779.399999999994, "d_ir_per_el": -4.231261317969384}, {"ck": "a8baa56554f96369ab93e4f3bb068c22", "csm": "Ryan Wallace", "client_name": "Express Scripts", "sub_client": "Dick's Sporting Goods", "display": "Express Scripts \u2014 Dick's Sporting Goods", "go_live_year": 2024, "cy_el": 20564, "py_el": 20018, "cy_ir": 548374.5, "py_ir": 345872.93, "cy_ir_per_el": 26.66672340011671, "py_ir_per_el": 17.27809621340793, "d_el": 546, "d_ir": 202501.57, "d_ir_per_el": 9.388627186708778}, {"ck": "2723d092b63885e0d7c260cc007e8b9d", "csm": "Caitlin Kimball", "client_name": "RPM International", "sub_client": "", "display": "RPM International", "go_live_year": 2024, "cy_el": 20301, "py_el": 20628, "cy_ir": 315553.31, "py_ir": 358884.65, "cy_ir_per_el": 15.543732328456727, "py_ir_per_el": 17.397937269730466, "d_el": -327, "d_ir": -43331.340000000026, "d_ir_per_el": -1.8542049412737391}, {"ck": "a2557a7b2e94197ff767970b67041697", "csm": "Ryan Wallace", "client_name": "Express Scripts", "sub_client": "Cascade Drilling", "display": "Express Scripts \u2014 Cascade Drilling", "go_live_year": 2026, "cy_el": 1107, "py_el": 0, "cy_ir": 14298.23, "py_ir": 0.0, "cy_ir_per_el": 12.916196928635953, "py_ir_per_el": null, "d_el": 1107, "d_ir": 14298.23, "d_ir_per_el": null}, {"ck": "6ea9ab1baa0efb9e19094440c317e21b", "csm": "Amy Nguyen", "client_name": "Tractor Supply Company", "sub_client": "", "display": "Tractor Supply Company", "go_live_year": 2021, "cy_el": 47683, "py_el": 24860, "cy_ir": 101995.5, "py_ir": 181917.75, "cy_ir_per_el": 2.1390327789778327, "py_ir_per_el": 7.317689058728882, "d_el": 22823, "d_ir": -79922.25, "d_ir_per_el": -5.178656279751049}, {"ck": "73278a4a86960eeb576a8fd4c9ec6997", "csm": "Breanna Thompson", "client_name": "KKR", "sub_client": "", "display": "KKR", "go_live_year": 2023, "cy_el": 4090, "py_el": 3936, "cy_ir": 49915.0, "py_ir": 10009.26, "cy_ir_per_el": 12.204156479217604, "py_ir_per_el": 2.5430030487804878, "d_el": 154, "d_ir": 39905.74, "d_ir_per_el": 9.661153430437116}, {"ck": "8f85517967795eeef66c225f7883bdcb", "csm": "Caitlin Kimball", "client_name": "CVS Health", "sub_client": "Hubbell CVS", "display": "CVS Health \u2014 Hubbell CVS", "go_live_year": 2026, "cy_el": 11571, "py_el": 0, "cy_ir": 463464.48, "py_ir": 0.0, "cy_ir_per_el": 40.053969406274305, "py_ir_per_el": null, "d_el": 11571, "d_ir": 463464.48, "d_ir_per_el": null}, {"ck": "7f39f831b763f0140b1b4a2aaeace6a7", "csm": "Breanna Thompson", "client_name": "Spring Health", "sub_client": "", "display": "Spring Health", "go_live_year": null, "cy_el": 0, "py_el": 0, "cy_ir": 0.0, "py_ir": 0.0, "cy_ir_per_el": null, "py_ir_per_el": null, "d_el": null, "d_ir": null, "d_ir_per_el": null}, {"ck": "96da2f590cd7246bbde0051047b0d6f7", "csm": "Blake Bueltel", "client_name": "Aetna", "sub_client": "Builders FirstSource", "display": "Aetna \u2014 Builders FirstSource", "go_live_year": 2026, "cy_el": 36418, "py_el": 0, "cy_ir": 80835.0, "py_ir": 0.0, "cy_ir_per_el": 2.2196441320226263, "py_ir_per_el": null, "d_el": 36418, "d_ir": 80835.0, "d_ir_per_el": null}, {"ck": "202cb962ac59075b964b07152d234b70", "csm": "Amy Nguyen", "client_name": "MPI", "sub_client": "MPI-Alcohol", "display": "MPI \u2014 MPI-Alcohol", "go_live_year": 2024, "cy_el": 75303, "py_el": 81748, "cy_ir": 419708.0, "py_ir": 234148.92, "cy_ir_per_el": 5.573589365629523, "py_ir_per_el": 2.8642770465332488, "d_el": -6445, "d_ir": 185559.08, "d_ir_per_el": 2.7093123190962745}, {"ck": "903ce9225fca3e988c2af215d4e544d3", "csm": "Amy Nguyen", "client_name": "Schreiber Foods", "sub_client": "", "display": "Schreiber Foods", "go_live_year": 2025, "cy_el": 13746, "py_el": 13769, "cy_ir": 76710.53, "py_ir": 249273.47, "cy_ir_per_el": 5.580571075221883, "py_ir_per_el": 18.10396325078074, "d_el": -23, "d_ir": -172562.94, "d_ir_per_el": -12.523392175558858}, {"ck": "7647966b7343c29048673252e490f736", "csm": "Ryan Wallace", "client_name": "Express Scripts", "sub_client": "Redner's Markets", "display": "Express Scripts \u2014 Redner's Markets", "go_live_year": 2023, "cy_el": 1904, "py_el": 1889, "cy_ir": 54990.75, "py_ir": 5949.0, "cy_ir_per_el": 28.881696428571427, "py_ir_per_el": 3.1492853361566966, "d_el": 15, "d_ir": 49041.75, "d_ir_per_el": 25.73241109241473}, {"ck": "a97da629b098b75c294dffdc3e463904", "csm": "Caitlin Kimball", "client_name": "Live Nation", "sub_client": "", "display": "Live Nation", "go_live_year": 2023, "cy_el": 23976, "py_el": 22741, "cy_ir": 536286.92, "py_ir": 44844.03, "cy_ir_per_el": 22.367655989322657, "py_ir_per_el": 1.9719462644562684, "d_el": 1235, "d_ir": 491442.89, "d_ir_per_el": 20.39570972486639}, {"ck": "a684eceee76fc522773286a895bc8436", "csm": "Caitlin Kimball", "client_name": "Hubbell", "sub_client": "", "display": "Hubbell", "go_live_year": 2022, "cy_el": 507, "py_el": 10832, "cy_ir": 20345.0, "py_ir": 35603.94, "cy_ir_per_el": 40.12820512820513, "py_ir_per_el": 3.286922082717873, "d_el": -10325, "d_ir": -15258.940000000002, "d_ir_per_el": 36.84128304548726}, {"ck": "b6d767d2f8ed5d21a44b0e5886680cb9", "csm": "Amy Nguyen", "client_name": "HPE", "sub_client": "", "display": "HPE", "go_live_year": 2021, "cy_el": 63859, "py_el": 52183, "cy_ir": 746825.31, "py_ir": 722269.52, "cy_ir_per_el": 11.694910819148438, "py_ir_per_el": 13.84108847709024, "d_el": 11676, "d_ir": 24555.790000000037, "d_ir_per_el": -2.146177657941802}, {"ck": "c74d97b01eae257e44aa9d5bade97baf", "csm": "Ryan Wallace", "client_name": "Express Scripts", "sub_client": "Yokohama", "display": "Express Scripts \u2014 Yokohama", "go_live_year": 2020, "cy_el": 2903, "py_el": 0, "cy_ir": 27968.0, "py_ir": 0.0, "cy_ir_per_el": 9.634171546675853, "py_ir_per_el": null, "d_el": 2903, "d_ir": 27968.0, "d_ir_per_el": null}, {"ck": "0336dcbab05b9d5ad24f4333c7658a0e", "csm": "Blake Bueltel", "client_name": "CVS Health", "sub_client": "Archer Daniels Midland", "display": "CVS Health \u2014 Archer Daniels Midland", "go_live_year": 2026, "cy_el": 27740, "py_el": 0, "cy_ir": 889157.37, "py_ir": 0.0, "cy_ir_per_el": 32.05325775054074, "py_ir_per_el": null, "d_el": 27740, "d_ir": 889157.37, "d_ir_per_el": null}, {"ck": "eecca5b6365d9607ee5a9d336962c534", "csm": "Caitlin Kimball", "client_name": "SRS Distribution", "sub_client": "", "display": "SRS Distribution", "go_live_year": 2026, "cy_el": 46791, "py_el": 0, "cy_ir": 154063.03, "py_ir": 0.0, "cy_ir_per_el": 3.2925782735996236, "py_ir_per_el": null, "d_el": 46791, "d_ir": 154063.03, "d_ir_per_el": null}, {"ck": "182be0c5cdcd5072bb1864cdee4d3d6e", "csm": "Caitlin Kimball", "client_name": "Silgan Containers", "sub_client": "", "display": "Silgan Containers", "go_live_year": 2022, "cy_el": 3522, "py_el": 3859, "cy_ir": 200143.67, "py_ir": 101283.21, "cy_ir_per_el": 56.826709256104486, "py_ir_per_el": 26.245973050012957, "d_el": -337, "d_ir": 98860.46, "d_ir_per_el": 30.58073620609153}, {"ck": "2b44928ae11fb9384c4cf38708677c48", "csm": "Caitlin Kimball", "client_name": "CNH Industrial", "sub_client": "", "display": "CNH Industrial", "go_live_year": 2024, "cy_el": 35056, "py_el": 27508, "cy_ir": 539092.0, "py_ir": 425971.0, "cy_ir_per_el": 15.378023733455043, "py_ir_per_el": 15.485349716446125, "d_el": 7548, "d_ir": 113121.0, "d_ir_per_el": -0.10732598299108176}, {"ck": "757b505cfd34c64c85ca5b5690ee5293", "csm": "Trisha Kes", "client_name": "Independence", "sub_client": "BlueLink", "display": "Independence \u2014 BlueLink", "go_live_year": 2026, "cy_el": 0, "py_el": 0, "cy_ir": 3495.0, "py_ir": 0.0, "cy_ir_per_el": null, "py_ir_per_el": null, "d_el": null, "d_ir": 3495.0, "d_ir_per_el": null}, {"ck": "68d30a9594728bc39aa24be94b319d21", "csm": "Ryan Wallace", "client_name": "Express Scripts", "sub_client": "New Balance", "display": "Express Scripts \u2014 New Balance", "go_live_year": 2022, "cy_el": 5061, "py_el": 4938, "cy_ir": 76637.5, "py_ir": 34891.21, "cy_ir_per_el": 15.142758348152539, "py_ir_per_el": 7.065858647225597, "d_el": 123, "d_ir": 41746.29, "d_ir_per_el": 8.07689970092694}];
 
 function fmt(v, isDollar=true) {
-  if (!v || v === 0) return '<span class="null-cell">—</span>';
+  if (!v && v !== 0) return '<span class="null-cell">—</span>';
+  if (v === 0) return '<span class="null-cell">—</span>';
   const absV = Math.abs(v);
   if (isDollar) {
-    if (absV >= 1e6) return '$' + (v/1e6).toFixed(2) + 'M';
-    if (absV >= 1000) return '$' + (v/1000).toFixed(0) + 'K';
-    return '$' + Math.round(v).toLocaleString();
+    const s = v < 0 ? '-' : '';
+    if (absV >= 1e6) return s + '$' + (absV/1e6).toFixed(2) + 'M';
+    if (absV >= 1000) return s + '$' + Math.round(absV/1000) + 'K';
+    return s + '$' + Math.round(absV).toLocaleString();
   } else {
     if (absV >= 1e6) return (v/1e6).toFixed(1) + 'M';
-    if (absV >= 1000) return (v/1000).toFixed(0) + 'K';
+    if (absV >= 1000) return Math.round(v/1000) + 'K';
     return Math.round(v).toLocaleString();
   }
 }
 
-// Populate CSM dropdown
+function fmtDelta(v, isDollar=true, suffix='') {
+  if (v === null || v === undefined) return '<span class="null-cell">—</span>';
+  const cls = v > 0 ? 'delta-pos' : v < 0 ? 'delta-neg' : 'delta-zero';
+  const sign = v > 0 ? '+' : '';
+  const absV = Math.abs(v);
+  let str;
+  if (isDollar) {
+    if (absV >= 1e6) str = '$' + (absV/1e6).toFixed(2) + 'M';
+    else if (absV >= 1000) str = '$' + Math.round(absV/1000) + 'K';
+    else str = '$' + Math.round(absV).toLocaleString();
+    if (v < 0) str = '-' + str;
+  } else {
+    if (absV >= 1e6) str = (absV/1e6).toFixed(1) + 'M';
+    else if (absV >= 1000) str = Math.round(absV/1000) + 'K';
+    else str = Math.round(absV).toLocaleString();
+    if (v < 0) str = '-' + str;
+  }
+  return `<span class="${cls}">${sign}${str}${suffix}</span>`;
+}
+
+function fmtIrPerEl(v) {
+  if (!v) return '<span class="null-cell">—</span>';
+  return '$' + v.toFixed(2);
+}
+
+function fmtDeltaIrPerEl(v) {
+  if (v === null || v === undefined) return '<span class="null-cell">—</span>';
+  const cls = v > 0 ? 'delta-pos' : v < 0 ? 'delta-neg' : 'delta-zero';
+  const sign = v > 0 ? '+' : '';
+  return `<span class="${cls}">${sign}$${v.toFixed(2)}</span>`;
+}
+
+// ── SECTION 1: BOB ──
 const csmSel = document.getElementById('csmFilter');
-CSMS.forEach(c => {
-  const opt = document.createElement('option');
-  opt.value = c; opt.text = c;
-  csmSel.appendChild(opt);
-});
+CSMS.forEach(c => { const o = document.createElement('option'); o.value=c; o.text=c; csmSel.appendChild(o); });
 
 function onCsmChange() {
-  const csm = csmSel.value;
-  document.getElementById('backBtn').classList.toggle('visible', !!csm);
+  document.getElementById('backBtn').classList.toggle('visible', !!csmSel.value);
   render();
 }
+function clearCsm() { csmSel.value=''; document.getElementById('backBtn').classList.remove('visible'); render(); }
 
-function clearCsm() {
-  csmSel.value = '';
-  document.getElementById('backBtn').classList.remove('visible');
-  render();
-}
-
-// Aggregate rows by CSM
 function aggregateByCsm(rows) {
   const map = {};
   rows.forEach(r => {
-    if (!map[r.csm]) map[r.csm] = {csm: r.csm, avg_els: 0, regs: 0, tps: 0, unique_touched: 0, y1: 0, rnwl: 0, other: 0, total: 0, client_count: 0};
+    if (!map[r.csm]) map[r.csm] = {csm:r.csm,avg_els:0,regs:0,tps:0,unique_touched:0,y1:0,rnwl:0,other:0,total:0,client_count:0};
     const m = map[r.csm];
-    m.avg_els += r.avg_els || 0;
-    m.regs += r.regs || 0;
-    m.tps += r.tps || 0;
-    m.unique_touched += r.unique_touched || 0;
-    m.y1 += r.y1 || 0;
-    m.rnwl += r.rnwl || 0;
-    m.other += r.other || 0;
-    m.total += r.total || 0;
-    m.client_count++;
+    m.avg_els+=r.avg_els||0; m.regs+=r.regs||0; m.tps+=r.tps||0; m.unique_touched+=r.unique_touched||0;
+    m.y1+=r.y1||0; m.rnwl+=r.rnwl||0; m.other+=r.other||0; m.total+=r.total||0; m.client_count++;
   });
-  return Object.values(map).sort((a,b) => (b.total||0) - (a.total||0));
+  return Object.values(map).sort((a,b)=>(b.total||0)-(a.total||0));
 }
 
 function renderKPIs(rows, isCsm) {
-  const totELs = rows.reduce((s,r)=>s+(r.avg_els||0), 0);
-  const totRegs = rows.reduce((s,r)=>s+(r.regs||0), 0);
-  const totTPs = rows.reduce((s,r)=>s+(r.tps||0), 0);
-  const totIR = rows.reduce((s,r)=>s+(r.total||0), 0);
-  const totY1 = rows.reduce((s,r)=>s+(r.y1||0), 0);
-  const totRnwl = rows.reduce((s,r)=>s+(r.rnwl||0), 0);
-  const nClients = isCsm ? new Set(rows.map(r=>r.ck)).size : rows.length;
-  document.getElementById('kpiRow').innerHTML = `
+  const totELs=rows.reduce((s,r)=>s+(r.avg_els||0),0);
+  const totRegs=rows.reduce((s,r)=>s+(r.regs||0),0);
+  const totTPs=rows.reduce((s,r)=>s+(r.tps||0),0);
+  const totIR=rows.reduce((s,r)=>s+(r.total||0),0);
+  const totY1=rows.reduce((s,r)=>s+(r.y1||0),0);
+  const totRnwl=rows.reduce((s,r)=>s+(r.rnwl||0),0);
+  const nClients=isCsm?new Set(rows.map(r=>r.ck)).size:rows.length;
+  document.getElementById('kpiRow').innerHTML=`
     <div class="kpi"><div class="kpi-label">Clients</div><div class="kpi-value">${nClients}</div></div>
     <div class="kpi"><div class="kpi-label">Total IR YTD</div><div class="kpi-value">${fmt(totIR)}</div></div>
     <div class="kpi"><div class="kpi-label">Y1 Case Rate IR</div><div class="kpi-value">${fmt(totY1)}</div></div>
     <div class="kpi"><div class="kpi-label">Renewal IR</div><div class="kpi-value">${fmt(totRnwl)}</div></div>
-    <div class="kpi"><div class="kpi-label">Growth TPs</div><div class="kpi-value">${fmt(totTPs, false)}</div></div>
-    <div class="kpi"><div class="kpi-label">Regs</div><div class="kpi-value">${fmt(totRegs, false)}</div></div>
-  `;
+    <div class="kpi"><div class="kpi-label">Growth TPs</div><div class="kpi-value">${fmt(totTPs,false)}</div></div>
+    <div class="kpi"><div class="kpi-label">Regs</div><div class="kpi-value">${fmt(totRegs,false)}</div></div>`;
 }
 
 function render() {
-  const csm = csmSel.value;
-
+  const csm=csmSel.value;
   if (!csm) {
-    // ── CSM-aggregated view ──
-    const agg = aggregateByCsm(ALL_ROWS);
-    renderKPIs(ALL_ROWS, false);
-    document.getElementById('rowCount').textContent = agg.length + ' CSMs · click to drill in';
-
-    document.getElementById('tableHead').innerHTML = `
-      <tr>
-        <th class="left">CSM</th>
-        <th># Clients</th>
-        <th>Avg ELs</th>
-        <th>Regs YTD</th>
-        <th>Growth TPs</th>
-        <th>Unique Touched</th>
-        <th>Y1 Case Rate IR</th>
-        <th>Renewal IR</th>
-        <th>Other IR</th>
-        <th>Total IR</th>
-      </tr>`;
-
-    const totals = agg.reduce((t,r)=>{t.avg_els+=r.avg_els;t.regs+=r.regs;t.tps+=r.tps;t.unique_touched+=r.unique_touched;t.y1+=r.y1;t.rnwl+=r.rnwl;t.other+=r.other;t.total+=r.total;t.client_count+=r.client_count;return t;},{avg_els:0,regs:0,tps:0,unique_touched:0,y1:0,rnwl:0,other:0,total:0,client_count:0});
-
-    document.getElementById('tableBody').innerHTML =
-      agg.map(r => `
-        <tr class="clickable" onclick="drillInto('${r.csm.replace(/'/g,"\\'")}')">
-          <td class="left"><span class="csm-name">${r.csm}</span><span class="drill-hint">▶ expand</span></td>
-          <td>${r.client_count}</td>
-          <td>${fmt(r.avg_els, false)}</td>
-          <td>${fmt(r.regs, false)}</td>
-          <td>${fmt(r.tps, false)}</td>
-          <td>${fmt(r.unique_touched, false)}</td>
-          <td>${fmt(r.y1)}</td>
-          <td>${fmt(r.rnwl)}</td>
-          <td>${fmt(r.other)}</td>
-          <td><b>${fmt(r.total)}</b></td>
-        </tr>
-      `).join('') +
-      `<tr class="total-row">
-        <td class="left"><b>Total</b></td>
-        <td><b>${totals.client_count}</b></td>
-        <td><b>${fmt(totals.avg_els, false)}</b></td>
-        <td><b>${fmt(totals.regs, false)}</b></td>
-        <td><b>${fmt(totals.tps, false)}</b></td>
-        <td><b>${fmt(totals.unique_touched, false)}</b></td>
-        <td><b>${fmt(totals.y1)}</b></td>
-        <td><b>${fmt(totals.rnwl)}</b></td>
-        <td><b>${fmt(totals.other)}</b></td>
-        <td><b>${fmt(totals.total)}</b></td>
-      </tr>`;
-
+    const agg=aggregateByCsm(ALL_ROWS);
+    renderKPIs(ALL_ROWS,false);
+    document.getElementById('rowCount').textContent=agg.length+' CSMs · click to expand';
+    document.getElementById('tableHead').innerHTML=`<tr><th class="left">CSM</th><th># Clients</th><th>Avg ELs</th><th>Regs YTD</th><th>Growth TPs</th><th>Unique Touched</th><th>Y1 Case Rate IR</th><th>Renewal IR</th><th>Other IR</th><th>Total IR</th></tr>`;
+    const tot=agg.reduce((t,r)=>{Object.keys(t).forEach(k=>{if(typeof t[k]==='number')t[k]+=r[k]||0;});return t;},{avg_els:0,regs:0,tps:0,unique_touched:0,y1:0,rnwl:0,other:0,total:0,client_count:0});
+    document.getElementById('tableBody').innerHTML=
+      agg.map(r=>`<tr class="clickable" onclick="drillInto('${r.csm.replace(/'/g,"\\'")}')">`+
+        `<td class="left"><span class="csm-name">${r.csm}</span><span class="drill-hint">▶ expand</span></td>`+
+        `<td>${r.client_count}</td><td>${fmt(r.avg_els,false)}</td><td>${fmt(r.regs,false)}</td>`+
+        `<td>${fmt(r.tps,false)}</td><td>${fmt(r.unique_touched,false)}</td>`+
+        `<td>${fmt(r.y1)}</td><td>${fmt(r.rnwl)}</td><td>${fmt(r.other)}</td><td><b>${fmt(r.total)}</b></td></tr>`).join('')+
+      `<tr class="total-row"><td class="left"><b>Total</b></td><td><b>${tot.client_count}</b></td>`+
+      `<td><b>${fmt(tot.avg_els,false)}</b></td><td><b>${fmt(tot.regs,false)}</b></td>`+
+      `<td><b>${fmt(tot.tps,false)}</b></td><td><b>${fmt(tot.unique_touched,false)}</b></td>`+
+      `<td><b>${fmt(tot.y1)}</b></td><td><b>${fmt(tot.rnwl)}</b></td><td><b>${fmt(tot.other)}</b></td>`+
+      `<td><b>${fmt(tot.total)}</b></td></tr>`;
   } else {
-    // ── Client-expanded view for selected CSM ──
-    const filtered = ALL_ROWS.filter(r => r.csm === csm).sort((a,b) => (b.total||0) - (a.total||0));
-    renderKPIs(filtered, true);
-    document.getElementById('rowCount').textContent = filtered.length + ' clients';
-
-    document.getElementById('tableHead').innerHTML = `
-      <tr>
-        <th class="left">Client</th>
-        <th class="left">Sub-Client</th>
-        <th>Avg ELs</th>
-        <th>Regs YTD</th>
-        <th>Growth TPs</th>
-        <th>Unique Touched</th>
-        <th>Y1 Case Rate IR</th>
-        <th>Renewal IR</th>
-        <th>Other IR</th>
-        <th>Total IR</th>
-      </tr>`;
-
-    const totals = filtered.reduce((t,r)=>{t.avg_els+=r.avg_els||0;t.regs+=r.regs||0;t.tps+=r.tps||0;t.unique_touched+=r.unique_touched||0;t.y1+=r.y1||0;t.rnwl+=r.rnwl||0;t.other+=r.other||0;t.total+=r.total||0;return t;},{avg_els:0,regs:0,tps:0,unique_touched:0,y1:0,rnwl:0,other:0,total:0});
-
-    document.getElementById('tableBody').innerHTML =
-      filtered.map(r => `
-        <tr>
-          <td class="left">${r.client_name}</td>
-          <td class="left">${r.sub_client || '<span class="null-cell">—</span>'}</td>
-          <td>${fmt(r.avg_els, false)}</td>
-          <td>${fmt(r.regs, false)}</td>
-          <td>${fmt(r.tps, false)}</td>
-          <td>${fmt(r.unique_touched, false)}</td>
-          <td>${fmt(r.y1)}</td>
-          <td>${fmt(r.rnwl)}</td>
-          <td>${fmt(r.other)}</td>
-          <td><b>${fmt(r.total)}</b></td>
-        </tr>
-      `).join('') +
-      `<tr class="total-row">
-        <td class="left"><b>Total</b></td>
-        <td></td>
-        <td><b>${fmt(totals.avg_els, false)}</b></td>
-        <td><b>${fmt(totals.regs, false)}</b></td>
-        <td><b>${fmt(totals.tps, false)}</b></td>
-        <td><b>${fmt(totals.unique_touched, false)}</b></td>
-        <td><b>${fmt(totals.y1)}</b></td>
-        <td><b>${fmt(totals.rnwl)}</b></td>
-        <td><b>${fmt(totals.other)}</b></td>
-        <td><b>${fmt(totals.total)}</b></td>
-      </tr>`;
+    const filtered=ALL_ROWS.filter(r=>r.csm===csm).sort((a,b)=>(b.total||0)-(a.total||0));
+    renderKPIs(filtered,true);
+    document.getElementById('rowCount').textContent=filtered.length+' clients';
+    document.getElementById('tableHead').innerHTML=`<tr><th class="left">Client</th><th class="left">Sub-Client</th><th>Avg ELs</th><th>Regs YTD</th><th>Growth TPs</th><th>Unique Touched</th><th>Y1 Case Rate IR</th><th>Renewal IR</th><th>Other IR</th><th>Total IR</th></tr>`;
+    const tot=filtered.reduce((t,r)=>{t.avg_els+=r.avg_els||0;t.regs+=r.regs||0;t.tps+=r.tps||0;t.unique_touched+=r.unique_touched||0;t.y1+=r.y1||0;t.rnwl+=r.rnwl||0;t.other+=r.other||0;t.total+=r.total||0;return t;},{avg_els:0,regs:0,tps:0,unique_touched:0,y1:0,rnwl:0,other:0,total:0});
+    document.getElementById('tableBody').innerHTML=
+      filtered.map(r=>`<tr><td class="left">${r.client_name}</td><td class="left">${r.sub_client||'<span class="null-cell">—</span>'}</td>`+
+        `<td>${fmt(r.avg_els,false)}</td><td>${fmt(r.regs,false)}</td><td>${fmt(r.tps,false)}</td>`+
+        `<td>${fmt(r.unique_touched,false)}</td><td>${fmt(r.y1)}</td><td>${fmt(r.rnwl)}</td><td>${fmt(r.other)}</td><td><b>${fmt(r.total)}</b></td></tr>`).join('')+
+      `<tr class="total-row"><td class="left"><b>Total</b></td><td></td><td><b>${fmt(tot.avg_els,false)}</b></td><td><b>${fmt(tot.regs,false)}</b></td>`+
+      `<td><b>${fmt(tot.tps,false)}</b></td><td><b>${fmt(tot.unique_touched,false)}</b></td>`+
+      `<td><b>${fmt(tot.y1)}</b></td><td><b>${fmt(tot.rnwl)}</b></td><td><b>${fmt(tot.other)}</b></td><td><b>${fmt(tot.total)}</b></td></tr>`;
   }
 }
 
-function drillInto(csmName) {
-  csmSel.value = csmName;
-  document.getElementById('backBtn').classList.add('visible');
-  render();
+function drillInto(csmName) { csmSel.value=csmName; document.getElementById('backBtn').classList.add('visible'); render(); }
+
+// ── SECTION 2: YOY ──
+const yoyCsmSel = document.getElementById('yoyCsmFilter');
+CSMS.forEach(c => { const o = document.createElement('option'); o.value=c; o.text=c; yoyCsmSel.appendChild(o); });
+
+// Track which years are expanded
+const expandedYears = new Set();
+
+function getYoyFiltered() {
+  const csm = yoyCsmSel.value;
+  return csm ? YOY_DATA.filter(r => r.csm === csm) : YOY_DATA;
+}
+
+function renderYoy() {
+  const data = getYoyFiltered();
+  // Group by go_live_year
+  const yearMap = {};
+  data.forEach(r => {
+    const yr = r.go_live_year || 'Unknown';
+    if (!yearMap[yr]) yearMap[yr] = [];
+    yearMap[yr].push(r);
+  });
+  const years = Object.keys(yearMap).sort();
+
+  document.getElementById('yoyRowCount').textContent = data.length + ' clients across ' + years.length + ' cohorts';
+
+  let rows = '';
+  years.forEach(yr => {
+    const clients = yearMap[yr].sort((a,b) => (b.cy_ir||0) - (a.cy_ir||0));
+    // Aggregate year row
+    const agg = clients.reduce((t,r) => {
+      t.cy_el += r.cy_el||0; t.py_el += r.py_el||0;
+      t.cy_ir += r.cy_ir||0; t.py_ir += r.py_ir||0;
+      t.n++;
+      return t;
+    }, {cy_el:0,py_el:0,cy_ir:0,py_ir:0,n:0});
+    agg.cy_ir_per_el = agg.cy_el > 0 ? agg.cy_ir/agg.cy_el : null;
+    agg.py_ir_per_el = agg.py_el > 0 ? agg.py_ir/agg.py_el : null;
+    agg.d_el = agg.cy_el - agg.py_el;
+    agg.d_ir = agg.cy_ir - agg.py_ir;
+    agg.d_ir_per_el = (agg.cy_ir_per_el !== null && agg.py_ir_per_el !== null) ? agg.cy_ir_per_el - agg.py_ir_per_el : null;
+
+    const isExp = expandedYears.has(String(yr));
+    rows += `<tr class="clickable" onclick="toggleYear('${yr}')" style="background:#f8fafc">
+      <td class="left"><span class="yr-badge">${yr}</span> <span style="font-size:11px;color:var(--muted)">${agg.n} clients</span><span class="drill-hint">${isExp?'▲ collapse':'▶ expand'}</span></td>
+      <td>${fmt(agg.cy_el,false)}</td>
+      <td>${fmt(agg.cy_ir)}</td>
+      <td>${fmtIrPerEl(agg.cy_ir_per_el)}</td>
+      <td>${fmt(agg.py_el,false)}</td>
+      <td>${fmt(agg.py_ir)}</td>
+      <td>${fmtIrPerEl(agg.py_ir_per_el)}</td>
+      <td>${fmtDelta(agg.d_el,false)}</td>
+      <td>${fmtDelta(agg.d_ir)}</td>
+      <td>${fmtDeltaIrPerEl(agg.d_ir_per_el)}</td>
+    </tr>`;
+
+    if (isExp) {
+      clients.forEach(r => {
+        rows += `<tr style="background:#fafbff">
+          <td class="left" style="padding-left:28px;color:var(--muted)">${r.display}</td>
+          <td>${fmt(r.cy_el,false)}</td>
+          <td>${fmt(r.cy_ir)}</td>
+          <td>${fmtIrPerEl(r.cy_ir_per_el)}</td>
+          <td>${fmt(r.py_el,false)}</td>
+          <td>${fmt(r.py_ir)}</td>
+          <td>${fmtIrPerEl(r.py_ir_per_el)}</td>
+          <td>${fmtDelta(r.d_el,false)}</td>
+          <td>${fmtDelta(r.d_ir)}</td>
+          <td>${fmtDeltaIrPerEl(r.d_ir_per_el)}</td>
+        </tr>`;
+      });
+    }
+  });
+
+  // Grand total row
+  const grand = data.reduce((t,r)=>{
+    t.cy_el+=r.cy_el||0; t.py_el+=r.py_el||0; t.cy_ir+=r.cy_ir||0; t.py_ir+=r.py_ir||0; return t;
+  },{cy_el:0,py_el:0,cy_ir:0,py_ir:0});
+  grand.cy_ipe = grand.cy_el>0?grand.cy_ir/grand.cy_el:null;
+  grand.py_ipe = grand.py_el>0?grand.py_ir/grand.py_el:null;
+  grand.d_el = grand.cy_el-grand.py_el;
+  grand.d_ir = grand.cy_ir-grand.py_ir;
+  grand.d_ipe = (grand.cy_ipe!==null&&grand.py_ipe!==null)?grand.cy_ipe-grand.py_ipe:null;
+
+  rows += `<tr class="total-row">
+    <td class="left"><b>Total</b></td>
+    <td><b>${fmt(grand.cy_el,false)}</b></td>
+    <td><b>${fmt(grand.cy_ir)}</b></td>
+    <td><b>${fmtIrPerEl(grand.cy_ipe)}</b></td>
+    <td><b>${fmt(grand.py_el,false)}</b></td>
+    <td><b>${fmt(grand.py_ir)}</b></td>
+    <td><b>${fmtIrPerEl(grand.py_ipe)}</b></td>
+    <td><b>${fmtDelta(grand.d_el,false)}</b></td>
+    <td><b>${fmtDelta(grand.d_ir)}</b></td>
+    <td><b>${fmtDeltaIrPerEl(grand.d_ipe)}</b></td>
+  </tr>`;
+
+  document.getElementById('yoyBody').innerHTML = rows;
+}
+
+function toggleYear(yr) {
+  if (expandedYears.has(String(yr))) expandedYears.delete(String(yr));
+  else expandedYears.add(String(yr));
+  renderYoy();
 }
 
 // Init
 render();
+renderYoy();
 </script>
 </body>
 </html>
