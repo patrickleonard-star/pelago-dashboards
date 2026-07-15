@@ -276,6 +276,26 @@ function qIR(mmap,k,q){
   return(QI[q]||[]).reduce((s,i)=>s+(m[i]||0),0);
 }
 
+// ─── EL scaling by quarter ─────────────────────────────────
+// Maps each quarter to the most representative month index for ELs
+const Q_EL_IDX={Q1:2,Q2:5,Q3:6}; // Mar, Jun, Jul
+function cyElForQ(q){
+  const idx=Q_EL_IDX[q]??5;
+  return MONTHLY_CY[idx]?.el||MONTHLY_CY[5]?.el||3961012;
+}
+function pyElForQ(q){
+  const idx=Q_EL_IDX[q]??5;
+  return MONTHLY_PY[idx]?.el||MONTHLY_PY[5]?.el||3931432;
+}
+// Scale a per-client EL by ratio of quarter portfolio to June portfolio
+function scaledEl(el,q,isPY){
+  if(!el)return 0;
+  const qPortfolio=isPY?pyElForQ(q):cyElForQ(q);
+  const junePortfolio=isPY?(MONTHLY_PY[5]?.el||3931432):(MONTHLY_CY[5]?.el||3961012);
+  if(!junePortfolio)return el;
+  return Math.round(el*(qPortfolio/junePortfolio));
+}
+
 // ─── Filters ──────────────────────────────────────────────────
 function populateFilters(){
   const csms=[...new Set(ALL.map(r=>r.csm).filter(Boolean))].sort();
@@ -322,9 +342,9 @@ function renderMonthly(f){
       <td class="num yoy">${fDN((c.el||0)-(p.el||0))}</td><td class="num yoy">${fD$((c.ir||0)-(p.ir||0))}</td><td class="num yoy">${fD$((c.ren||0)-(p.ren||0))}</td>
     </tr>`;}
   h+=`<tr class="tot"><td class="lbl">Total</td>
-    <td class="num cy">${fN(Math.round(tcel/Math.max(cy.length,1)))}</td><td class="num cy">${f$(tci)}</td><td class="num cy">${f$(tcr)}</td>
-    <td class="num py">${fN(Math.round(tpel/Math.max(py.length,1)))}</td><td class="num py">${f$(tpi)}</td><td class="num py">${f$(tpr)}</td>
-    <td class="num yoy">${fDN(Math.round(tcel/Math.max(cy.length,1))-Math.round(tpel/Math.max(py.length,1)))}</td><td class="num yoy">${fD$(tci-tpi)}</td><td class="num yoy">${fD$(tcr-tpr)}</td>
+    <td class="num cy">${fN(cy[cy.length-1]?.el||0)}</td><td class="num cy">${f$(tci)}</td><td class="num cy">${f$(tcr)}</td>
+    <td class="num py">${fN(py[py.length-1]?.el||0)}</td><td class="num py">${f$(tpi)}</td><td class="num py">${f$(tpr)}</td>
+    <td class="num yoy">${fDN((cy[cy.length-1]?.el||0)-(py[py.length-1]?.el||0))}</td><td class="num yoy">${fD$(tci-tpi)}</td><td class="num yoy">${fD$(tcr-tpr)}</td>
   </tr>`;
   document.getElementById("tMon").innerHTML=h;
   document.getElementById("mCnt").textContent=`${cy.length} months`;
@@ -337,7 +357,42 @@ function renderGrouped(rows,tbodyId,countId,groupFn,isYear){
   for(const r of rows){
     const g=groupFn(r);if(!g)continue;
     if(!grp[g])grp[g]={el:0,pyEl:0,cyIR:0,pyIR:0};
-    grp[g].el+=r.el||0;grp[g].pyEl+=r.pyEl||0;
+    grp[g].el+=scaledEl(r.el,f.q,false);grp[g].pyEl+=scaledEl(r.pyEl,f.q,true);
+    const qc=qIR(CYM,r.k,f.q);const qp=qIR(PYM,r.k,f.q);
+    grp[g].cyIR+=(qc!==null?qc:r.cyIR)||0;
+    grp[g].pyIR+=(qp!==null?qp:r.pyIR)||0;
+  }
+  const keys=Object.keys(grp).sort((a,b)=>{
+    if(isYear){if(a==="Unknown")return 1;if(b==="Unknown")return -1;return parseInt(b)-parseInt(a);}
+    return grp[b].cyIR-grp[a].cyIR;
+  });
+  let h="",te=0,tpe=0,tc=0,tp=0;
+  for(const g of keys){
+    const d=grp[g];te+=d.el;tpe+=d.pyEl||0;tc+=d.cyIR;tp+=d.pyIR;
+    const yir=d.cyIR-d.pyIR;
+    h+=`<tr>
+      <td class="lbl">${g}</td>
+      <td class="num cy">${fN(d.el)||D}</td><td class="num cy">${f$(d.cyIR)}</td><td class="num cy">${fPE(d.cyIR,d.el)}</td>
+      <td class="num py">${d.pyEl?fN(d.pyEl):D}</td><td class="num py">${d.pyIR?f$(d.pyIR):D}</td><td class="num py">${fPE(d.pyIR,d.pyEl)}</td>
+      <td class="num yoy">${(d.el&&d.pyEl)?fDN(d.el-d.pyEl):D}</td><td class="num yoy">${d.pyIR?fD$(yir):D}</td><td class="num yoy">${(d.pyIR&&d.pyEl)?fDPE(d.cyIR,d.pyIR,d.pyEl):D}</td>
+    </tr>`;}
+  h+=`<tr class="tot"><td class="lbl">Total</td>
+    <td class="num cy">${fN(te)||D}</td><td class="num cy">${f$(tc)}</td><td class="num cy">${fPE(tc,te)}</td>
+    <td class="num py">${tpe?fN(tpe):D}</td><td class="num py">${f$(tp)}</td><td class="num py">${fPE(tp,tpe)}</td>
+    <td class="num yoy">${(te&&tpe)?fDN(te-tpe):D}</td><td class="num yoy">${fD$(tc-tp)}</td><td class="num yoy">${(tp&&tpe)?fDPE(tc,tp,tpe):D}</td>
+  </tr>`;
+  document.getElementById(tbodyId).innerHTML=h;
+  document.getElementById(countId).textContent=`${keys.length} groups`;
+}
+
+// ─── Client render ────────────────────────────────────────────
+function renderGrouped(rows,tbodyId,countId,groupFn,isYear){
+  const f=gf();
+  const grp={};
+  for(const r of rows){
+    const g=groupFn(r);if(!g)continue;
+    if(!grp[g])grp[g]={el:0,pyEl:0,cyIR:0,pyIR:0};
+    grp[g].el+=scaledEl(r.el,f.q,false);grp[g].pyEl+=scaledEl(r.pyEl,f.q,true);
     const qc=qIR(CYM,r.k,f.q);const qp=qIR(PYM,r.k,f.q);
     grp[g].cyIR+=(qc!==null?qc:r.cyIR)||0;
     grp[g].pyIR+=(qp!==null?qp:r.pyIR)||0;
@@ -374,7 +429,7 @@ function renderClient(rows){
   }).sort((a,b)=>b.cyIR-a.cyIR);
   let h="",te=0,tpe=0,tc=0,tp=0;
   for(const r of mapped){
-    te+=r.el||0;tpe+=r.pyEl||0;tc+=r.cyIR||0;tp+=r.pyIR||0;
+    te+=scaledEl(r.el,f.q,false)||0;tpe+=scaledEl(r.pyEl,f.q,true)||0;tc+=r.cyIR||0;tp+=r.pyIR||0;
     const yir=r.cyIR-r.pyIR;
     h+=`<tr>
       <td class="lbl">${r.employer}</td><td class="lbl sub">${r.partner}</td>
