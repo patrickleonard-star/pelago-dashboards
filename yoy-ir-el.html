@@ -86,8 +86,8 @@ td.sub { font-size: 11px; color: #666; }
           <th colspan="4" class="gh-yoy">YOY &#916;</th>
         </tr>
         <tr>
-          <th class="gh-cy">Total IR</th><th class="gh-cy">Renewal IR</th><th class="gh-cy">Regs</th>
-          <th class="gh-py">Total IR</th><th class="gh-py">Renewal IR</th><th class="gh-py">Regs</th>
+          <th class="gh-cy">Total IR</th><th class="gh-cy">Renewal IR</th><th class="gh-cy">Mktable HHs</th><th class="gh-cy">Touchpoints</th><th class="gh-cy">Regs</th>
+          <th class="gh-py">Total IR</th><th class="gh-py">Renewal IR</th><th class="gh-py">Mktable HHs</th><th class="gh-py">Touchpoints</th><th class="gh-py">Regs</th>
           <th class="gh-yoy">IR &#916;</th><th class="gh-yoy">Renewal &#916;</th><th class="gh-yoy">TPs &#916;</th><th class="gh-yoy">Regs &#916;</th>
         </tr>
       </thead>
@@ -230,7 +230,7 @@ function buildMeta(){const m={};for(const[cn,sc,csm,cohort,product,gl]of RAW_MET
 function buildEL(){const m={};for(const[cn,sc,el]of RAW_EL){const k=ck(cn,sc);if(!m[k]||el>m[k])m[k]=el;}return m;}
 function goLiveYear(d){return d?d.substring(0,4):"Unknown";}
 function partnerEmployer(cn,sc){if(sc&&sc.trim())return{partner:cn,employer:sc.trim()};return{partner:"Direct",employer:cn};}
-function getPyEl(cn,sc){const byParent=PY_EL_PARENT[cn]||0;return byParent;}
+function getPyEl(cn,sc){return 0;} // PY ELs removed: eligibility_member_snapshots over-counts across file dates
 function getCloseWon(cn,sc){const emp=sc&&sc.trim()?sc.trim():cn;return CLOSE_WON[emp]||CLOSE_WON[cn]||null;}
 
 function buildRows(){const cy=buildCY(),py=buildPY(),meta=buildMeta(),elMap=buildEL();
@@ -293,18 +293,21 @@ function renderGrouped(rows,tbodyId,countId,groupFn){
     const qPY=getClientIR(PY_M_MAP,r.key,f.quarter);
     grp[g].cyIR+=(qCY!==null?qCY:r.cyIR)||0;
     grp[g].pyIR+=(qPY!==null?qPY:r.pyIR)||0;}
-  const keys=Object.keys(grp).sort((a,b)=>grp[b].cyIR-grp[a].cyIR);
+  const isYearView=(tbodyId==="tLaunchBody");
+  const keys=Object.keys(grp).sort((a,b)=>{if(isYearView){if(a==="Unknown")return 1;if(b==="Unknown")return -1;return parseInt(b)-parseInt(a);}return grp[b].cyIR-grp[a].cyIR;});
   let html="",totEl=0,totPyEl=0,totCY=0,totPY=0;
   for(const g of keys){const d=grp[g];const yoyIR=d.cyIR-d.pyIR;const yoyEl=d.el-d.pyEl;
     totEl+=d.el;totPyEl+=d.pyEl;totCY+=d.cyIR;totPY+=d.pyIR;
+    const cyCPE=d.el?d.cyIR/d.el:null;const pyCPE=d.pyEl?d.pyIR/d.pyEl:null;const yoyCPE=(cyCPE&&pyCPE)?cyCPE-pyCPE:null;
     html+=`<tr><td class="label">${g}</td>
-      <td class="num cy-cell">${fmtN(d.el)}</td><td class="num cy-cell">${fmt$(d.cyIR)}</td><td class="num cy-cell">${fmtPer(d.cyIR,d.el)}</td>
-      <td class="num py-cell">${fmtN(d.pyEl)}</td><td class="num py-cell">${fmt$(d.pyIR)}</td><td class="num py-cell">${fmtPer(d.pyIR,d.pyEl)}</td>
-      <td class="num yoy-cell">${fmtDN(yoyEl)}</td><td class="num yoy-cell">${fmtD$(yoyIR)}</td><td class="num yoy-cell">&#8212;</td></tr>`;}
+      <td class="num cy-cell">${fmtN(d.el)||"&#8212;"}</td><td class="num cy-cell">${fmt$(d.cyIR)}</td><td class="num cy-cell">${fmtPer(d.cyIR,d.el)}</td>
+      <td class="num py-cell">&#8212;</td><td class="num py-cell">${d.pyIR?fmt$(d.pyIR):"&#8212;"}</td><td class="num py-cell">&#8212;</td>
+      <td class="num yoy-cell">&#8212;</td><td class="num yoy-cell">${d.pyIR?fmtD$(yoyIR):"&#8212;"}</td><td class="num yoy-cell">${yoyCPE!=null?"$"+yoyCPE.toFixed(2):"&#8212;"}</td></tr>`;}
+  const tCyCPE=totEl?totCY/totEl:null;const tPyCPE=totPyEl?totPY/totPyEl:null;const tYCPE=(tCyCPE&&tPyCPE)?tCyCPE-tPyCPE:null;
   html+=`<tr class="total-row"><td class="label">Total</td>
-    <td class="num cy-cell">${fmtN(totEl)}</td><td class="num cy-cell">${fmt$(totCY)}</td><td class="num cy-cell">${fmtPer(totCY,totEl)}</td>
-    <td class="num py-cell">${fmtN(totPyEl)}</td><td class="num py-cell">${fmt$(totPY)}</td><td class="num py-cell">${fmtPer(totPY,totPyEl)}</td>
-    <td class="num yoy-cell">${fmtDN(totEl-totPyEl)}</td><td class="num yoy-cell">${fmtD$(totCY-totPY)}</td><td class="num yoy-cell">&#8212;</td></tr>`;
+    <td class="num cy-cell">${fmtN(totEl)||"&#8212;"}</td><td class="num cy-cell">${fmt$(totCY)}</td><td class="num cy-cell">${fmtPer(totCY,totEl)}</td>
+    <td class="num py-cell">&#8212;</td><td class="num py-cell">${fmt$(totPY)}</td><td class="num py-cell">&#8212;</td>
+    <td class="num yoy-cell">&#8212;</td><td class="num yoy-cell">${fmtD$(totCY-totPY)}</td><td class="num yoy-cell">${tYCPE!=null?"$"+tYCPE.toFixed(2):"&#8212;"}</td></tr>`;
   document.getElementById(tbodyId).innerHTML=html;document.getElementById(countId).textContent=`${keys.length} groups`;}
 
 function renderByClient(rows){
