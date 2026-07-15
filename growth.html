@@ -16,7 +16,13 @@
   .header h1 { font-size:22px; font-weight:700; }
   .header p { opacity:0.85; font-size:13px; margin-top:4px; }
   .header-badge { display:inline-block; background:rgba(255,255,255,.2); padding:2px 10px; border-radius:10px; font-size:11px; margin-top:6px; white-space:nowrap; }
-  .section-header { background:white; padding:12px 24px 0; border-top:3px solid var(--blue); margin-top:24px; }
+  .controls { background:white; padding:10px 24px; border-bottom:1px solid var(--border); display:flex; gap:20px; align-items:center; flex-wrap:wrap; }
+  .ctrl-group { display:flex; align-items:center; gap:8px; }
+  .ctrl-label { font-size:11px; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:.05em; }
+  select { border:1px solid var(--border); border-radius:6px; padding:5px 10px; font-size:13px; background:white; color:var(--text); cursor:pointer; min-width:200px; }
+  .campaign-note { font-size:11px; color:var(--purple); background:#f5f0ff; border:1px solid #d8c8f5; border-radius:5px; padding:4px 10px; display:none; }
+  .campaign-note.visible { display:inline-block; }
+  .section-header { background:white; padding:12px 24px 0; border-top:3px solid var(--blue); margin-top:16px; }
   .section-header h2 { font-size:16px; font-weight:700; color:var(--blue); padding-bottom:4px; }
   .section-header p { font-size:12px; color:var(--muted); padding-bottom:12px; }
   .table-wrap { padding:0 24px 20px; overflow-x:auto; }
@@ -33,6 +39,7 @@
   tr:hover td { background:#f0f4ff; }
   .null-cell { color:#c0c9d8; }
   .pct { color:var(--muted); }
+  .reg-attributed { color:var(--purple); font-weight:600; }
   .footnote { padding:8px 24px 20px; font-size:11px; color:var(--muted); line-height:1.8; }
   .footnote strong { color:var(--text); }
 </style>
@@ -42,14 +49,55 @@
 <div class="header">
   <div>
     <h1>&#128200; Pelago Growth Dashboard</h1>
-    <p>Growth acquisition funnel &middot; Monthly view &middot; All data governed via Cube</p>
+    <p>Growth acquisition funnel &middot; Monthly view &middot; July 2024 &ndash; June 2026</p>
   </div>
   <div class="header-badge" id="refreshed-badge">Last refreshed: &mdash;</div>
 </div>
 
+<div class="controls">
+  <div class="ctrl-group">
+    <span class="ctrl-label">Campaign</span>
+    <select id="campaign-sel" onchange="render()">
+      <option value="">All Campaigns</option>
+      <option value="31AD">31AD</option>
+      <option value="CTA">CTA</option>
+      <option value="Challenge">Challenge</option>
+      <option value="ClearTheAir">ClearTheAir</option>
+      <option value="DJ2026">DJ2026</option>
+      <option value="DRYJAN">DRYJAN</option>
+      <option value="DryJan">DryJan</option>
+      <option value="FAM">FAM</option>
+      <option value="HL2026">HL2026</option>
+      <option value="Incentive">Incentive</option>
+      <option value="KWTSW">KWTSW</option>
+      <option value="Launch">Launch</option>
+      <option value="Multi">Multi</option>
+      <option value="NE">NE</option>
+      <option value="PM">PM</option>
+      <option value="Postcard">Postcard</option>
+      <option value="RCFRL">RCFRL</option>
+      <option value="SL2026">SL2026</option>
+      <option value="SMS">SMS</option>
+      <option value="SOBOCT">SOBOCT</option>
+      <option value="SS">SS</option>
+      <option value="SSN">SSN</option>
+      <option value="STOP">STOP</option>
+      <option value="STRESS">STRESS</option>
+      <option value="SUMPH">SUMPH</option>
+      <option value="Surcharge">Surcharge</option>
+      <option value="WYNTK">WYNTK</option>
+      <option value="Webinar Invite">Webinar Invite</option>
+      <option value="Unattributed">Unattributed</option>
+    </select>
+  </div>
+  <div class="campaign-note" id="campaign-note">
+    Registrations show 30-day last-touch attribution &middot; Other columns reflect total monthly volume &middot; Source: <code>dw_marts.marketing_events</code> (non-governed)
+  </div>
+</div>
+
 <div class="section-header">
   <h2>Growth Funnel by Month</h2>
-  <p>Rows = DOS month &middot; July 2024 &ndash; June 2026 &middot; Newest first</p>
+  <p id="section-desc">Rows = DOS month &middot; Newest first &middot; All data from Cube&#39;s governed semantic layer</p>
 </div>
 <div class="table-wrap">
   <table>
@@ -65,7 +113,7 @@
         <th class="group-rs">Reg Starts</th>
         <th class="group-rs">RS / UE</th>
         <th class="group-rs">RS / LP</th>
-        <th class="group-reg">Registrations</th>
+        <th class="group-reg" id="reg-header">Registrations</th>
         <th class="group-reg">Regs / UE</th>
         <th class="group-reg">Regs / RS</th>
       </tr>
@@ -76,29 +124,60 @@
 
 <div class="footnote">
   <strong>Avg ELs</strong> &mdash; <code>eligibility_member_snapshots.eligibility_member_count</code> &nbsp;&middot;&nbsp;
-  <strong>Uniq Touched</strong> &mdash; <code>growth.unique_users_delivered_sum</code> (communication_type = Growth) &nbsp;&middot;&nbsp;
+  <strong>Uniq Touched</strong> &mdash; <code>growth.unique_users_delivered_sum</code> (Growth) &nbsp;&middot;&nbsp;
   <strong>Touchpoints</strong> &mdash; <code>marketing_events.touchpoints_sum</code> (Growth; email net of bounces + DM) &nbsp;&middot;&nbsp;
   <strong>LP Starts</strong> &mdash; <code>marketing_web_events.landing_page_views_count</code> (distinct devices) &nbsp;&middot;&nbsp;
   <strong>Reg Starts</strong> &mdash; <code>marketing_web_events.registration_page_starts_count</code> (distinct devices) &nbsp;&middot;&nbsp;
-  <strong>Registrations</strong> &mdash; <code>member_journey.journey_status_registered_count</code> &nbsp;&middot;&nbsp;
-  All metrics from Cube&#39;s governed semantic layer.
+  <strong>Registrations (All)</strong> &mdash; <code>member_journey.journey_status_registered_count</code> (Cube) &nbsp;&middot;&nbsp;
+  <strong>Registrations (Campaign filter)</strong> &mdash; 30-day last-touch attribution via <code>dw_marts.marketing_events</code> + <code>dw_marts.journey_status</code> (non-governed)
 </div>
 
 <script>
-const FUNNEL_DATA = [{"month": "Jul 2024", "avg_els": 2775911, "unique_touched": 245251, "touchpoints": 245701, "lp_starts": 12087, "reg_starts": 2754, "registrations": 1112}, {"month": "Aug 2024", "avg_els": 2821243, "unique_touched": 241237, "touchpoints": 214488, "lp_starts": 10307, "reg_starts": 2456, "registrations": 352}, {"month": "Sep 2024", "avg_els": 2868642, "unique_touched": 334587, "touchpoints": 521301, "lp_starts": 14354, "reg_starts": 2065, "registrations": 527}, {"month": "Oct 2024", "avg_els": 2865783, "unique_touched": 286098, "touchpoints": 539549, "lp_starts": 11039, "reg_starts": 2217, "registrations": 575}, {"month": "Nov 2024", "avg_els": 2900555, "unique_touched": 813271, "touchpoints": 1368211, "lp_starts": 20554, "reg_starts": 5520, "registrations": 901}, {"month": "Dec 2024", "avg_els": 3367642, "unique_touched": 459819, "touchpoints": 719629, "lp_starts": 13375, "reg_starts": 3247, "registrations": 823}, {"month": "Jan 2025", "avg_els": 3692627, "unique_touched": 710478, "touchpoints": 1220546, "lp_starts": 25067, "reg_starts": 14256, "registrations": 2569}, {"month": "Feb 2025", "avg_els": 3792072, "unique_touched": 292076, "touchpoints": 326834, "lp_starts": 4894, "reg_starts": 2710, "registrations": 867}, {"month": "Mar 2025", "avg_els": 3940793, "unique_touched": 614250, "touchpoints": 1150460, "lp_starts": 16465, "reg_starts": 2921, "registrations": 865}, {"month": "Apr 2025", "avg_els": 3849823, "unique_touched": 422378, "touchpoints": 849089, "lp_starts": 15587, "reg_starts": 4913, "registrations": 1552}, {"month": "May 2025", "avg_els": 3259445, "unique_touched": 552595, "touchpoints": 783859, "lp_starts": 6124, "reg_starts": 4157, "registrations": 1080}, {"month": "Jun 2025", "avg_els": 3931432, "unique_touched": 366334, "touchpoints": 825626, "lp_starts": 7152, "reg_starts": 3541, "registrations": 1059}, {"month": "Jul 2025", "avg_els": 3944917, "unique_touched": 329640, "touchpoints": 723446, "lp_starts": 8423, "reg_starts": 2351, "registrations": 742}, {"month": "Aug 2025", "avg_els": 3962264, "unique_touched": 186888, "touchpoints": 365103, "lp_starts": 17661, "reg_starts": 3965, "registrations": 950}, {"month": "Sep 2025", "avg_els": 3963199, "unique_touched": 633583, "touchpoints": 997404, "lp_starts": 8239, "reg_starts": 5083, "registrations": 1833}, {"month": "Oct 2025", "avg_els": 4443612, "unique_touched": 218969, "touchpoints": 561809, "lp_starts": 28479, "reg_starts": 3722, "registrations": 1354}, {"month": "Nov 2025", "avg_els": 4487500, "unique_touched": 602743, "touchpoints": 769480, "lp_starts": 43760, "reg_starts": 2787, "registrations": 1051}, {"month": "Dec 2025", "avg_els": 4082574, "unique_touched": 717034, "touchpoints": 1323867, "lp_starts": 48562, "reg_starts": 3983, "registrations": 1517}, {"month": "Jan 2026", "avg_els": 4048729, "unique_touched": 492742, "touchpoints": 1496985, "lp_starts": 48039, "reg_starts": 5442, "registrations": 2286}, {"month": "Feb 2026", "avg_els": 4034626, "unique_touched": 698474, "touchpoints": 1299469, "lp_starts": 15238, "reg_starts": 3630, "registrations": 1420}, {"month": "Mar 2026", "avg_els": 3994797, "unique_touched": 650510, "touchpoints": 1583880, "lp_starts": 8492, "reg_starts": 6009, "registrations": 1513}, {"month": "Apr 2026", "avg_els": 4037279, "unique_touched": 824743, "touchpoints": 1238166, "lp_starts": 9122, "reg_starts": 4666, "registrations": 1789}, {"month": "May 2026", "avg_els": 3960005, "unique_touched": 661830, "touchpoints": 1035420, "lp_starts": 10286, "reg_starts": 5196, "registrations": 1949}, {"month": "Jun 2026", "avg_els": 3961012, "unique_touched": 845322, "touchpoints": 1560711, "lp_starts": 21424, "reg_starts": 5380, "registrations": 2007}];
+const FUNNEL_DATA = [{"month": "Jul 2024", "dos": "2024-07-01", "avg_els": 2775911, "unique_touched": 245251, "touchpoints": 245701, "lp_starts": 12087, "reg_starts": 2754, "registrations": 1112}, {"month": "Aug 2024", "dos": "2024-08-01", "avg_els": 2821243, "unique_touched": 241237, "touchpoints": 214488, "lp_starts": 10307, "reg_starts": 2456, "registrations": 352}, {"month": "Sep 2024", "dos": "2024-09-01", "avg_els": 2868642, "unique_touched": 334587, "touchpoints": 521301, "lp_starts": 14354, "reg_starts": 2065, "registrations": 527}, {"month": "Oct 2024", "dos": "2024-10-01", "avg_els": 2865783, "unique_touched": 286098, "touchpoints": 539549, "lp_starts": 11039, "reg_starts": 2217, "registrations": 575}, {"month": "Nov 2024", "dos": "2024-11-01", "avg_els": 2900555, "unique_touched": 813271, "touchpoints": 1368211, "lp_starts": 20554, "reg_starts": 5520, "registrations": 901}, {"month": "Dec 2024", "dos": "2024-12-01", "avg_els": 3367642, "unique_touched": 459819, "touchpoints": 719629, "lp_starts": 13375, "reg_starts": 3247, "registrations": 823}, {"month": "Jan 2025", "dos": "2025-01-01", "avg_els": 3692627, "unique_touched": 710478, "touchpoints": 1220546, "lp_starts": 25067, "reg_starts": 14256, "registrations": 2569}, {"month": "Feb 2025", "dos": "2025-02-01", "avg_els": 3792072, "unique_touched": 292076, "touchpoints": 326834, "lp_starts": 4894, "reg_starts": 2710, "registrations": 867}, {"month": "Mar 2025", "dos": "2025-03-01", "avg_els": 3940793, "unique_touched": 614250, "touchpoints": 1150460, "lp_starts": 16465, "reg_starts": 2921, "registrations": 865}, {"month": "Apr 2025", "dos": "2025-04-01", "avg_els": 3849823, "unique_touched": 422378, "touchpoints": 849089, "lp_starts": 15587, "reg_starts": 4913, "registrations": 1552}, {"month": "May 2025", "dos": "2025-05-01", "avg_els": 3259445, "unique_touched": 552595, "touchpoints": 783859, "lp_starts": 6124, "reg_starts": 4157, "registrations": 1080}, {"month": "Jun 2025", "dos": "2025-06-01", "avg_els": 3931432, "unique_touched": 366334, "touchpoints": 825626, "lp_starts": 7152, "reg_starts": 3541, "registrations": 1059}, {"month": "Jul 2025", "dos": "2025-07-01", "avg_els": 3944917, "unique_touched": 329640, "touchpoints": 723446, "lp_starts": 8423, "reg_starts": 2351, "registrations": 742}, {"month": "Aug 2025", "dos": "2025-08-01", "avg_els": 3962264, "unique_touched": 186888, "touchpoints": 365103, "lp_starts": 17661, "reg_starts": 3965, "registrations": 950}, {"month": "Sep 2025", "dos": "2025-09-01", "avg_els": 3963199, "unique_touched": 633583, "touchpoints": 997404, "lp_starts": 8239, "reg_starts": 5083, "registrations": 1833}, {"month": "Oct 2025", "dos": "2025-10-01", "avg_els": 4443612, "unique_touched": 218969, "touchpoints": 561809, "lp_starts": 28479, "reg_starts": 3722, "registrations": 1354}, {"month": "Nov 2025", "dos": "2025-11-01", "avg_els": 4487500, "unique_touched": 602743, "touchpoints": 769480, "lp_starts": 43760, "reg_starts": 2787, "registrations": 1051}, {"month": "Dec 2025", "dos": "2025-12-01", "avg_els": 4082574, "unique_touched": 717034, "touchpoints": 1323867, "lp_starts": 48562, "reg_starts": 3983, "registrations": 1517}, {"month": "Jan 2026", "dos": "2026-01-01", "avg_els": 4048729, "unique_touched": 492742, "touchpoints": 1496985, "lp_starts": 48039, "reg_starts": 5442, "registrations": 2286}, {"month": "Feb 2026", "dos": "2026-02-01", "avg_els": 4034626, "unique_touched": 698474, "touchpoints": 1299469, "lp_starts": 15238, "reg_starts": 3630, "registrations": 1420}, {"month": "Mar 2026", "dos": "2026-03-01", "avg_els": 3994797, "unique_touched": 650510, "touchpoints": 1583880, "lp_starts": 8492, "reg_starts": 6009, "registrations": 1513}, {"month": "Apr 2026", "dos": "2026-04-01", "avg_els": 4037279, "unique_touched": 824743, "touchpoints": 1238166, "lp_starts": 9122, "reg_starts": 4666, "registrations": 1789}, {"month": "May 2026", "dos": "2026-05-01", "avg_els": 3960005, "unique_touched": 661830, "touchpoints": 1035420, "lp_starts": 10286, "reg_starts": 5196, "registrations": 1949}, {"month": "Jun 2026", "dos": "2026-06-01", "avg_els": 3961012, "unique_touched": 845322, "touchpoints": 1560711, "lp_starts": 21424, "reg_starts": 5380, "registrations": 2007}];
+const ATTRIBUTION_DATA = [["2024-07-01", "Unattributed", 900], ["2024-07-01", "WYNTK", 193], ["2024-07-01", "Surcharge", 11], ["2024-07-01", "Launch", 6], ["2024-07-01", "SMS", 2], ["2024-08-01", "Unattributed", 275], ["2024-08-01", "SUMPH", 39], ["2024-08-01", "WYNTK", 17], ["2024-08-01", "Launch", 13], ["2024-08-01", "Surcharge", 8], ["2024-09-01", "Unattributed", 366], ["2024-09-01", "SUMPH", 149], ["2024-09-01", "Launch", 12], ["2024-10-01", "Unattributed", 369], ["2024-10-01", "SUMPH", 191], ["2024-10-01", "Launch", 15], ["2024-11-01", "KWTSW", 455], ["2024-11-01", "Unattributed", 410], ["2024-11-01", "SUMPH", 32], ["2024-11-01", "Launch", 4], ["2024-12-01", "Unattributed", 432], ["2024-12-01", "KWTSW", 219], ["2024-12-01", "31AD", 141], ["2024-12-01", "Launch", 31], ["2025-01-01", "Unattributed", 1256], ["2025-01-01", "31AD", 704], ["2025-01-01", "Surcharge", 338], ["2025-01-01", "Launch", 110], ["2025-01-01", "CTA", 102], ["2025-01-01", "ClearTheAir", 31], ["2025-01-01", "Incentive", 13], ["2025-01-01", "DryJan", 10], ["2025-01-01", "KWTSW", 5], ["2025-02-01", "Unattributed", 558], ["2025-02-01", "Surcharge", 129], ["2025-02-01", "31AD", 91], ["2025-02-01", "Launch", 70], ["2025-02-01", "PM", 6], ["2025-02-01", "CTA", 5], ["2025-02-01", "DryJan", 4], ["2025-02-01", "ClearTheAir", 2], ["2025-02-01", "Incentive", 2], ["2025-03-01", "Unattributed", 485], ["2025-03-01", "SSN", 156], ["2025-03-01", "Launch", 94], ["2025-03-01", "Surcharge", 69], ["2025-03-01", "31AD", 56], ["2025-03-01", "PM", 5], ["2025-04-01", "Unattributed", 637], ["2025-04-01", "SSN", 626], ["2025-04-01", "Surcharge", 244], ["2025-04-01", "Launch", 44], ["2025-04-01", "Postcard", 1], ["2025-05-01", "Unattributed", 586], ["2025-05-01", "SSN", 150], ["2025-05-01", "Surcharge", 124], ["2025-05-01", "Challenge", 92], ["2025-05-01", "Launch", 53], ["2025-05-01", "Postcard", 39], ["2025-05-01", "PM", 27], ["2025-05-01", "Incentive", 4], ["2025-05-01", "Multi", 3], ["2025-05-01", "STRESS", 2], ["2025-06-01", "Unattributed", 369], ["2025-06-01", "Multi", 352], ["2025-06-01", "SS", 184], ["2025-06-01", "Incentive", 87], ["2025-06-01", "Surcharge", 38], ["2025-06-01", "Launch", 18], ["2025-06-01", "SSN", 6], ["2025-06-01", "PM", 5], ["2025-07-01", "Unattributed", 383], ["2025-07-01", "SS", 149], ["2025-07-01", "Launch", 116], ["2025-07-01", "Multi", 45], ["2025-07-01", "Webinar Invite", 30], ["2025-07-01", "Surcharge", 19], ["2025-08-01", "Unattributed", 471], ["2025-08-01", "Challenge", 149], ["2025-08-01", "Surcharge", 137], ["2025-08-01", "Launch", 111], ["2025-08-01", "PM", 52], ["2025-08-01", "Webinar Invite", 17], ["2025-08-01", "SS", 11], ["2025-08-01", "Incentive", 2], ["2025-09-01", "SOBOCT", 845], ["2025-09-01", "Unattributed", 450], ["2025-09-01", "Webinar Invite", 406], ["2025-09-01", "STOP", 61], ["2025-09-01", "Launch", 29], ["2025-09-01", "Surcharge", 16], ["2025-09-01", "Incentive", 10], ["2025-09-01", "PM", 8], ["2025-09-01", "Challenge", 5], ["2025-09-01", "FAM", 3], ["2025-10-01", "Unattributed", 645], ["2025-10-01", "SOBOCT", 583], ["2025-10-01", "STOP", 114], ["2025-10-01", "FAM", 11], ["2025-10-01", "Surcharge", 1], ["2025-11-01", "Unattributed", 598], ["2025-11-01", "RCFRL", 337], ["2025-11-01", "Incentive", 43], ["2025-11-01", "Launch", 30], ["2025-11-01", "SOBOCT", 29], ["2025-11-01", "STOP", 14], ["2025-12-01", "Unattributed", 493], ["2025-12-01", "DRYJAN", 363], ["2025-12-01", "RCFRL", 359], ["2025-12-01", "Incentive", 281], ["2025-12-01", "Launch", 21], ["2026-01-01", "Unattributed", 1058], ["2026-01-01", "DRYJAN", 880], ["2026-01-01", "RCFRL", 173], ["2026-01-01", "CTA", 118], ["2026-01-01", "Launch", 31], ["2026-01-01", "Incentive", 24], ["2026-01-01", "Surcharge", 2], ["2026-02-01", "Unattributed", 462], ["2026-02-01", "Launch", 265], ["2026-02-01", "PM", 251], ["2026-02-01", "DRYJAN", 218], ["2026-02-01", "Surcharge", 192], ["2026-02-01", "Challenge", 23], ["2026-02-01", "CTA", 9], ["2026-03-01", "Challenge", 476], ["2026-03-01", "Unattributed", 445], ["2026-03-01", "Launch", 260], ["2026-03-01", "PM", 130], ["2026-03-01", "Surcharge", 80], ["2026-03-01", "Incentive", 75], ["2026-03-01", "DRYJAN", 28], ["2026-03-01", "SL2026", 20], ["2026-04-01", "Unattributed", 658], ["2026-04-01", "Incentive", 639], ["2026-04-01", "Launch", 160], ["2026-04-01", "SL2026", 118], ["2026-04-01", "SSN", 106], ["2026-04-01", "Surcharge", 69], ["2026-04-01", "Challenge", 39], ["2026-05-01", "Incentive", 679], ["2026-05-01", "Unattributed", 513], ["2026-05-01", "Launch", 442], ["2026-05-01", "SL2026", 163], ["2026-05-01", "SSN", 102], ["2026-05-01", "NE", 28], ["2026-05-01", "Surcharge", 22], ["2026-06-01", "Incentive", 1182], ["2026-06-01", "Unattributed", 409], ["2026-06-01", "NE", 110], ["2026-06-01", "DJ2026", 105], ["2026-06-01", "HL2026", 92], ["2026-06-01", "Launch", 69], ["2026-06-01", "SL2026", 28], ["2026-06-01", "PM", 6], ["2026-06-01", "SSN", 6]];
+const ALL_CAMPAIGNS = ["31AD", "CTA", "Challenge", "ClearTheAir", "DJ2026", "DRYJAN", "DryJan", "FAM", "HL2026", "Incentive", "KWTSW", "Launch", "Multi", "NE", "PM", "Postcard", "RCFRL", "SL2026", "SMS", "SOBOCT", "SS", "SSN", "STOP", "STRESS", "SUMPH", "Surcharge", "WYNTK", "Webinar Invite", "Unattributed"];
+
+// Build attribution lookup: {dos: {campaign: count}}
+const attrLookup = {};
+ATTRIBUTION_DATA.forEach(([dos, cg, n]) => {
+  if (!attrLookup[dos]) attrLookup[dos] = {};
+  attrLookup[dos][cg] = n;
+});
 
 function fmt(n){if(n==null||isNaN(n))return'&mdash;';return Number(n).toLocaleString();}
 function pct(n){if(n==null||isNaN(n)||!isFinite(n))return'<span class="null-cell">&mdash;</span>';return'<span class="pct">'+(n*100).toFixed(1)+'%</span>';}
 function ratio(n){if(n==null||isNaN(n)||!isFinite(n))return'<span class="null-cell">&mdash;</span>';return'<span class="pct">'+n.toFixed(2)+'</span>';}
 
 function render(){
-  const tbody=document.getElementById('funnel-body');
-  tbody.innerHTML='';
-  const rows=[...FUNNEL_DATA].reverse();
-  rows.forEach(r=>{
-    const ut=r.unique_touched,tp=r.touchpoints,lp=r.lp_starts,rs=r.reg_starts,reg=r.registrations;
-    const tr=document.createElement('tr');
-    tr.innerHTML=
+  const campaign = document.getElementById('campaign-sel').value;
+  const note = document.getElementById('campaign-note');
+  const desc = document.getElementById('section-desc');
+  const regHdr = document.getElementById('reg-header');
+
+  if (campaign) {
+    note.className = 'campaign-note visible';
+    desc.textContent = 'Rows = DOS month · Newest first · Registrations = 30-day last-touch attributed to: ' + campaign;
+    regHdr.textContent = 'Regs (attributed)';
+  } else {
+    note.className = 'campaign-note';
+    desc.textContent = "Rows = DOS month · Newest first · All data from Cube’s governed semantic layer";
+    regHdr.textContent = 'Registrations';
+  }
+
+  const tbody = document.getElementById('funnel-body');
+  tbody.innerHTML = '';
+  const rows = [...FUNNEL_DATA].reverse();
+  rows.forEach(r => {
+    const ut = r.unique_touched, tp = r.touchpoints, lp = r.lp_starts, rs = r.reg_starts;
+    let reg;
+    if (campaign) {
+      reg = (attrLookup[r.dos] && attrLookup[r.dos][campaign]) || 0;
+    } else {
+      reg = r.registrations;
+    }
+    const regClass = campaign ? ' class="reg-attributed"' : '';
+    const tr = document.createElement('tr');
+    tr.innerHTML =
       '<td class="left">'+r.month+'</td>'+
       '<td>'+fmt(r.avg_els)+'</td>'+
       '<td>'+fmt(ut)+'</td>'+
@@ -109,15 +188,25 @@ function render(){
       '<td>'+fmt(rs)+'</td>'+
       '<td>'+pct(rs/ut)+'</td>'+
       '<td>'+pct(rs/lp)+'</td>'+
-      '<td>'+fmt(reg)+'</td>'+
+      '<td'+regClass+'>'+fmt(reg)+'</td>'+
       '<td>'+pct(reg/ut)+'</td>'+
       '<td>'+pct(reg/rs)+'</td>';
     tbody.appendChild(tr);
   });
 }
 
-document.getElementById('refreshed-badge').textContent=
-  'Last refreshed: '+new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+// Populate campaign dropdown
+const sel = document.getElementById('campaign-sel');
+ALL_CAMPAIGNS.forEach(c => {
+  const opt = document.createElement('option');
+  opt.value = c;
+  opt.textContent = c;
+  sel.appendChild(opt);
+});
+
+document.getElementById('refreshed-badge').textContent =
+  'Last refreshed: ' + new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+
 render();
 </script>
 </body>
