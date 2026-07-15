@@ -117,22 +117,24 @@ td.sub{font-size:11px;color:#666;}
         <tr>
           <th class="col-label gh-lbl" rowspan="2" style="min-width:110px;">Launch Year</th>
           <th colspan="3" class="gh-cy">CY 2026 YTD</th>
-          <th colspan="2" class="gh-py">PY 2025 YTD</th>
-          <th colspan="2" class="gh-yoy">YOY &#916;</th>
+          <th colspan="3" class="gh-py">PY 2025 YTD</th>
+          <th colspan="3" class="gh-yoy">YOY &#916;</th>
         </tr>
         <tr>
           <th class="gh-cy">ELs</th>
           <th class="gh-cy">Billable Rev</th>
           <th class="gh-cy">BR$/EL</th>
+          <th class="gh-py">ELs</th>
           <th class="gh-py">Billable Rev</th>
-          <th class="gh-py">BR$/EL*</th>
+          <th class="gh-py">BR$/EL</th>
+          <th class="gh-yoy">ELs &#916;</th>
           <th class="gh-yoy">BR &#916;</th>
           <th class="gh-yoy">BR$/EL &#916;</th>
         </tr>
       </thead>
       <tbody id="tLY"></tbody>
     </table></div>
-    <div class="sn">Source: Cube &#183; billing + client_profile (governed) &#183; *PY BR$/EL uses current ELs as denominator</div>
+    <div class="sn">Source: Cube &#183; billing + client_profile (governed) &#183; ELs from eligibility_member_snapshots (Jun 2026 / Jun 2025)</div>
   </div>
 
   <!-- Partner -->
@@ -143,22 +145,24 @@ td.sub{font-size:11px;color:#666;}
         <tr>
           <th class="col-label gh-lbl" rowspan="2" style="min-width:140px;">Partner</th>
           <th colspan="3" class="gh-cy">CY 2026 YTD</th>
-          <th colspan="2" class="gh-py">PY 2025 YTD</th>
-          <th colspan="2" class="gh-yoy">YOY &#916;</th>
+          <th colspan="3" class="gh-py">PY 2025 YTD</th>
+          <th colspan="3" class="gh-yoy">YOY &#916;</th>
         </tr>
         <tr>
           <th class="gh-cy">ELs</th>
           <th class="gh-cy">Billable Rev</th>
           <th class="gh-cy">BR$/EL</th>
+          <th class="gh-py">ELs</th>
           <th class="gh-py">Billable Rev</th>
-          <th class="gh-py">BR$/EL*</th>
+          <th class="gh-py">BR$/EL</th>
+          <th class="gh-yoy">ELs &#916;</th>
           <th class="gh-yoy">BR &#916;</th>
           <th class="gh-yoy">BR$/EL &#916;</th>
         </tr>
       </thead>
       <tbody id="tPar"></tbody>
     </table></div>
-    <div class="sn">Source: Cube &#183; billing + client_profile (governed) &#183; *PY BR$/EL uses current ELs as denominator</div>
+    <div class="sn">Source: Cube &#183; billing + client_profile (governed) &#183; ELs from eligibility_member_snapshots (Jun 2026 / Jun 2025)</div>
   </div>
 
   <!-- Client -->
@@ -170,15 +174,17 @@ td.sub{font-size:11px;color:#666;}
           <th class="col-label gh-lbl" rowspan="2" style="min-width:190px;">Client / Employer</th>
           <th class="col-label gh-lbl" rowspan="2" style="min-width:110px;">Partner</th>
           <th colspan="3" class="gh-cy">CY 2026 YTD</th>
-          <th colspan="2" class="gh-py">PY 2025 YTD</th>
-          <th colspan="2" class="gh-yoy">YOY &#916;</th>
+          <th colspan="3" class="gh-py">PY 2025 YTD</th>
+          <th colspan="3" class="gh-yoy">YOY &#916;</th>
         </tr>
         <tr>
           <th class="gh-cy">ELs</th>
           <th class="gh-cy">Billable Rev</th>
           <th class="gh-cy">BR$/EL</th>
+          <th class="gh-py">ELs</th>
           <th class="gh-py">Billable Rev</th>
-          <th class="gh-py">BR$/EL*</th>
+          <th class="gh-py">BR$/EL</th>
+          <th class="gh-yoy">ELs &#916;</th>
           <th class="gh-yoy">BR &#916;</th>
           <th class="gh-yoy">BR$/EL &#916;</th>
         </tr>
@@ -299,7 +305,7 @@ function fN(v){if(!v&&v!==0)return D;const n=Math.abs(v);return n===0?D:n.toLoca
 function fPE(ir,el){if(!el||!ir)return D;return"$"+(ir/el).toFixed(2);}
 function fD$(v){if(v==null||isNaN(v))return D;const cl=v>0?"pos":v<0?"neg":"zer";const s=v>=0?"+":"&#8722;";return`<span class="${cl}">${s}$${Math.abs(v).toLocaleString("en-US",{maximumFractionDigits:0})}</span>`;}
 function fDN(v){if(v==null||isNaN(v))return D;const cl=v>0?"pos":v<0?"neg":"zer";const s=v>=0?"+":"&#8722;";return`<span class="${cl}">${s}${Math.abs(v).toLocaleString("en-US")}</span>`;}
-function fDPE(cyIR,pyIR,el){if(!el||!cyIR||!pyIR)return D;const d=(cyIR-pyIR)/el;const cl=d>0?"pos":d<0?"neg":"zer";const s=d>=0?"+":"&#8722;";return`<span class="${cl}">${s}$${Math.abs(d).toFixed(2)}</span>`;}
+function fDPE(cyIR,pyIR,el){if(!el||!cyIR||!pyIR)return D;const d=cyIR/el-pyIR/el;const cl=d>0?"pos":d<0?"neg":"zer";const s=d>=0?"+":"&#8722;";return`<span class="${cl}">${s}$${Math.abs(d).toFixed(2)}</span>`;}
 
 // ─── Monthly render ───────────────────────────────────────────
 function fMon(data,q){if(q==="all")return data;return data.filter((_,i)=>(QI[q]||[]).includes(i));}
@@ -349,13 +355,13 @@ function renderGrouped(rows,tbodyId,countId,groupFn,isYear){
     h+=`<tr>
       <td class="lbl">${g}</td>
       <td class="num cy">${fN(d.el)||D}</td><td class="num cy">${f$(d.cyIR)}</td><td class="num cy">${fPE(d.cyIR,d.el)}</td>
-      <td class="num py">${d.pyIR?f$(d.pyIR):D}</td><td class="num py">${fPE(d.pyIR,d.pyEl)}</td>
-      <td class="num yoy">${d.pyIR?fD$(yir):D}</td><td class="num yoy">${d.pyIR&&d.el?fDPE(d.cyIR,d.pyIR,d.el):D}</td>
+      <td class="num py">${d.pyEl?fN(d.pyEl):D}</td><td class="num py">${d.pyIR?f$(d.pyIR):D}</td><td class="num py">${fPE(d.pyIR,d.pyEl)}</td>
+      <td class="num yoy">${(d.el&&d.pyEl)?fDN(d.el-d.pyEl):D}</td><td class="num yoy">${d.pyIR?fD$(yir):D}</td><td class="num yoy">${(d.pyIR&&d.pyEl)?fDPE(d.cyIR,d.pyIR,d.pyEl):D}</td>
     </tr>`;}
   h+=`<tr class="tot"><td class="lbl">Total</td>
     <td class="num cy">${fN(te)||D}</td><td class="num cy">${f$(tc)}</td><td class="num cy">${fPE(tc,te)}</td>
-    <td class="num py">${f$(tp)}</td><td class="num py">${fPE(tp,tpe)}</td>
-    <td class="num yoy">${fD$(tc-tp)}</td><td class="num yoy">${te?fDPE(tc,tp,te):D}</td>
+    <td class="num py">${tpe?fN(tpe):D}</td><td class="num py">${f$(tp)}</td><td class="num py">${fPE(tp,tpe)}</td>
+    <td class="num yoy">${(te&&tpe)?fDN(te-tpe):D}</td><td class="num yoy">${fD$(tc-tp)}</td><td class="num yoy">${(tp&&tpe)?fDPE(tc,tp,tpe):D}</td>
   </tr>`;
   document.getElementById(tbodyId).innerHTML=h;
   document.getElementById(countId).textContent=`${keys.length} groups`;
@@ -375,13 +381,13 @@ function renderClient(rows){
     h+=`<tr>
       <td class="lbl">${r.employer}</td><td class="lbl sub">${r.partner}</td>
       <td class="num cy">${fN(r.el)||D}</td><td class="num cy">${f$(r.cyIR)}</td><td class="num cy">${fPE(r.cyIR,r.el)}</td>
-      <td class="num py">${r.pyIR?f$(r.pyIR):D}</td><td class="num py">${fPE(r.pyIR,r.pyEl)}</td>
-      <td class="num yoy">${r.pyIR?fD$(yir):D}</td><td class="num yoy">${r.pyIR&&r.el?fDPE(r.cyIR,r.pyIR,r.el):D}</td>
+      <td class="num py">${r.pyEl?fN(r.pyEl):D}</td><td class="num py">${r.pyIR?f$(r.pyIR):D}</td><td class="num py">${fPE(r.pyIR,r.pyEl)}</td>
+      <td class="num yoy">${(r.el&&r.pyEl)?fDN(r.el-r.pyEl):D}</td><td class="num yoy">${r.pyIR?fD$(yir):D}</td><td class="num yoy">${(r.pyIR&&r.pyEl)?fDPE(r.cyIR,r.pyIR,r.pyEl):D}</td>
     </tr>`;}
   h+=`<tr class="tot"><td class="lbl">Total</td><td></td>
     <td class="num cy">${fN(te)||D}</td><td class="num cy">${f$(tc)}</td><td class="num cy">${fPE(tc,te)}</td>
-    <td class="num py">${f$(tp)}</td><td class="num py">${fPE(tp,tpe)}</td>
-    <td class="num yoy">${fD$(tc-tp)}</td><td class="num yoy">${te?fDPE(tc,tp,te):D}</td>
+    <td class="num py">${tpe?fN(tpe):D}</td><td class="num py">${f$(tp)}</td><td class="num py">${fPE(tp,tpe)}</td>
+    <td class="num yoy">${(te&&tpe)?fDN(te-tpe):D}</td><td class="num yoy">${fD$(tc-tp)}</td><td class="num yoy">${(tp&&tpe)?fDPE(tc,tp,tpe):D}</td>
   </tr>`;
   document.getElementById("tCli").innerHTML=h;
   document.getElementById("cCnt").textContent=`${mapped.length} clients`;
