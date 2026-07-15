@@ -85,19 +85,17 @@ td.sub{font-size:11px;color:#666;}
       <thead>
         <tr>
           <th class="col-label gh-lbl" rowspan="2" style="min-width:140px;">Month (CY / PY)</th>
-          <th colspan="5" class="gh-cy">CY 2026</th>
-          <th colspan="5" class="gh-py">PY 2025</th>
+          <th colspan="4" class="gh-cy">CY 2026</th>
+          <th colspan="4" class="gh-py">PY 2025</th>
           <th colspan="4" class="gh-yoy">YOY &#916;</th>
         </tr>
         <tr>
           <th class="gh-cy">Total IR</th>
           <th class="gh-cy">Renewal IR</th>
-          <th class="gh-cy">Mktable HHs</th>
           <th class="gh-cy">Touchpoints</th>
           <th class="gh-cy">Registrations</th>
           <th class="gh-py">Total IR</th>
           <th class="gh-py">Renewal IR</th>
-          <th class="gh-py">Mktable HHs</th>
           <th class="gh-py">Touchpoints</th>
           <th class="gh-py">Registrations</th>
           <th class="gh-yoy">IR &#916;</th>
@@ -313,13 +311,13 @@ function renderMonthly(f){
     tctp+=c.tp||0;tptp+=p.tp||0;tcrg+=c.reg||0;tprg+=p.reg||0;
     h+=`<tr>
       <td class="lbl">${c.m||""}&nbsp;/&nbsp;${p.m||""}</td>
-      <td class="num cy">${f$(c.ir)}</td><td class="num cy">${f$(c.ren)}</td><td class="num cy">${fN(c.hhs)}</td><td class="num cy">${fN(c.tp)}</td><td class="num cy">${fN(c.reg)}</td>
-      <td class="num py">${f$(p.ir)}</td><td class="num py">${f$(p.ren)}</td><td class="num py">${fN(p.hhs)}</td><td class="num py">${fN(p.tp)}</td><td class="num py">${fN(p.reg)}</td>
+      <td class="num cy">${f$(c.ir)}</td><td class="num cy">${f$(c.ren)}</td><td class="num cy">${fN(c.tp)}</td><td class="num cy">${fN(c.reg)}</td>
+      <td class="num py">${f$(p.ir)}</td><td class="num py">${f$(p.ren)}</td><td class="num py">${fN(p.tp)}</td><td class="num py">${fN(p.reg)}</td>
       <td class="num yoy">${fD$((c.ir||0)-(p.ir||0))}</td><td class="num yoy">${fD$((c.ren||0)-(p.ren||0))}</td><td class="num yoy">${fDN((c.tp||0)-(p.tp||0))}</td><td class="num yoy">${fDN((c.reg||0)-(p.reg||0))}</td>
     </tr>`;}
   h+=`<tr class="tot"><td class="lbl">Total</td>
-    <td class="num cy">${f$(tci)}</td><td class="num cy">${f$(tcr)}</td><td class="num cy">${fN(0)}</td><td class="num cy">${fN(tctp)}</td><td class="num cy">${fN(tcrg)}</td>
-    <td class="num py">${f$(tpi)}</td><td class="num py">${f$(tpr)}</td><td class="num cy">${fN(0)}</td><td class="num py">${fN(tptp)}</td><td class="num py">${fN(tprg)}</td>
+    <td class="num cy">${f$(tci)}</td><td class="num cy">${f$(tcr)}</td><td class="num cy">${fN(tctp)}</td><td class="num cy">${fN(tcrg)}</td>
+    <td class="num py">${f$(tpi)}</td><td class="num py">${f$(tpr)}</td><td class="num py">${fN(tptp)}</td><td class="num py">${fN(tprg)}</td>
     <td class="num yoy">${fD$(tci-tpi)}</td><td class="num yoy">${fD$(tcr-tpr)}</td><td class="num yoy">${fDN(tctp-tptp)}</td><td class="num yoy">${fDN(tcrg-tprg)}</td>
   </tr>`;
   document.getElementById("tMon").innerHTML=h;
