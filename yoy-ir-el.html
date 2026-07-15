@@ -197,22 +197,22 @@ td.sub{font-size:11px;color:#666;}
 </div>
 <script>
 const MONTHLY_CY=[
-  {m:"Jan-26",ir:5316748.55,ren:364593.57,mem:3247,hhs:0,tp:1740572,reg:2469},
-  {m:"Feb-26",ir:2948372.20,ren:246407.99,mem:2305,hhs:6724,tp:1121834,reg:1548},
-  {m:"Mar-26",ir:3773445.02,ren:594156.90,mem:2570,hhs:0,tp:1832248,reg:1622},
-  {m:"Apr-26",ir:4251125.99,ren:295716.92,mem:2847,hhs:11655,tp:912885,reg:1886},
-  {m:"May-26",ir:7508930.65,ren:2738753.82,mem:4140,hhs:0,tp:1235161,reg:2082},
-  {m:"Jun-26",ir:5698825.21,ren:663854.09,mem:3220,hhs:399298,tp:1603023,reg:2169},
-  {m:"Jul-26",ir:1811643.39,ren:103857.62,mem:1269,hhs:3350949,tp:846735,reg:756}
+  {m:"Jan-26",ir:5316748.55,ren:364593.57,el:4048729,tp:1740572,reg:2469},
+  {m:"Feb-26",ir:2948372.20,ren:246407.99,el:4034626,tp:1121834,reg:1548},
+  {m:"Mar-26",ir:3773445.02,ren:594156.90,el:3994797,tp:1832248,reg:1622},
+  {m:"Apr-26",ir:4251125.99,ren:295716.92,el:4037279,tp:912885,reg:1886},
+  {m:"May-26",ir:7508930.65,ren:2738753.82,el:3960005,tp:1235161,reg:2082},
+  {m:"Jun-26",ir:5698825.21,ren:663854.09,el:3961012,tp:1603023,reg:2169},
+  {m:"Jul-26",ir:1811643.39,ren:103857.62,el:3560005,tp:846735,reg:756}
 ];
 const MONTHLY_PY=[
-  {m:"Jan-25",ir:4179035.30,ren:123373.74,mem:3113,hhs:192,tp:1130016,reg:2736},
-  {m:"Feb-25",ir:1416403.03,ren:247415.45,mem:1626,hhs:0,tp:413207,reg:932},
-  {m:"Mar-25",ir:1444875.44,ren:232794.24,mem:1540,hhs:229,tp:1043239,reg:899},
-  {m:"Apr-25",ir:2318894.43,ren:107781.02,mem:2055,hhs:2373,tp:1067626,reg:1618},
-  {m:"May-25",ir:1961778.14,ren:229294.10,mem:1582,hhs:0,tp:532021,reg:1188},
-  {m:"Jun-25",ir:2335935.50,ren:444603.78,mem:1756,hhs:0,tp:1140158,reg:1301},
-  {m:"Jul-25",ir:1008964.84,ren:106877.29,mem:801,hhs:0,tp:620419,reg:514}
+  {m:"Jan-25",ir:4179035.30,ren:123373.74,el:3692627,tp:1130016,reg:2736},
+  {m:"Feb-25",ir:1416403.03,ren:247415.45,el:3792072,tp:413207,reg:932},
+  {m:"Mar-25",ir:1444875.44,ren:232794.24,el:3940793,tp:1043239,reg:899},
+  {m:"Apr-25",ir:2318894.43,ren:107781.02,el:3849823,tp:1067626,reg:1618},
+  {m:"May-25",ir:1961778.14,ren:229294.10,el:3259445,tp:532021,reg:1188},
+  {m:"Jun-25",ir:2335935.50,ren:444603.78,el:3931432,tp:1140158,reg:1301},
+  {m:"Jul-25",ir:1008964.84,ren:106877.29,el:3944917,tp:620419,reg:514}
 ];
 const PY_EL_PARENT={"Amazon":895050,"Alight":665857,"Guardian":650404,"Cambia":337599,"Express Scripts":291975,"ADUSA Services":208368,"MPI":179485,"Curative":115401,"Securitas":86230,"Southern Company":56534,"Lumen":35577,"CVS Health":33301,"CACI":31204,"Bimbo Bakeries USA (BBU, Inc.)":30762,"Stanley Black & Decker":27564,"CNH Industrial":26441,"HPE":25026,"Corning":24534,"Philips":22854,"Tractor Supply Company":22246,"7-Eleven":20946,"Kraft Heinz":20861,"Live Nation":19984,"GE Appliances":19138,"RPM International":18899,"Dollar Tree":17289,"Beacon Health":15930,"Schreiber Foods":12850,"Cheesecake Factory":12782,"Family Dollar":11115,"Hubbell":9882,"Gray Television":9497,"Personify":8477,"Yanfeng":8439,"Toyoda Gosei":7495,"Southcoast Health":7441,"Blue Cross & Blue Shield of Rhode Island":6585,"U.S. Venture":6547,"Chobani":6150,"SPX":4778,"Under Armour":4659,"KKR":3703,"K&L Gates":3605,"Silgan Containers":3560,"Carters":3290,"Evry Health":2963,"Wellstar":1123};
 const CLOSE_WON={"Costco Wholesale":"2025","Panasonic":"2026","Builders FirstSource":"2025","ADM (Archer Daniels Midland)":"2025","Chicago Public Schools":"2025","Fidelity National Financial":"2025","Hubbell CVS":"2025","Sprouts Farmers Market":"2025","Lumen":"2026","Philips":"2026","Kraft Heinz":"2024","HPE":"2021","Amazon":"2024","Curative":"2026","Express Scripts":"2025","ADUSA Services":"2024","7-Eleven":"2025","Loews Hotels":"2026","Corning":"2020","Southern Company":"2025","City of Minneapolis":"2025","Personify":"2025","CNH Industrial":"2024","MetLife":"2025","Dick's Sporting Goods":"2024","Family Dollar":"2025","Evry Health":"2026","TTEC":"2025","Cheesecake Factory":"2025","GE Appliances":"2026","RPM International":"2024","Securitas":"2026","Yanfeng":"2025","Silgan Containers":"2025","Blue Cross & Blue Shield of Rhode Island":"2025","Stanley Black & Decker":"2024","MPI":"2025","CACI":"2025","Perdue Farms":"2025","Guitar Center":"2025","U.S. Venture":"2025","Toyoda Gosei":"2025","BD":"2024","Sanofi":"2025","KnitWell Group":"2025","Alex Lee":"2025","Alcon":"2025","AT&T":"2025","Maximus":"2025","Polaris":"2025","SharkNinja":"2025","Beacon Health":"2025","Dollar Tree":"2025","Live Nation":"2025","KKR":"2025","Cobalt Benefits Group":"2025","SRS Distribution":"2025","Red Bull":"2025","Piedmont Healthcare":"2026","Carpenters H&W Trust Fund":"2025","JM Huber":"2025","SugarCreek":"2025","MetLife":"2025","New Balance":"2025","Tractor Supply Company":"2025","Carters":"2025","Chobani":"2025","Schreiber Foods":"2025","Southcoast Health":"2025","K&L Gates":"2025","Gray Television":"2024","Gerdau":"2025","Cascade Drilling":"2025","Benjamin Moore":"2026","The Doe Run Company":"2025","OPEH&W":"2025","Windstream":"2024","VNS Health":"2026","Under Armour":"2025","Hunter Douglas":"2025","Hubbell":"2025","ADUSA - Multi":"2024","ADUSA - Limited":"2024","Washington State Health Care Authority":"2026","Weyerhaeuser":"2024","Fortive":"2024","Litehouse Inc":"2026","Ralliant Corporation":"2026","Darigold":"2024","HealthPartners":"2026","B&G Foods":"2026","Cincinnati Children's Hospital Medical Center":"2025","Whataburger":"2026","Independence Blue Cross":"2026","BlueLink":"2026","Micron":"2026","Loews Hotels Holding Corporation":"2026"};
@@ -312,11 +312,12 @@ function fMon(data,q){if(q==="all")return data;return data.filter((_,i)=>(QI[q]|
 
 function renderMonthly(f){
   const cy=fMon(MONTHLY_CY,f.q),py=fMon(MONTHLY_PY,f.q);
-  let h="",tci=0,tpi=0,tcr=0,tpr=0,tctp=0,tptp=0,tcrg=0,tprg=0;
+  let h="",tci=0,tpi=0,tcr=0,tpr=0,tctp=0,tptp=0,tcrg=0,tprg=0,tcel=0,tpel=0;
   for(let i=0;i<Math.max(cy.length,py.length);i++){
     const c=cy[i]||{},p=py[i]||{};
     tci+=c.ir||0;tpi+=p.ir||0;tcr+=c.ren||0;tpr+=p.ren||0;
     tctp+=c.tp||0;tptp+=p.tp||0;tcrg+=c.reg||0;tprg+=p.reg||0;
+    tcel+=c.el||0;tpel+=p.el||0;
     h+=`<tr>
       <td class="lbl">${c.m||""}&nbsp;/&nbsp;${p.m||""}</td>
       <td class="num cy">${fN(c.el)}</td><td class="num cy">${f$(c.ir)}</td><td class="num cy">${f$(c.ren)}</td><td class="num cy">${fN(c.tp)}</td><td class="num cy">${fN(c.reg)}</td>
@@ -324,9 +325,9 @@ function renderMonthly(f){
       <td class="num yoy">${fDN((c.el||0)-(p.el||0))}</td><td class="num yoy">${fD$((c.ir||0)-(p.ir||0))}</td><td class="num yoy">${fD$((c.ren||0)-(p.ren||0))}</td><td class="num yoy">${fDN((c.tp||0)-(p.tp||0))}</td><td class="num yoy">${fDN((c.reg||0)-(p.reg||0))}</td>
     </tr>`;}
   h+=`<tr class="tot"><td class="lbl">Total</td>
-    <td class="num cy">${f$(tci)}</td><td class="num cy">${f$(tcr)}</td><td class="num cy">${fN(tctp)}</td><td class="num cy">${fN(tcrg)}</td>
-    <td class="num py">${f$(tpi)}</td><td class="num py">${f$(tpr)}</td><td class="num py">${fN(tptp)}</td><td class="num py">${fN(tprg)}</td>
-    <td class="num yoy">${fD$(tci-tpi)}</td><td class="num yoy">${fD$(tcr-tpr)}</td><td class="num yoy">${fDN(tctp-tptp)}</td><td class="num yoy">${fDN(tcrg-tprg)}</td>
+    <td class="num cy">${fN(Math.round(tcel/Math.max(cy.length,1)))}</td><td class="num cy">${f$(tci)}</td><td class="num cy">${f$(tcr)}</td><td class="num cy">${fN(tctp)}</td><td class="num cy">${fN(tcrg)}</td>
+    <td class="num py">${fN(Math.round(tpel/Math.max(py.length,1)))}</td><td class="num py">${f$(tpi)}</td><td class="num py">${f$(tpr)}</td><td class="num py">${fN(tptp)}</td><td class="num py">${fN(tprg)}</td>
+    <td class="num yoy">${fDN(Math.round(tcel/Math.max(cy.length,1))-Math.round(tpel/Math.max(py.length,1)))}</td><td class="num yoy">${fD$(tci-tpi)}</td><td class="num yoy">${fD$(tcr-tpr)}</td><td class="num yoy">${fDN(tctp-tptp)}</td><td class="num yoy">${fDN(tcrg-tprg)}</td>
   </tr>`;
   document.getElementById("tMon").innerHTML=h;
   document.getElementById("mCnt").textContent=`${cy.length} months`;
