@@ -297,13 +297,10 @@ function clientElForQ(elm,k,q){
   const monthly=elm[k];
   if(!monthly)return 0;
   const idxs=Q_EL_MONTHS[q]||Q_EL_MONTHS.all;
-  // Use the most recent non-zero month in the period (point-in-time snapshot)
-  // This matches what the monthly table shows per row and avoids inflation from new clients
-  for(let i=idxs.length-1;i>=0;i--){
-    const v=monthly[idxs[i]]||0;
-    if(v>0)return v;
-  }
-  return 0;
+  // Average over full period length (include zero months for new clients)
+  // This guarantees sum(per-client averages) == portfolio average from monthly EL data
+  const total=idxs.reduce((s,i)=>s+(monthly[i]||0),0);
+  return Math.round(total/idxs.length);
 }
 // Alias: scaledEl uses actual per-client monthly data
 function scaledEl(el,q,isPY,k){
