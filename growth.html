@@ -6,129 +6,35 @@
 <title>Pelago Growth Dashboard</title>
 <style>
   :root {
-    --bg: #0f1117;
-    --surface: #1a1d27;
-    --surface2: #22263a;
-    --border: #2e3248;
-    --accent: #6c63ff;
-    --accent2: #4ecdc4;
-    --text: #e8eaf0;
-    --muted: #8b90a7;
-    --green: #4ade80;
-    --yellow: #facc15;
-    --red: #f87171;
-    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --blue:#1B4FCC; --purple:#6B3FA0; --light:#F0F4FF;
+    --border:#DDE3EF; --text:#1a1a2e; --muted:#6b7280;
+    --green:#16a34a; --red:#dc2626;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--font);
-    font-size: 13px;
-    min-height: 100vh;
-  }
-  .header {
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    padding: 20px 32px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .header h1 {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--text);
-    letter-spacing: -0.3px;
-  }
-  .header .subtitle {
-    font-size: 12px;
-    color: var(--muted);
-    margin-top: 2px;
-  }
-  .header .badge {
-    background: var(--accent);
-    color: #fff;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 3px 10px;
-    border-radius: 20px;
-    letter-spacing: 0.3px;
-  }
-  .main { padding: 28px 32px; }
-  .section-title {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .section-title span {
-    font-size: 11px;
-    font-weight: 400;
-    color: var(--muted);
-  }
-  .table-wrap {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow-x: auto;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    white-space: nowrap;
-  }
-  thead tr {
-    background: var(--surface2);
-  }
-  th {
-    padding: 10px 14px;
-    text-align: right;
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-bottom: 1px solid var(--border);
-  }
-  th.left, td.left { text-align: left; }
-  th.group-el   { border-left: 2px solid #6c63ff33; color: #9b98ff; }
-  th.group-tp   { border-left: 2px solid #4ecdc433; color: #4ecdc4; }
-  th.group-lp   { border-left: 2px solid #f9731633; color: #fb923c; }
-  th.group-rs   { border-left: 2px solid #facc1533; color: #fbbf24; }
-  th.group-reg  { border-left: 2px solid #4ade8033; color: #4ade80; }
-  td {
-    padding: 9px 14px;
-    text-align: right;
-    border-bottom: 1px solid var(--border);
-  }
-  td.group-el  { border-left: 2px solid #6c63ff22; }
-  td.group-tp  { border-left: 2px solid #4ecdc422; }
-  td.group-lp  { border-left: 2px solid #f9731622; }
-  td.group-rs  { border-left: 2px solid #facc1522; }
-  td.group-reg { border-left: 2px solid #4ade8022; }
-  tbody tr:last-child td { border-bottom: none; }
-  tbody tr:hover { background: var(--surface2); }
-  .month-cell {
-    font-weight: 600;
-    color: var(--text);
-    font-size: 12px;
-  }
-  .num { font-variant-numeric: tabular-nums; }
-  .pct { color: var(--muted); font-size: 12px; }
-  .ratio { color: var(--muted); font-size: 12px; }
-  .footer {
-    margin-top: 20px;
-    font-size: 11px;
-    color: var(--muted);
-    line-height: 1.7;
-    padding: 0 4px;
-  }
-  .footer strong { color: var(--text); }
-  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; background:#f8fafc; color:var(--text); font-size:13px; }
+  .header { background:linear-gradient(135deg,var(--blue),var(--purple)); color:white; padding:20px 24px; display:flex; align-items:flex-start; justify-content:space-between; }
+  .header h1 { font-size:22px; font-weight:700; }
+  .header p { opacity:0.85; font-size:13px; margin-top:4px; }
+  .header-badge { display:inline-block; background:rgba(255,255,255,.2); padding:2px 10px; border-radius:10px; font-size:11px; margin-top:6px; white-space:nowrap; }
+  .section-header { background:white; padding:12px 24px 0; border-top:3px solid var(--blue); margin-top:24px; }
+  .section-header h2 { font-size:16px; font-weight:700; color:var(--blue); padding-bottom:4px; }
+  .section-header p { font-size:12px; color:var(--muted); padding-bottom:12px; }
+  .table-wrap { padding:0 24px 20px; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; background:white; border-radius:8px; overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,.06); font-size:12px; }
+  th { background:#1B4FCC; color:white; padding:9px 10px; text-align:right; font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:.04em; white-space:nowrap; }
+  th.left { text-align:left; }
+  th.group-tp { background:#1a45b0; }
+  th.group-lp { background:#1e3a8a; }
+  th.group-rs { background:#1e3461; }
+  th.group-reg { background:#172554; }
+  td { padding:7px 10px; border-bottom:1px solid var(--border); text-align:right; white-space:nowrap; }
+  td.left { text-align:left; font-weight:600; color:var(--blue); }
+  tr:last-child td { border-bottom:none; }
+  tr:hover td { background:#f0f4ff; }
+  .null-cell { color:#c0c9d8; }
+  .pct { color:var(--muted); }
+  .footnote { padding:8px 24px 20px; font-size:11px; color:var(--muted); line-height:1.8; }
+  .footnote strong { color:var(--text); }
 </style>
 </head>
 <body>
@@ -136,99 +42,82 @@
 <div class="header">
   <div>
     <h1>&#128200; Pelago Growth Dashboard</h1>
-    <div class="subtitle">Growth acquisition funnel &middot; Monthly view &middot; All data governed via Cube</div>
+    <p>Growth acquisition funnel &middot; Monthly view &middot; All data governed via Cube</p>
   </div>
-  <div class="badge" id="refreshed-badge">Last refreshed: &mdash;</div>
+  <div class="header-badge" id="refreshed-badge">Last refreshed: &mdash;</div>
 </div>
 
-<div class="main">
-  <div class="section-title">
-    Growth Funnel by Month
-    <span>Rows = DOS month &nbsp;&middot;&nbsp; July 2024 &ndash; June 2026</span>
-  </div>
+<div class="section-header">
+  <h2>Growth Funnel by Month</h2>
+  <p>Rows = DOS month &middot; July 2024 &ndash; June 2026 &middot; Newest first</p>
+</div>
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th class="left">Month</th>
+        <th>Avg ELs</th>
+        <th class="group-tp">Uniq Touched</th>
+        <th class="group-tp">Touchpoints</th>
+        <th class="group-tp">TPs / UE</th>
+        <th class="group-lp">LP Starts</th>
+        <th class="group-lp">LP / UE</th>
+        <th class="group-rs">Reg Starts</th>
+        <th class="group-rs">RS / UE</th>
+        <th class="group-rs">RS / LP</th>
+        <th class="group-reg">Registrations</th>
+        <th class="group-reg">Regs / UE</th>
+        <th class="group-reg">Regs / RS</th>
+      </tr>
+    </thead>
+    <tbody id="funnel-body"></tbody>
+  </table>
+</div>
 
-  <div class="table-wrap">
-    <table id="funnel-table">
-      <thead>
-        <tr>
-          <th class="left">Month</th>
-          <th class="group-el">Avg ELs</th>
-          <th class="group-tp">Uniq Touched</th>
-          <th class="group-tp">Touchpoints</th>
-          <th class="group-tp">TPs / UE</th>
-          <th class="group-lp">LP Starts</th>
-          <th class="group-lp">LP / UE</th>
-          <th class="group-rs">Reg Starts</th>
-          <th class="group-rs">RS / UE</th>
-          <th class="group-rs">RS / LP</th>
-          <th class="group-reg">Regs</th>
-          <th class="group-reg">Regs / UE</th>
-          <th class="group-reg">Regs / RS</th>
-        </tr>
-      </thead>
-      <tbody id="funnel-body"></tbody>
-    </table>
-  </div>
-
-  <div class="footer">
-    <strong>Avg ELs</strong> &mdash; <code>eligibility_member_snapshots.eligibility_member_count</code> (Cube) &nbsp;&middot;&nbsp;
-    <strong>Uniq Touched</strong> &mdash; <code>growth.unique_users_delivered_sum</code>, communication_type = Growth (Cube) &nbsp;&middot;&nbsp;
-    <strong>Touchpoints</strong> &mdash; <code>marketing_events.touchpoints_sum</code>, communication_type = Growth; email sends net of bounces + DM sends (Cube) &nbsp;&middot;&nbsp;
-    <strong>LP Starts</strong> &mdash; <code>marketing_web_events.landing_page_views_count</code>, distinct devices (Cube) &nbsp;&middot;&nbsp;
-    <strong>Reg Starts</strong> &mdash; <code>marketing_web_events.registration_page_starts_count</code>, distinct devices (Cube) &nbsp;&middot;&nbsp;
-    <strong>Regs</strong> &mdash; <code>member_journey.journey_status_registered_count</code> (Cube)
-  </div>
+<div class="footnote">
+  <strong>Avg ELs</strong> &mdash; <code>eligibility_member_snapshots.eligibility_member_count</code> &nbsp;&middot;&nbsp;
+  <strong>Uniq Touched</strong> &mdash; <code>growth.unique_users_delivered_sum</code> (communication_type = Growth) &nbsp;&middot;&nbsp;
+  <strong>Touchpoints</strong> &mdash; <code>marketing_events.touchpoints_sum</code> (Growth; email net of bounces + DM) &nbsp;&middot;&nbsp;
+  <strong>LP Starts</strong> &mdash; <code>marketing_web_events.landing_page_views_count</code> (distinct devices) &nbsp;&middot;&nbsp;
+  <strong>Reg Starts</strong> &mdash; <code>marketing_web_events.registration_page_starts_count</code> (distinct devices) &nbsp;&middot;&nbsp;
+  <strong>Registrations</strong> &mdash; <code>member_journey.journey_status_registered_count</code> &nbsp;&middot;&nbsp;
+  All metrics from Cube&#39;s governed semantic layer.
 </div>
 
 <script>
 const FUNNEL_DATA = [{"month": "Jul 2024", "avg_els": 2775911, "unique_touched": 245251, "touchpoints": 245701, "lp_starts": 12087, "reg_starts": 2754, "registrations": 1112}, {"month": "Aug 2024", "avg_els": 2821243, "unique_touched": 241237, "touchpoints": 214488, "lp_starts": 10307, "reg_starts": 2456, "registrations": 352}, {"month": "Sep 2024", "avg_els": 2868642, "unique_touched": 334587, "touchpoints": 521301, "lp_starts": 14354, "reg_starts": 2065, "registrations": 527}, {"month": "Oct 2024", "avg_els": 2865783, "unique_touched": 286098, "touchpoints": 539549, "lp_starts": 11039, "reg_starts": 2217, "registrations": 575}, {"month": "Nov 2024", "avg_els": 2900555, "unique_touched": 813271, "touchpoints": 1368211, "lp_starts": 20554, "reg_starts": 5520, "registrations": 901}, {"month": "Dec 2024", "avg_els": 3367642, "unique_touched": 459819, "touchpoints": 719629, "lp_starts": 13375, "reg_starts": 3247, "registrations": 823}, {"month": "Jan 2025", "avg_els": 3692627, "unique_touched": 710478, "touchpoints": 1220546, "lp_starts": 25067, "reg_starts": 14256, "registrations": 2569}, {"month": "Feb 2025", "avg_els": 3792072, "unique_touched": 292076, "touchpoints": 326834, "lp_starts": 4894, "reg_starts": 2710, "registrations": 867}, {"month": "Mar 2025", "avg_els": 3940793, "unique_touched": 614250, "touchpoints": 1150460, "lp_starts": 16465, "reg_starts": 2921, "registrations": 865}, {"month": "Apr 2025", "avg_els": 3849823, "unique_touched": 422378, "touchpoints": 849089, "lp_starts": 15587, "reg_starts": 4913, "registrations": 1552}, {"month": "May 2025", "avg_els": 3259445, "unique_touched": 552595, "touchpoints": 783859, "lp_starts": 6124, "reg_starts": 4157, "registrations": 1080}, {"month": "Jun 2025", "avg_els": 3931432, "unique_touched": 366334, "touchpoints": 825626, "lp_starts": 7152, "reg_starts": 3541, "registrations": 1059}, {"month": "Jul 2025", "avg_els": 3944917, "unique_touched": 329640, "touchpoints": 723446, "lp_starts": 8423, "reg_starts": 2351, "registrations": 742}, {"month": "Aug 2025", "avg_els": 3962264, "unique_touched": 186888, "touchpoints": 365103, "lp_starts": 17661, "reg_starts": 3965, "registrations": 950}, {"month": "Sep 2025", "avg_els": 3963199, "unique_touched": 633583, "touchpoints": 997404, "lp_starts": 8239, "reg_starts": 5083, "registrations": 1833}, {"month": "Oct 2025", "avg_els": 4443612, "unique_touched": 218969, "touchpoints": 561809, "lp_starts": 28479, "reg_starts": 3722, "registrations": 1354}, {"month": "Nov 2025", "avg_els": 4487500, "unique_touched": 602743, "touchpoints": 769480, "lp_starts": 43760, "reg_starts": 2787, "registrations": 1051}, {"month": "Dec 2025", "avg_els": 4082574, "unique_touched": 717034, "touchpoints": 1323867, "lp_starts": 48562, "reg_starts": 3983, "registrations": 1517}, {"month": "Jan 2026", "avg_els": 4048729, "unique_touched": 492742, "touchpoints": 1496985, "lp_starts": 48039, "reg_starts": 5442, "registrations": 2286}, {"month": "Feb 2026", "avg_els": 4034626, "unique_touched": 698474, "touchpoints": 1299469, "lp_starts": 15238, "reg_starts": 3630, "registrations": 1420}, {"month": "Mar 2026", "avg_els": 3994797, "unique_touched": 650510, "touchpoints": 1583880, "lp_starts": 8492, "reg_starts": 6009, "registrations": 1513}, {"month": "Apr 2026", "avg_els": 4037279, "unique_touched": 824743, "touchpoints": 1238166, "lp_starts": 9122, "reg_starts": 4666, "registrations": 1789}, {"month": "May 2026", "avg_els": 3960005, "unique_touched": 661830, "touchpoints": 1035420, "lp_starts": 10286, "reg_starts": 5196, "registrations": 1949}, {"month": "Jun 2026", "avg_els": 3961012, "unique_touched": 845322, "touchpoints": 1560711, "lp_starts": 21424, "reg_starts": 5380, "registrations": 2007}];
 
-function fmt(n) {
-  if (n == null || isNaN(n)) return '&mdash;';
-  return Number(n).toLocaleString();
-}
-function pct(n) {
-  if (n == null || isNaN(n) || !isFinite(n)) return '&mdash;';
-  return (n * 100).toFixed(1) + '%';
-}
-function ratio(n) {
-  if (n == null || isNaN(n) || !isFinite(n)) return '&mdash;';
-  return n.toFixed(2);
-}
+function fmt(n){if(n==null||isNaN(n))return'&mdash;';return Number(n).toLocaleString();}
+function pct(n){if(n==null||isNaN(n)||!isFinite(n))return'<span class="null-cell">&mdash;</span>';return'<span class="pct">'+(n*100).toFixed(1)+'%</span>';}
+function ratio(n){if(n==null||isNaN(n)||!isFinite(n))return'<span class="null-cell">&mdash;</span>';return'<span class="pct">'+n.toFixed(2)+'</span>';}
 
-function render() {
-  const tbody = document.getElementById('funnel-body');
-  tbody.innerHTML = '';
-  const rows = [...FUNNEL_DATA].reverse();
-  rows.forEach(r => {
-    const ut = r.unique_touched;
-    const tp = r.touchpoints;
-    const lp = r.lp_starts;
-    const rs = r.reg_starts;
-    const reg = r.registrations;
-
-    const tr = document.createElement('tr');
-    tr.innerHTML =
-      '<td class="left month-cell">' + r.month + '</td>' +
-      '<td class="group-el num">' + fmt(r.avg_els) + '</td>' +
-      '<td class="group-tp num">' + fmt(ut) + '</td>' +
-      '<td class="group-tp num">' + fmt(tp) + '</td>' +
-      '<td class="group-tp ratio">' + ratio(tp / ut) + '</td>' +
-      '<td class="group-lp num">' + fmt(lp) + '</td>' +
-      '<td class="group-lp pct">' + pct(lp / ut) + '</td>' +
-      '<td class="group-rs num">' + fmt(rs) + '</td>' +
-      '<td class="group-rs pct">' + pct(rs / ut) + '</td>' +
-      '<td class="group-rs pct">' + pct(rs / lp) + '</td>' +
-      '<td class="group-reg num">' + fmt(reg) + '</td>' +
-      '<td class="group-reg pct">' + pct(reg / ut) + '</td>' +
-      '<td class="group-reg pct">' + pct(reg / rs) + '</td>';
+function render(){
+  const tbody=document.getElementById('funnel-body');
+  tbody.innerHTML='';
+  const rows=[...FUNNEL_DATA].reverse();
+  rows.forEach(r=>{
+    const ut=r.unique_touched,tp=r.touchpoints,lp=r.lp_starts,rs=r.reg_starts,reg=r.registrations;
+    const tr=document.createElement('tr');
+    tr.innerHTML=
+      '<td class="left">'+r.month+'</td>'+
+      '<td>'+fmt(r.avg_els)+'</td>'+
+      '<td>'+fmt(ut)+'</td>'+
+      '<td>'+fmt(tp)+'</td>'+
+      '<td>'+ratio(tp/ut)+'</td>'+
+      '<td>'+fmt(lp)+'</td>'+
+      '<td>'+pct(lp/ut)+'</td>'+
+      '<td>'+fmt(rs)+'</td>'+
+      '<td>'+pct(rs/ut)+'</td>'+
+      '<td>'+pct(rs/lp)+'</td>'+
+      '<td>'+fmt(reg)+'</td>'+
+      '<td>'+pct(reg/ut)+'</td>'+
+      '<td>'+pct(reg/rs)+'</td>';
     tbody.appendChild(tr);
   });
 }
 
-document.getElementById('refreshed-badge').textContent =
-  'Last refreshed: ' + new Date().toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'});
-
+document.getElementById('refreshed-badge').textContent=
+  'Last refreshed: '+new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
 render();
 </script>
 </body>
