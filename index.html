@@ -169,9 +169,9 @@ function clearCsm(){csmSel.value='';document.getElementById('backBtn').classList
 function aggByCsm(rows){
   const m={};
   rows.forEach(r=>{
-    if(!m[r.csm]) m[r.csm]={csm:r.csm,avg_els:0,regs:0,tps:0,unique_touched:0,y1:0,rnwl:0,other:0,total:0,n:0};
+    if(!m[r.csm]){m[r.csm]={csm:r.csm,avg_els:0,regs:0,tps:0,unique_touched:0,y1:0,rnwl:0,other:0,total:0,n:0,_ck:new Set()};};
     const x=m[r.csm];
-    x.avg_els+=r.avg_els||0;x.regs+=r.regs||0;x.tps+=r.tps||0;x.unique_touched+=r.unique_touched||0;
+    if(!x._ck.has(r.ck)){x._ck.add(r.ck);x.avg_els+=r.avg_els||0;x.regs+=r.regs||0;x.tps+=r.tps||0;x.unique_touched+=r.unique_touched||0;}
     x.y1+=r.y1||0;x.rnwl+=r.rnwl||0;x.other+=r.other||0;x.total+=r.total||0;x.n++;
   });
   const vals=Object.values(m);
@@ -182,7 +182,7 @@ function aggByCsm(rows){
 
 function renderKPIs(rows,isCsm){
   const nC=isCsm?new Set(rows.map(r=>r.ck)).size:rows.length;
-  const t=rows.reduce((a,r)=>{a.e+=r.avg_els||0;a.re+=r.regs||0;a.tp+=r.tps||0;a.ir+=r.total||0;a.y1+=r.y1||0;a.rn+=r.rnwl||0;return a;},{e:0,re:0,tp:0,ir:0,y1:0,rn:0});
+  const _s=new Set();const t=rows.reduce((a,r)=>{a.ir+=r.total||0;a.y1+=r.y1||0;a.rn+=r.rnwl||0;if(!_s.has(r.ck)){_s.add(r.ck);a.e+=r.avg_els||0;a.re+=r.regs||0;a.tp+=r.tps||0;}return a;},{e:0,re:0,tp:0,ir:0,y1:0,rn:0});
   document.getElementById('kpiRow').innerHTML=`
     <div class="kpi"><div class="kpi-label">Clients</div><div class="kpi-value">${nC}</div></div>
     <div class="kpi"><div class="kpi-label">Total IR YTD</div><div class="kpi-value">${fmt(t.ir)}</div></div>
@@ -199,7 +199,7 @@ function render(){
     renderKPIs(ALL_ROWS,false);
     document.getElementById('rowCount').textContent=agg.length+' CSMs · click to expand';
     document.getElementById('tableHead').innerHTML='<tr><th class="left">CSM</th><th># Clients</th><th>Avg ELs</th><th>Regs</th><th>Growth TPs</th><th>Unique Touched</th><th>Y1 IR</th><th>Renewal IR</th><th>Other IR</th><th>Total IR</th></tr>';
-    const tot=agg.reduce((t,r)=>{t.avg_els+=r.avg_els;t.regs+=r.regs;t.tps+=r.tps;t.unique_touched+=r.unique_touched;t.y1+=r.y1;t.rnwl+=r.rnwl;t.other+=r.other;t.total+=r.total;t.n+=r.n;return t;},{avg_els:0,regs:0,tps:0,unique_touched:0,y1:0,rnwl:0,other:0,total:0,n:0});
+    const _ts=new Set();const tot=ALL_ROWS.reduce((t,r)=>{t.y1+=r.y1||0;t.rnwl+=r.rnwl||0;t.other+=r.other||0;t.total+=r.total||0;if(!_ts.has(r.ck)){_ts.add(r.ck);t.avg_els+=r.avg_els||0;t.regs+=r.regs||0;t.tps+=r.tps||0;t.unique_touched+=r.unique_touched||0;t.n++;}return t;},{avg_els:0,regs:0,tps:0,unique_touched:0,y1:0,rnwl:0,other:0,total:0,n:0});
     document.getElementById('tableBody').innerHTML=
       agg.map(r=>`<tr class="clickable" onclick="drillInto('${r.csm.replace(/'/g,"\\'")}')">`+
         `<td class="left"><span class="csm-name">${r.csm}</span><span class="drill-hint">▶</span></td>`+
