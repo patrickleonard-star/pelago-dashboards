@@ -297,9 +297,13 @@ function clientElForQ(elm,k,q){
   const monthly=elm[k];
   if(!monthly)return 0;
   const idxs=Q_EL_MONTHS[q]||Q_EL_MONTHS.all;
-  const vals=idxs.map(i=>monthly[i]||0).filter(v=>v>0);
-  if(!vals.length)return 0;
-  return Math.round(vals.reduce((s,v)=>s+v,0)/vals.length);
+  // Use the most recent non-zero month in the period (point-in-time snapshot)
+  // This matches what the monthly table shows per row and avoids inflation from new clients
+  for(let i=idxs.length-1;i>=0;i--){
+    const v=monthly[idxs[i]]||0;
+    if(v>0)return v;
+  }
+  return 0;
 }
 // Alias: scaledEl uses actual per-client monthly data
 function scaledEl(el,q,isPY,k){
@@ -353,9 +357,9 @@ function renderMonthly(f){
       <td class="num yoy">${fDN((c.el||0)-(p.el||0))}</td><td class="num yoy">${fD$((c.ir||0)-(p.ir||0))}</td><td class="num yoy">${fD$((c.ren||0)-(p.ren||0))}</td>
     </tr>`;}
   h+=`<tr class="tot"><td class="lbl">Total</td>
-    <td class="num cy">${fN(cy[cy.length-1]?.el||0)}</td><td class="num cy">${f$(tci)}</td><td class="num cy">${f$(tcr)}</td>
-    <td class="num py">${fN(py[py.length-1]?.el||0)}</td><td class="num py">${f$(tpi)}</td><td class="num py">${f$(tpr)}</td>
-    <td class="num yoy">${fDN((cy[cy.length-1]?.el||0)-(py[py.length-1]?.el||0))}</td><td class="num yoy">${fD$(tci-tpi)}</td><td class="num yoy">${fD$(tcr-tpr)}</td>
+    <td class="num cy">${fN(Math.round(cy.reduce((s,m)=>s+(m.el||0),0)/Math.max(cy.length,1)))}</td><td class="num cy">${f$(tci)}</td><td class="num cy">${f$(tcr)}</td>
+    <td class="num py">${fN(Math.round(py.reduce((s,m)=>s+(m.el||0),0)/Math.max(py.length,1)))}</td><td class="num py">${f$(tpi)}</td><td class="num py">${f$(tpr)}</td>
+    <td class="num yoy">${fDN(Math.round(cy.reduce((s,m)=>s+(m.el||0),0)/Math.max(cy.length,1))-Math.round(py.reduce((s,m)=>s+(m.el||0),0)/Math.max(py.length,1)))}</td><td class="num yoy">${fD$(tci-tpi)}</td><td class="num yoy">${fD$(tcr-tpr)}</td>
   </tr>`;
   document.getElementById("tMon").innerHTML=h;
   document.getElementById("mCnt").textContent=`${cy.length} months`;
