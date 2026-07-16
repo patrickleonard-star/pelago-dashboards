@@ -339,8 +339,40 @@ function fDPE(cyIR,pyIR,el){if(!el||!cyIR||!pyIR)return D;const d=cyIR/el-pyIR/e
 // ─── Monthly render ───────────────────────────────────────────
 function fMon(data,q){if(q==="all")return data;return data.filter((_,i)=>(QI[q]||[]).includes(i));}
 
-function renderMonthly(f){
-  const cy=fMon(MONTHLY_CY,f.q),py=fMon(MONTHLY_PY,f.q);
+// ─── Filter-aware monthly aggregation ────────────────────────
+// Builds [{m, ir, ren, el}] from filtered rows using per-client monthly maps
+// ren is kept from portfolio-level data (no per-client renewal monthly breakdown yet)
+const CY_MON_LABELS=["Jan-26","Feb-26","Mar-26","Apr-26","May-26","Jun-26","Jul-26"];
+const PY_MON_LABELS=["Jan-25","Feb-25","Mar-25","Apr-25","May-25","Jun-25","Jul-25"];
+function buildFilteredMonthly(rows,q,isPY){
+  const mmap=isPY?PYM:CYM;
+  const elm=isPY?PY_ELM:CY_ELM;
+  const labels=isPY?PY_MON_LABELS:CY_MON_LABELS;
+  const idxs=QI[q]||[0,1,2,3,4,5,6];
+  return idxs.map(i=>{
+    let ir=0,el=0;
+    for(const r of rows){
+      const cm=mmap[r.k];if(cm)ir+=cm[i]||0;
+      const ce=elm[r.k];if(ce)el+=ce[i]||0;
+    }
+    return{m:labels[i],ir,el,ren:null}; // ren requires per-client renewal breakdown
+  });
+}
+// Blend: use portfolio renewal IR proportion × filtered IR ratio
+function blendRen(filtMonthly,portMonthly){
+  return filtMonthly.map((f,i)=>{
+    const p=portMonthly[i]||{};
+    const ratio=(p.ir&&f.ir)?f.ir/p.ir:1;
+    return{...f,ren:(p.ren||0)*Math.min(ratio,1)};
+  });
+}
+
+function renderMonthly(rows,f){
+  // Use filtered per-client monthly data; blend in portfolio renewal proportion
+  const rawCy=buildFilteredMonthly(rows,f.q,false);
+  const rawPy=buildFilteredMonthly(rows,f.q,true);
+  const cy=blendRen(rawCy,fMon(MONTHLY_CY,f.q));
+  const py=blendRen(rawPy,fMon(MONTHLY_PY,f.q));
   let h="",tci=0,tpi=0,tcr=0,tpr=0,tctp=0,tptp=0,tcrg=0,tprg=0,tcel=0,tpel=0;
   for(let i=0;i<Math.max(cy.length,py.length);i++){
     const c=cy[i]||{},p=py[i]||{};
@@ -460,9 +492,13 @@ function renderClient(rows){
 
 // ─── KPIs ─────────────────────────────────────────────────────
 function renderKPIs(rows,f){
-  const cm=fMon(MONTHLY_CY,f.q),pm=fMon(MONTHLY_PY,f.q);
+  // Use filter-aware monthly data for IR; blend portfolio ren proportion
+  const rawCm=buildFilteredMonthly(rows,f.q,false);
+  const rawPm=buildFilteredMonthly(rows,f.q,true);
+  const cm=blendRen(rawCm,fMon(MONTHLY_CY,f.q));
+  const pm=blendRen(rawPm,fMon(MONTHLY_PY,f.q));
   const tci=cm.reduce((s,m)=>s+m.ir,0),tpi=pm.reduce((s,m)=>s+m.ir,0);
-  const tcr=cm.reduce((s,m)=>s+m.ren,0),tpr=pm.reduce((s,m)=>s+m.ren,0);
+  const tcr=cm.reduce((s,m)=>s+(m.ren||0),0),tpr=pm.reduce((s,m)=>s+(m.ren||0),0);
   const yp=tpi?((tci-tpi)/tpi*100).toFixed(1):null;
   const rp=tpr?((tcr-tpr)/tpr*100).toFixed(0):null;
   const te=rows.reduce((s,r)=>s+(r.el||0),0);
@@ -482,7 +518,7 @@ function renderAll(){
   const f=gf();
   const rows=af(ALL,f);
   renderKPIs(rows,f);
-  renderMonthly(f);
+  renderMonthly(rows,f);
   renderGrouped(rows,"tLY","lyCnt",r=>r.launchYear,true);
   renderGrouped(rows,"tPar","pCnt",r=>r.partner,false);
   renderClient(rows);
