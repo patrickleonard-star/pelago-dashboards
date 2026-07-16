@@ -90,7 +90,7 @@
 <!-- SECTION 2 -->
 <div class="section-header">
   <h2>📈 Year-Over-Year by Contract Close Year</h2>
-  <p>Grouped by Salesforce Closed Won year · CY = Jan–Jul 2026 · PY = Jan 1–Jul 13, 2025 · ELs = monthly average (Jan–Jul) · Click a year row to expand clients</p>
+  <p>Grouped by Salesforce Closed Won year · CY = Jan–Jul 2026 · PY = Jan–Jul 2025 · ELs = monthly average (Jan–Jul) · Click a year row to expand clients</p>
 </div>
 <div class="controls" style="background:#f8fafc;"><span style="font-size:12px;color:var(--muted);font-style:italic;">CSM filter applies to both sections</span><span class="row-count" id="yoyRowCount"></span></div>
   <span class="row-count" id="yoyRowCount"></span>
@@ -236,12 +236,12 @@ function renderYoy(){
   let data;
   if(csm){
     data=YOY_DATA
-      .filter(r=>r.cy_ir_csm&&r.cy_ir_csm[csm]!=null&&r.cy_ir_csm[csm]!==0)
+      .filter(r=>r.csm===csm&&(r.cy_ir_csm||0)!==0)
       .map(r=>Object.assign({},r,{
-        cy_ir:r.cy_ir_csm[csm]||0,
-        cy_ir_per_el:r.cy_el>0?(r.cy_ir_csm[csm]||0)/r.cy_el:null,
-        d_ir:(r.cy_ir_csm[csm]||0)-r.py_ir,
-        d_ir_per_el:(r.cy_el>0&&r.py_el>0)?(((r.cy_ir_csm[csm]||0)/r.cy_el)-(r.py_ir/r.py_el)):null
+        cy_ir:r.cy_ir_csm||0,
+        cy_ir_per_el:r.cy_el>0?(r.cy_ir_csm||0)/r.cy_el:null,
+        d_ir:(r.cy_ir_csm||0)-r.py_ir,
+        d_ir_per_el:(r.cy_el>0&&r.py_el>0)?(((r.cy_ir_csm||0)/r.cy_el)-(r.py_ir/r.py_el)):null
       }));
   }else{
     data=YOY_DATA;
