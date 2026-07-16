@@ -57,7 +57,7 @@ td.sub{font-size:11px;color:#666;}
     <div class="subtitle">Pelago Health &#183; Billable Revenue &amp; Eligible Lives</div>
     <h1>Year-Over-Year IR &amp; EL Activity</h1>
   </div>
-  <div class="badge">CY 2026 vs PY 2025 &#183; YTD Jul 15</div>
+  <div class="badge" id="ytd-badge">CY 2026 vs PY 2025 &#183; YTD <span id="ytd-date"></span></div>
 </div>
 <div class="filter-bar">
   <div class="fg"><label>Quarter</label>
@@ -527,6 +527,16 @@ function renderAll(){
 }
 function resetFilters(){["fQ","fProd","fCoh","fCSM","fLY","fCW","fPar"].forEach(id=>document.getElementById(id).value="all");renderAll();}
 document.addEventListener("DOMContentLoaded",()=>{populateFilters();["fQ","fProd","fCoh","fCSM","fLY","fCW","fPar"].forEach(id=>document.getElementById(id).addEventListener("change",renderAll));renderAll();});
+</script>
+
+<script>
+(function(){
+  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var d = new Date();
+  var label = months[d.getMonth()] + ' ' + d.getDate();
+  var el = document.getElementById('ytd-date');
+  if(el) el.textContent = label;
+})();
 </script>
 </body>
 </html>
