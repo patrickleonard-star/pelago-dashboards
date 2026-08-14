@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-08-13T10:30:00Z",
-  "as_of_date": "2026-08-13",
+  "generated_at": "2026-08-14T10:30:00Z",
+  "as_of_date": "2026-08-14",
   "cy": 2026,
   "py": 2025,
   "ytd_month": 8,
@@ -28,7 +28,7 @@
   "monthly_cy": [
     {
       "m": "Jan-26",
-      "ir": 283440.08,
+      "ir": 5316748.55,
       "ren": 0.0,
       "el": 0,
       "tp": 0,
@@ -36,7 +36,7 @@
     },
     {
       "m": "Feb-26",
-      "ir": 429501.41,
+      "ir": 2968779.59,
       "ren": 0.0,
       "el": 0,
       "tp": 0,
@@ -44,7 +44,7 @@
     },
     {
       "m": "Mar-26",
-      "ir": 327347.69,
+      "ir": 3828835.87,
       "ren": 0.0,
       "el": 0,
       "tp": 0,
@@ -52,7 +52,7 @@
     },
     {
       "m": "Apr-26",
-      "ir": 798464.77,
+      "ir": 4251125.99,
       "ren": 0.0,
       "el": 0,
       "tp": 0,
@@ -60,7 +60,7 @@
     },
     {
       "m": "May-26",
-      "ir": 1356967.94,
+      "ir": 7722125.65,
       "ren": 0.0,
       "el": 0,
       "tp": 0,
@@ -68,7 +68,7 @@
     },
     {
       "m": "Jun-26",
-      "ir": 522299.76,
+      "ir": 5699778.3,
       "ren": 0.0,
       "el": 0,
       "tp": 0,
@@ -76,7 +76,7 @@
     },
     {
       "m": "Jul-26",
-      "ir": 416669.04,
+      "ir": 3712320.37,
       "ren": 0.0,
       "el": 0,
       "tp": 0,
@@ -84,7 +84,7 @@
     },
     {
       "m": "Aug-26",
-      "ir": 135126.37,
+      "ir": 1192507.16,
       "ren": 0.0,
       "el": 0,
       "tp": 0,
@@ -94,7 +94,7 @@
   "monthly_py": [
     {
       "m": "Jan-25",
-      "ir": 0.0,
+      "ir": 4179064.5,
       "ren": 0.0,
       "el": 0,
       "tp": 0,
@@ -102,7 +102,7 @@
     },
     {
       "m": "Feb-25",
-      "ir": 0.0,
+      "ir": 1416403.03,
       "ren": 0.0,
       "el": 0,
       "tp": 0,
@@ -110,7 +110,7 @@
     },
     {
       "m": "Mar-25",
-      "ir": 0.0,
+      "ir": 1444875.44,
       "ren": 0.0,
       "el": 0,
       "tp": 0,
@@ -118,7 +118,7 @@
     },
     {
       "m": "Apr-25",
-      "ir": 0.0,
+      "ir": 2318914.43,
       "ren": 0.0,
       "el": 0,
       "tp": 0,
@@ -126,7 +126,7 @@
     },
     {
       "m": "May-25",
-      "ir": 0.0,
+      "ir": 1974278.14,
       "ren": 0.0,
       "el": 0,
       "tp": 0,
@@ -134,7 +134,7 @@
     },
     {
       "m": "Jun-25",
-      "ir": 0.0,
+      "ir": 2335935.5,
       "ren": 0.0,
       "el": 0,
       "tp": 0,
@@ -142,7 +142,7 @@
     },
     {
       "m": "Jul-25",
-      "ir": 0.0,
+      "ir": 1708584.81,
       "ren": 0.0,
       "el": 0,
       "tp": 0,
@@ -150,7 +150,7 @@
     },
     {
       "m": "Aug-25",
-      "ir": 0.0,
+      "ir": 912899.36,
       "ren": 0.0,
       "el": 0,
       "tp": 0,
@@ -162,43 +162,22 @@
       "3M",
       "3M - BCBSMN",
       "Breanna Thompson",
-      321490.0,
-      102
-    ],
-    [
-      "3M",
-      "3M - BCBSMN",
-      null,
-      54885.0,
-      61
-    ],
-    [
-      "3M",
-      "3M - Health Partner",
-      null,
-      3594.0,
-      8
+      465245.0,
+      127
     ],
     [
       "3M",
       "3M - Health Partner",
       "Breanna Thompson",
-      394571.0,
+      391376.0,
       134
     ],
     [
       "7-Eleven",
-      null,
-      null,
-      495.0,
-      1
-    ],
-    [
-      "7-Eleven",
-      null,
+      "",
       "Blake Bueltel",
-      449458.7,
-      268
+      449953.7,
+      269
     ],
     [
       "ADUSA Services",
@@ -211,15 +190,8 @@
       "ADUSA Services",
       "ADUSA - Multi",
       "Blake Bueltel",
-      181611.74,
-      109
-    ],
-    [
-      "ADUSA Services",
-      "ADUSA - Multi",
-      null,
-      8829.0,
-      4
+      190596.74,
+      112
     ],
     [
       "Aetna",
@@ -231,58 +203,23 @@
     [
       "Aetna",
       "Costco Wholesale",
-      null,
-      6485.0,
-      3
-    ],
-    [
-      "Aetna",
-      "Costco Wholesale",
       "Blake Bueltel",
-      2523377.5,
-      935
-    ],
-    [
-      "Aetna",
-      "Panasonic",
-      "Blake Bueltel",
-      96330.0,
-      34
-    ],
-    [
-      "Aetna",
-      "Panasonic",
-      null,
-      2995.0,
-      1
+      2529862.5,
+      938
     ],
     [
       "Aetna",
       "Panasonic",
       "Taylor Lutcher",
-      127745.0,
-      51
-    ],
-    [
-      "Alight",
-      "AT&T",
-      null,
-      1260.82,
-      121
+      227070.0,
+      86
     ],
     [
       "Alight",
       "AT&T",
       "Leslie Esch",
-      4521.04,
-      112
-    ],
-    [
-      "Alight",
-      "AT&T",
-      "Amy Nguyen",
-      31417.13,
-      612
+      37323.99,
+      638
     ],
     [
       "Alight",
@@ -301,111 +238,55 @@
     [
       "Alight",
       "BD",
-      null,
-      9429.01,
-      4
-    ],
-    [
-      "Alight",
-      "BD",
       "Leslie Esch",
-      67390.0,
-      23
-    ],
-    [
-      "Alight",
-      "BD",
-      "Amy Nguyen",
-      186254.46,
-      81
+      263129.46,
+      103
     ],
     [
       "Alight",
       "KnitWell Group",
       "Caitlin Kimball",
-      108029.18,
-      70
-    ],
-    [
-      "Alight",
-      "KnitWell Group",
-      null,
-      6165.5,
-      2
+      114194.68,
+      72
     ],
     [
       "Alight",
       "Maximus",
       "Blake Bueltel",
-      323417.0,
+      323573.0,
       147
     ],
     [
       "Alight",
       "Sanofi",
       "Ryan Wallace",
-      743276.22,
-      285
-    ],
-    [
-      "Alight",
-      "Sanofi",
-      null,
-      8535.75,
-      3
+      751811.97,
+      288
     ],
     [
       "Amazon",
-      null,
+      "",
       "Breanna Thompson",
-      1042436.36,
-      545
-    ],
-    [
-      "Amazon",
-      null,
-      null,
-      4115.6,
-      10
+      1050202.96,
+      544
     ],
     [
       "Beacon Health",
-      null,
-      null,
-      3736.15,
-      3
-    ],
-    [
-      "Beacon Health",
-      null,
-      "Amy Nguyen",
-      704661.18,
-      302
-    ],
-    [
-      "Beacon Health",
-      null,
+      "",
       "Leslie Esch",
-      89508.68,
-      39
+      807547.01,
+      341
     ],
     [
       "Bimbo Bakeries USA (BBU, Inc.)",
-      null,
-      null,
-      495.0,
-      1
-    ],
-    [
-      "Bimbo Bakeries USA (BBU, Inc.)",
-      null,
+      "",
       "Ryan Wallace",
-      25066.02,
-      13
+      25561.02,
+      14
     ],
     [
       "Blue Cross & Blue Shield of Rhode Island",
-      null,
+      "",
       "Trisha Kes",
       170720.0,
       56
@@ -413,65 +294,30 @@
     [
       "Blue Cross and Blue Shield of Minnesota Plan",
       "Blue Cross and Blue Shield of Minnesota",
-      "Breanna Thompson",
-      2995.0,
-      1
-    ],
-    [
-      "Blue Cross and Blue Shield of Minnesota Plan",
-      "Blue Cross and Blue Shield of Minnesota",
       "Trisha Kes",
-      95345.0,
-      31
-    ],
-    [
-      "Blue Cross and Blue Shield of Minnesota Plan",
-      "Blue Cross and Blue Shield of Minnesota",
-      null,
-      11980.0,
-      6
+      106825.0,
+      34
     ],
     [
       "Blue Cross and Blue Shield of Minnesota Plan",
       "Polaris",
       "Breanna Thompson",
-      255015.0,
-      97
-    ],
-    [
-      "Blue Cross and Blue Shield of Minnesota Plan",
-      "Polaris",
-      null,
-      17960.0,
-      21
+      297440.0,
+      104
     ],
     [
       "CACI",
-      null,
-      null,
-      510.5,
-      2
-    ],
-    [
-      "CACI",
-      null,
+      "",
       "Ryan Wallace",
-      307443.0,
-      100
+      307953.5,
+      101
     ],
     [
       "CNH Industrial",
-      null,
-      null,
-      17970.0,
-      6
-    ],
-    [
-      "CNH Industrial",
-      null,
+      "",
       "Caitlin Kimball",
-      590740.0,
-      287
+      608866.0,
+      293
     ],
     [
       "CVS Health",
@@ -483,44 +329,23 @@
     [
       "CVS Health",
       "Chicago Public Schools",
-      null,
-      2995.0,
-      1
-    ],
-    [
-      "CVS Health",
-      "Chicago Public Schools",
       "Blake Bueltel",
-      1512436.97,
-      508
+      1524416.97,
+      512
     ],
     [
       "CVS Health",
       "Fidelity National Financial",
       "Blake Bueltel",
-      824532.47,
-      309
-    ],
-    [
-      "CVS Health",
-      "Fidelity National Financial",
-      null,
-      2995.0,
-      1
+      830522.47,
+      311
     ],
     [
       "CVS Health",
       "Hubbell CVS",
       "Caitlin Kimball",
-      540116.48,
-      202
-    ],
-    [
-      "CVS Health",
-      "Hubbell CVS",
-      null,
-      10940.0,
-      14
+      554051.48,
+      215
     ],
     [
       "CVS Health",
@@ -560,15 +385,8 @@
     [
       "Cambia",
       "Washington State Health Care Authority",
-      null,
-      24.58,
-      1
-    ],
-    [
-      "Cambia",
-      "Washington State Health Care Authority",
       "Caitlin Kimball",
-      8952.88,
+      8977.46,
       26
     ],
     [
@@ -580,21 +398,14 @@
     ],
     [
       "Carters",
-      null,
-      null,
-      3985.0,
-      3
-    ],
-    [
-      "Carters",
-      null,
+      "",
       "Caitlin Kimball",
-      116740.0,
-      52
+      120725.0,
+      55
     ],
     [
       "Cheesecake Factory",
-      null,
+      "",
       "Caitlin Kimball",
       320018.17,
       102
@@ -602,72 +413,37 @@
     [
       "Cobalt Benefits Group",
       "SharkNinja",
-      null,
-      3011.3,
-      2
-    ],
-    [
-      "Cobalt Benefits Group",
-      "SharkNinja",
       "Caitlin Kimball",
-      52465.7,
-      20
+      55477.0,
+      21
     ],
     [
       "Corning",
-      null,
-      null,
-      8470.31,
-      43
-    ],
-    [
-      "Corning",
-      null,
+      "",
       "Breanna Thompson",
-      645843.24,
-      695
+      628954.05,
+      699
     ],
     [
       "Curative",
-      null,
-      null,
-      3475.0,
-      34
-    ],
-    [
-      "Curative",
-      null,
+      "",
       "Trisha Kes",
-      811940.0,
-      312
+      909780.0,
+      340
     ],
     [
       "Dollar Tree",
-      null,
-      "Amy Nguyen",
-      649575.05,
-      415
-    ],
-    [
-      "Dollar Tree",
-      null,
+      "",
       "Ryan Wallace",
-      34258.48,
-      26
-    ],
-    [
-      "Dollar Tree",
-      null,
-      null,
-      9153.1,
-      4
+      693016.02,
+      438
     ],
     [
       "Evry Health",
-      null,
+      "",
       "Trisha Kes",
-      366398.8,
-      139
+      370393.8,
+      140
     ],
     [
       "Express Scripts",
@@ -679,16 +455,9 @@
     [
       "Express Scripts",
       "Benjamin Moore",
-      null,
-      2680.42,
-      6
-    ],
-    [
-      "Express Scripts",
-      "Benjamin Moore",
       "Ryan Wallace",
-      43397.3,
-      86
+      46077.72,
+      91
     ],
     [
       "Express Scripts",
@@ -722,15 +491,8 @@
       "Express Scripts",
       "Dick's Sporting Goods",
       "Ryan Wallace",
-      717963.0,
-      288
-    ],
-    [
-      "Express Scripts",
-      "Dick's Sporting Goods",
-      null,
-      5690.5,
-      2
+      723653.5,
+      290
     ],
     [
       "Express Scripts",
@@ -743,29 +505,15 @@
       "Express Scripts",
       "JM Huber",
       "Ryan Wallace",
-      158427.92,
-      68
-    ],
-    [
-      "Express Scripts",
-      "JM Huber",
-      null,
-      0.0,
-      2
+      161273.17,
+      69
     ],
     [
       "Express Scripts",
       "MetLife",
       "Ryan Wallace",
-      590197.98,
-      251
-    ],
-    [
-      "Express Scripts",
-      "MetLife",
-      null,
-      14701.25,
-      5
+      604899.23,
+      256
     ],
     [
       "Express Scripts",
@@ -777,16 +525,9 @@
     [
       "Express Scripts",
       "New Balance",
-      null,
-      6165.5,
-      2
-    ],
-    [
-      "Express Scripts",
-      "New Balance",
       "Ryan Wallace",
-      88330.5,
-      35
+      94496.0,
+      37
     ],
     [
       "Express Scripts",
@@ -798,30 +539,16 @@
     [
       "Express Scripts",
       "Piedmont Healthcare",
-      null,
-      2845.25,
-      1
-    ],
-    [
-      "Express Scripts",
-      "Piedmont Healthcare",
       "Ryan Wallace",
-      519415.53,
-      197
+      522260.78,
+      198
     ],
     [
       "Express Scripts",
       "Red Bull",
       "Ryan Wallace",
-      354068.33,
-      163
-    ],
-    [
-      "Express Scripts",
-      "Red Bull",
-      null,
-      4589.92,
-      4
+      358658.25,
+      166
     ],
     [
       "Express Scripts",
@@ -847,16 +574,9 @@
     [
       "Express Scripts",
       "TTEC",
-      null,
-      3764.76,
-      4
-    ],
-    [
-      "Express Scripts",
-      "TTEC",
       "Ryan Wallace",
-      356529.34,
-      235
+      360785.34,
+      236
     ],
     [
       "Express Scripts",
@@ -876,613 +596,398 @@
       "Express Scripts",
       "Windstream",
       "Ryan Wallace",
-      93159.65,
-      75
+      106100.73,
+      77
     ],
     [
-      "Family Dollar",
-      null,
-      "Amy Nguyen",
-      72905.18,
-      95
-    ],
-    [
-      "Family Dollar",
-      null,
-      null,
-      940.5,
-      5
-    ],
-    [
-      "Farm Bureau",
-      "Farm Bureau Health Plans",
-      "Trisha Kes",
-      120465.0,
-      48
-    ],
-    [
-      "Farm Bureau",
-      "Farm Bureau Home Office",
-      "Trisha Kes",
-      22470.0,
-      9
-    ],
-    [
-      "GE Appliances",
-      null,
-      "Caitlin Kimball",
-      447760.0,
-      232
-    ],
-    [
-      "GE Appliances",
-      null,
-      null,
-      9845.0,
-      7
-    ],
-    [
-      "Garmin",
-      null,
-      "Caitlin Kimball",
-      105252.0,
-      55
-    ],
-    [
-      "Gray Television",
-      null,
-      "Trisha Kes",
-      121512.81,
-      68
-    ],
-    [
-      "Guardian",
-      null,
-      "Taylor Lutcher",
-      540420.0,
-      171
-    ],
-    [
-      "HPE",
-      null,
-      "Breanna Thompson",
-      997460.0,
-      362
-    ],
-    [
-      "HPE",
-      null,
-      null,
-      14855.0,
-      5
-    ],
-    [
-      "HealthPartners Plan",
-      "HealthPartners",
-      "Trisha Kes",
-      31455.0,
-      10
-    ],
-    [
-      "Hubbell",
-      null,
+      "Express Scripts",
+      "Yokohama",
       "Ryan Wallace",
-      90305.0,
-      40
+      28438.25,
+      13
     ],
     [
-      "Hunter Douglas",
-      null,
-      "Caitlin Kimball",
-      155570.0,
-      60
-    ],
-    [
-      "Independence Blue Cross",
-      null,
-      "Trisha Kes",
-      262660.0,
-      87
-    ],
-    [
-      "Independence Blue Cross",
-      null,
-      null,
-      3960.0,
-      2
-    ],
-    [
-      "K&L Gates",
-      "K&L Gates US",
-      "Taylor Lutcher",
-      162690.0,
-      54
-    ],
-    [
-      "KKR",
-      null,
-      "Taylor Lutcher",
-      130915.0,
-      42
-    ],
-    [
-      "Live Nation",
-      null,
-      "Taylor Lutcher",
-      281062.0,
-      100
-    ],
-    [
-      "Lumen",
-      null,
-      "Amy Nguyen",
-      826245.0,
-      402
-    ],
-    [
-      "Lumen",
-      null,
-      null,
-      18675.0,
-      9
-    ],
-    [
-      "MPI",
-      "MPI-Alcohol",
-      "Amy Nguyen",
-      383620.12,
-      195
-    ],
-    [
-      "MPI",
-      "MPI-Tobacco",
-      "Amy Nguyen",
-      26565.0,
-      18
-    ],
-    [
-      "Mortenson",
-      null,
-      "Caitlin Kimball",
-      31570.0,
-      15
-    ],
-    [
-      "NMHC",
-      null,
-      "Amy Nguyen",
-      51445.25,
-      35
-    ],
-    [
-      "Nationwide",
-      null,
-      "Breanna Thompson",
-      519540.0,
-      176
-    ],
-    [
-      "New York Life",
-      null,
-      "Taylor Lutcher",
-      374055.0,
-      127
-    ],
-    [
-      "Ochsner Health",
-      null,
-      "Trisha Kes",
-      259840.0,
-      87
-    ],
-    [
-      "Ochsner Health",
-      null,
-      null,
-      2995.0,
-      1
-    ],
-    [
-      "Owens & Minor",
-      null,
-      "Leslie Esch",
-      105640.0,
-      39
-    ],
-    [
-      "Owens & Minor",
-      null,
-      null,
-      990.0,
-      1
-    ],
-    [
-      "Personify",
-      "City of Minneapolis",
-      "Breanna Thompson",
-      213785.0,
-      68
-    ],
-    [
-      "Philips",
-      null,
-      "Breanna Thompson",
-      868310.0,
-      345
-    ],
-    [
-      "Philips",
-      null,
-      null,
-      12390.0,
-      5
-    ],
-    [
-      "RPM International",
-      null,
-      "Caitlin Kimball",
-      489720.0,
-      190
-    ],
-    [
-      "RPM International",
-      null,
-      null,
-      5900.0,
-      4
-    ],
-    [
-      "Rice University",
-      null,
-      "Taylor Lutcher",
-      35640.0,
-      11
-    ],
-    [
-      "SPX",
-      null,
-      "Taylor Lutcher",
-      241450.0,
-      88
-    ],
-    [
-      "Schnuck Markets",
-      null,
-      "Amy Nguyen",
-      62095.0,
-      37
-    ],
-    [
-      "Schreiber Foods",
-      null,
-      null,
-      6490.0,
-      2
-    ],
-    [
-      "Schreiber Foods",
-      null,
-      "Amy Nguyen",
-      63079.53,
-      29
-    ],
-    [
-      "Schreiber Foods",
-      null,
-      "Taylor Lutcher",
-      32564.0,
-      14
-    ],
-    [
-      "Securitas",
-      null,
-      "Breanna Thompson",
-      210249.6,
-      550
-    ],
-    [
-      "Securitas",
-      null,
-      null,
-      392.4,
-      1
-    ],
-    [
-      "Sequoia Multiprogram",
-      null,
-      "Jorie Stavropoulos",
-      7372.2,
-      1
-    ],
-    [
-      "Sequoia Multiprogram",
-      null,
-      null,
-      1485.0,
-      0
-    ],
-    [
-      "Silgan Containers",
-      null,
-      "Caitlin Kimball",
-      228629.16,
-      213
-    ],
-    [
-      "Silgan Containers",
-      null,
-      null,
-      5970.0,
-      6
-    ],
-    [
-      "Southcoast Health",
-      null,
-      "Taylor Lutcher",
-      454155.0,
-      169
-    ],
-    [
-      "Southcoast Health",
-      null,
-      null,
-      5990.0,
-      2
-    ],
-    [
-      "Southcoast Health",
-      null,
-      "Blake Bueltel",
-      85835.0,
-      33
-    ],
-    [
-      "Southern Company",
-      null,
-      null,
-      2578.7,
-      15
-    ],
-    [
-      "Southern Company",
-      null,
-      "Ryan Wallace",
-      88343.85,
-      81
-    ],
-    [
-      "Southern Company",
-      null,
-      "Amy Nguyen",
-      571424.94,
-      309
-    ],
-    [
-      "Stanley Black & Decker",
-      null,
-      "Ryan Wallace",
-      11139.27,
-      7
-    ],
-    [
-      "Stanley Black & Decker",
-      null,
-      "Amy Nguyen",
-      150862.69,
-      88
-    ],
-    [
-      "Stanley Black & Decker",
-      null,
-      null,
-      6485.0,
-      3
-    ],
-    [
-      "Toyoda Gosei",
-      null,
-      "Taylor Lutcher",
-      257963.23,
-      150
-    ],
-    [
-      "Toyoda Gosei",
-      null,
-      "Blake Bueltel",
-      38641.2,
-      31
-    ],
-    [
-      "Toyoda Gosei",
-      null,
+      "FAMD25DIR",
+      "",
       null,
       495.0,
       1
     ],
     [
-      "Tractor Supply Company",
-      null,
-      null,
-      728.75,
-      4
+      "Family Dollar",
+      "",
+      "Blake Bueltel",
+      570362.21,
+      315
     ],
     [
-      "Tractor Supply Company",
-      null,
-      "Ryan Wallace",
-      33140.5,
-      40
-    ],
-    [
-      "Tractor Supply Company",
-      null,
-      "Amy Nguyen",
-      101995.5,
-      167
-    ],
-    [
-      "U.S. Venture",
-      null,
+      "GE Appliances",
+      "",
       "Breanna Thompson",
-      511487.43,
-      213
+      433632.41,
+      206
     ],
     [
-      "Under Armour",
-      null,
-      null,
-      9485.0,
+      "Gray Television",
+      "",
+      "Taylor Lutcher",
+      97091.96,
+      50
+    ],
+    [
+      "Guitar Center",
+      "",
+      "Caitlin Kimball",
+      254137.97,
+      93
+    ],
+    [
+      "HPE",
+      "",
+      "Ryan Wallace",
+      812980.22,
+      352
+    ],
+    [
+      "HealthPartners Plan",
+      "HealthPartners",
+      "Trisha Kes",
+      16772.0,
+      6
+    ],
+    [
+      "Hubbell",
+      "",
+      "Caitlin Kimball",
+      24857.5,
+      35
+    ],
+    [
+      "Hunter Douglas",
+      "",
+      "Caitlin Kimball",
+      195646.57,
+      81
+    ],
+    [
+      "Independence",
+      "AmeriHealth",
+      "Steven White",
+      6490.0,
+      2
+    ],
+    [
+      "Independence",
+      "AmeriHealth Administrators",
+      "Steven White",
+      2995.0,
+      1
+    ],
+    [
+      "Independence",
+      "BlueLink",
+      "Trisha Kes",
+      9985.0,
       3
     ],
     [
-      "Under Armour",
-      null,
-      "Taylor Lutcher",
-      32500.49,
-      13
+      "Independence",
+      "Independence Administrators",
+      "Trisha Kes",
+      2995.0,
+      1
     ],
     [
-      "Wellstar",
-      null,
-      "Amy Nguyen",
-      9900.0,
+      "Independence",
+      "Independence Blue Cross",
+      "Trisha Kes",
+      98845.0,
+      31
+    ],
+    [
+      "Independence Blue Cross",
+      "",
+      "Trisha Kes",
+      64400.0,
       20
     ],
     [
-      "Wellstar",
-      null,
+      "K&L Gates",
+      "K&L Gates US",
       "Taylor Lutcher",
-      42075.0,
-      85
+      104648.35,
+      43
+    ],
+    [
+      "KKR",
+      "",
+      "Breanna Thompson",
+      49915.0,
+      17
+    ],
+    [
+      "Kraft Heinz",
+      "",
+      "Blake Bueltel",
+      1394738.09,
+      593
+    ],
+    [
+      "Live Nation",
+      "",
+      "Caitlin Kimball",
+      673027.81,
+      267
+    ],
+    [
+      "Loews Hotels",
+      "",
+      "Caitlin Kimball",
+      1057751.78,
+      356
+    ],
+    [
+      "Lumen",
+      "",
+      "Ryan Wallace",
+      1608906.55,
+      1024
+    ],
+    [
+      "MPI",
+      "MPI-Alcohol",
+      "Taylor Lutcher",
+      506835.0,
+      168
+    ],
+    [
+      "MPI",
+      "MPI-Tobacco",
+      "Taylor Lutcher",
+      6130.36,
+      40
+    ],
+    [
+      "Perdue Farms",
+      "",
+      "Taylor Lutcher",
+      334701.31,
+      123
+    ],
+    [
+      "Personify",
+      "City of Minneapolis",
+      "Caitlin Kimball",
+      523291.08,
+      198
+    ],
+    [
+      "Philips",
+      "",
+      "Leslie Esch",
+      1439429.13,
+      570
+    ],
+    [
+      "RPM International",
+      "",
+      "Caitlin Kimball",
+      399975.31,
+      172
+    ],
+    [
+      "SPX",
+      "",
+      "Taylor Lutcher",
+      325672.04,
+      138
+    ],
+    [
+      "SRS Distribution",
+      "",
+      "Caitlin Kimball",
+      374082.9,
+      142
+    ],
+    [
+      "Schreiber Foods",
+      "",
+      "Taylor Lutcher",
+      102133.53,
+      41
+    ],
+    [
+      "Securitas",
+      "",
+      "Breanna Thompson",
+      211819.2,
+      553
+    ],
+    [
+      "Sequoia Multiprogram",
+      "",
+      "Jorie Stavropoulos",
+      8857.2,
+      0
+    ],
+    [
+      "Silgan Containers",
+      "",
+      "Caitlin Kimball",
+      234599.16,
+      218
+    ],
+    [
+      "Southcoast Health",
+      "",
+      "Taylor Lutcher",
+      545980.0,
+      204
+    ],
+    [
+      "Southern Company",
+      "",
+      "Ryan Wallace",
+      662347.49,
+      352
+    ],
+    [
+      "Stanley Black & Decker",
+      "",
+      "Ryan Wallace",
+      168549.14,
+      97
+    ],
+    [
+      "Toyoda Gosei",
+      "",
+      "Taylor Lutcher",
+      297750.43,
+      178
+    ],
+    [
+      "Tractor Supply Company",
+      "",
+      "Ryan Wallace",
+      136106.0,
+      189
+    ],
+    [
+      "U.S. Venture",
+      "",
+      "Breanna Thompson",
+      514977.43,
+      215
+    ],
+    [
+      "Under Armour",
+      "",
+      "Taylor Lutcher",
+      41985.49,
+      16
+    ],
+    [
+      "Wellstar",
+      "",
+      "Taylor Lutcher",
+      51975.0,
+      105
     ],
     [
       "Whataburger",
-      null,
+      "",
       null,
       990.0,
       2
     ],
     [
       "Yanfeng",
-      null,
+      "",
       "Taylor Lutcher",
-      277188.94,
-      125
-    ],
-    [
-      "Yanfeng",
-      null,
-      "Blake Bueltel",
-      12032.87,
-      10
-    ],
-    [
-      "Yanfeng",
-      null,
-      null,
-      8985.0,
-      3
-    ],
-    [
-      "SRS Distribution",
-      null,
-      "Caitlin Kimball",
-      294153.05,
-      127
-    ],
-    [
-      "SRS Distribution",
-      null,
-      null,
-      41910.0,
-      18
+      302201.81,
+      137
     ]
   ],
   "raw_py": [
     [
       "7-Eleven",
-      null,
-      614694.71
+      "",
+      588333.39
     ],
     [
       "ADUSA Services",
       "ADUSA - Limited",
-      94700.51
+      101590.31
     ],
     [
       "ADUSA Services",
       "ADUSA - Multi",
-      698861.39
+      691529.39
     ],
     [
       "Alight",
       "AT&T",
-      28336.34
+      27437.78
     ],
     [
       "Alight",
       "BD",
-      123981.65
+      123486.65
     ],
     [
       "Alight",
       "KnitWell Group",
-      31805.05
-    ],
-    [
-      "Alight",
-      "Knitwell",
-      -0.05
+      31770.24
     ],
     [
       "Alight",
       "Maximus",
-      319715.0
+      313257.0
     ],
     [
       "Amazon",
-      null,
-      1189490.98
+      "",
+      1125163.88
     ],
     [
       "Appalachian Regional Healthcare",
-      null,
+      "",
       4121.0
     ],
     [
       "Apree Health",
       "Kraft Heinz",
-      408450.0
+      287710.0
     ],
     [
       "Beacon Health",
-      null,
-      380840.93
+      "",
+      360174.17
     ],
     [
       "Blue Cross & Blue Shield of Rhode Island",
-      null,
-      71385.0
+      "",
+      59405.0
     ],
     [
       "Blue Cross and Blue Shield of Minnesota Plan",
       "Blue Cross and Blue Shield of Minnesota",
-      12480.0
+      8985.0
     ],
     [
       "CACI",
-      null,
+      "",
       14738.25
     ],
     [
       "CNH Industrial",
-      null,
-      455312.0
+      "",
+      452317.0
     ],
     [
       "CVS Health",
       "Fidelity National Financial",
-      233605.79
+      214635.79
     ],
     [
       "Cambia",
@@ -1502,7 +1007,7 @@
     [
       "Cambia",
       "Small Mine Development",
-      2607.0
+      2229.5
     ],
     [
       "Cambia",
@@ -1512,42 +1017,57 @@
     [
       "Cambia",
       "Weyerhaeuser",
-      1333.0
+      955.5
     ],
     [
       "Carters",
-      null,
+      "",
       64360.0
     ],
     [
       "Cheesecake Factory",
-      null,
-      97813.0
+      "",
+      93876.0
+    ],
+    [
+      "Chegg",
+      "",
+      750.0
     ],
     [
       "Chobani",
-      null,
-      112644.59
+      "",
+      102878.59
     ],
     [
       "Corning",
-      null,
-      315439.31
+      "",
+      296103.35
     ],
     [
       "Curative",
-      null,
-      554780.0
+      "",
+      523840.0
     ],
     [
       "Dollar Tree",
-      null,
-      579126.91
+      "",
+      559338.84
     ],
     [
       "Evry Health",
-      null,
-      3917.4
+      "",
+      3497.4
+    ],
+    [
+      "Express Scripts",
+      "American Eagle Outfitters Inc.",
+      43537.5
+    ],
+    [
+      "Express Scripts",
+      "AvalonBay Communities",
+      2707.5
     ],
     [
       "Express Scripts",
@@ -1557,52 +1077,97 @@
     [
       "Express Scripts",
       "Benjamin Moore",
-      13353.75
+      12337.5
+    ],
+    [
+      "Express Scripts",
+      "Bimbo Bakeries USA (BBU, Inc.)",
+      46166.25
+    ],
+    [
+      "Express Scripts",
+      "CACI",
+      14840.0
     ],
     [
       "Express Scripts",
       "Carpenters H&W Trust Fund",
-      6545.0
+      6125.0
+    ],
+    [
+      "Express Scripts",
+      "Chico's",
+      17158.95
+    ],
+    [
+      "Express Scripts",
+      "Christian Brothers",
+      5979.18
+    ],
+    [
+      "Express Scripts",
+      "Cincinnati Children's Hospital Medical Center",
+      3118.75
     ],
     [
       "Express Scripts",
       "Dick's Sporting Goods",
-      388479.42
+      382001.92
     ],
     [
       "Express Scripts",
       "Gerdau",
-      25085.96
+      13794.44
     ],
     [
       "Express Scripts",
       "JM Huber",
-      73858.64
+      72716.25
+    ],
+    [
+      "Express Scripts",
+      "Mattress Firm",
+      3282.5
     ],
     [
       "Express Scripts",
       "MetLife",
-      123445.86
+      123048.97
     ],
     [
       "Express Scripts",
       "New Balance",
-      40440.63
+      40581.71
     ],
     [
       "Express Scripts",
       "OPEH&W",
-      43147.58
+      45967.94
     ],
     [
       "Express Scripts",
       "Piedmont Healthcare",
-      21908.48
+      19533.48
     ],
     [
       "Express Scripts",
       "Red Bull",
-      168601.14
+      160292.72
+    ],
+    [
+      "Express Scripts",
+      "Redner's Markets",
+      5949.0
+    ],
+    [
+      "Express Scripts",
+      "Solvay",
+      3710.0
+    ],
+    [
+      "Express Scripts",
+      "Southeastern Grocers",
+      19516.36
     ],
     [
       "Express Scripts",
@@ -1612,172 +1177,242 @@
     [
       "Express Scripts",
       "TTEC",
-      341213.51
+      302153.12
     ],
     [
       "Express Scripts",
       "The Doe Run Company",
-      10808.66
+      7488.41
+    ],
+    [
+      "Express Scripts",
+      "The Fresh Market",
+      5642.5
+    ],
+    [
+      "Express Scripts",
+      "Valvoline",
+      105.0
+    ],
+    [
+      "Express Scripts",
+      "Whataburger",
+      14431.25
+    ],
+    [
+      "Express Scripts",
+      "Windstream",
+      4035.67
+    ],
+    [
+      "Family Dollar",
+      "",
+      5574.85
+    ],
+    [
+      "Farm Bureau",
+      "Farm Bureau Health Plans",
+      36925.0
+    ],
+    [
+      "Farm Bureau",
+      "Farm Bureau Home Office",
+      3150.0
     ],
     [
       "GE Appliances",
-      null,
-      315105.58
+      "",
+      303876.58
+    ],
+    [
+      "Garmin",
+      "",
+      107.29
     ],
     [
       "Gray Television",
-      null,
-      97396.04
+      "",
+      91627.64
     ],
     [
       "Guardian",
-      null,
-      447171.0
+      "",
+      384629.25
     ],
     [
       "HPE",
-      null,
-      746428.48
+      "",
+      741997.52
+    ],
+    [
+      "HealthPartners Plan",
+      "HealthPartners",
+      9485.0
+    ],
+    [
+      "Hubbell",
+      "",
+      37673.1
     ],
     [
       "Hunter Douglas",
-      null,
+      "",
       180793.71
     ],
     [
       "Independence Blue Cross",
-      null,
-      194195.0
+      "",
+      187205.0
     ],
     [
       "K&L Gates",
       "K&L Gates US",
-      121551.65
+      117698.75
     ],
     [
       "KKR",
-      null,
+      "",
       10999.26
     ],
     [
       "Live Nation",
-      null,
-      197008.68
+      "",
+      194013.68
     ],
     [
       "Lumen",
-      null,
-      1089713.43
+      "",
+      1092278.88
     ],
     [
       "MPI",
       "MPI-Alcohol",
-      279345.92
+      273355.92
     ],
     [
       "MPI",
       "MPI-Tobacco",
-      11520.06
+      10701.82
     ],
     [
       "Mortenson",
-      null,
+      "",
       17380.0
+    ],
+    [
+      "Orano",
+      "",
+      70.0
     ],
     [
       "Personify",
       "City of Minneapolis",
-      140562.0
+      117790.0
     ],
     [
       "Philips",
-      null,
-      845290.17
+      "",
+      821398.17
     ],
     [
       "RPM International",
-      null,
-      457877.65
+      "",
+      432630.65
+    ],
+    [
+      "Rice University",
+      "",
+      930.0
     ],
     [
       "SPX",
-      null,
-      205151.66
+      "",
+      199347.61
+    ],
+    [
+      "Schnuck Markets",
+      "",
+      13815.14
     ],
     [
       "Schreiber Foods",
-      null,
-      254796.47
+      "",
+      250989.47
     ],
     [
       "Securitas",
-      null,
-      146784.1
+      "",
+      145214.5
     ],
     [
       "Sequoia Multiprogram",
-      null,
+      "",
       31762.5
     ],
     [
       "Silgan Containers",
-      null,
-      111912.86
+      "",
+      111866.97
     ],
     [
       "Southcoast Health",
-      null,
-      299349.5
+      "",
+      300849.5
     ],
     [
       "Southern Company",
-      null,
-      882923.47
+      "",
+      875852.65
     ],
     [
       "Stanley Black & Decker",
-      null,
-      154275.66
+      "",
+      151993.51
+    ],
+    [
+      "Stanley Decker",
+      "",
+      200234.58
     ],
     [
       "Toyoda Gosei",
-      null,
-      342569.4
+      "",
+      341579.4
     ],
     [
       "Tractor Supply Company",
-      null,
-      373706.0
+      "",
+      308202.75
     ],
     [
       "U.S. Venture",
-      null,
+      "",
       284134.23
     ],
     [
       "Under Armour",
-      null,
-      39057.47
+      "",
+      38406.47
     ],
     [
       "Valmont",
-      null,
+      "",
       81000.0
     ],
     [
       "WEI",
-      null,
+      "",
       16000.0
     ],
     [
       "Wellstar",
-      null,
-      199980.0
+      "",
+      193050.0
     ],
     [
       "Yanfeng",
-      null,
-      175331.93
+      "",
+      175232.93
     ]
   ],
   "raw_meta": [
@@ -2696,269 +2331,409 @@
   ],
   "raw_el": [
     [
-      "3M",
-      "3M - BCBSMN",
-      1
-    ],
-    [
-      "3M",
-      "3M - Health Partner",
-      1
-    ],
-    [
       "7-Eleven",
       null,
-      17629
+      17753
     ],
     [
       "ADUSA Services",
       "ADUSA - Limited",
-      1
+      126326
     ],
     [
       "ADUSA Services",
       "ADUSA - Multi",
-      63933
-    ],
-    [
-      "Aetna",
-      "Builders FirstSource",
-      17074
+      63978
     ],
     [
       "Aetna",
       "Costco Wholesale",
-      215848
-    ],
-    [
-      "Aetna",
-      "Panasonic",
-      8110
+      356002
     ],
     [
       "Alight",
       "AT&T",
-      227057
-    ],
-    [
-      "Alight",
-      "Alcon",
-      0
-    ],
-    [
-      "Alight",
-      "Alex Lee",
-      0
+      569967
     ],
     [
       "Alight",
       "BD",
-      40989
+      42268
     ],
     [
       "Alight",
       "KnitWell Group",
-      0
+      8559
     ],
     [
       "Alight",
       "Maximus",
-      0
-    ],
-    [
-      "Alight",
-      "Sanofi",
-      0
+      22516
     ],
     [
       "Amazon",
       null,
-      874386
+      882095
+    ],
+    [
+      "Apree Health",
+      "Kraft Heinz",
+      20512
     ],
     [
       "Beacon Health",
       null,
-      7827
-    ],
-    [
-      "Bimbo Bakeries USA (BBU, Inc.)",
-      null,
-      1
+      20746
     ],
     [
       "Blue Cross & Blue Shield of Rhode Island",
       null,
-      11257
-    ],
-    [
-      "Blue Cross and Blue Shield of Minnesota Plan",
-      "Polaris",
-      10565
+      11659
     ],
     [
       "CACI",
       null,
-      14759
+      31685
     ],
     [
       "CNH Industrial",
       null,
-      1
-    ],
-    [
-      "CVS Health",
-      "Archer Daniels Midland",
-      24668
-    ],
-    [
-      "CVS Health",
-      "Chicago Public Schools",
-      68615
+      16379
     ],
     [
       "CVS Health",
       "Fidelity National Financial",
-      22382
-    ],
-    [
-      "CVS Health",
-      "Hubbell CVS",
-      10318
+      22354
     ],
     [
       "CVS Health",
       "Sprouts Farmers Market",
-      12980
+      13024
     ],
     [
       "Cambia",
       "Darigold",
-      936
+      1407
     ],
     [
       "Cambia",
       "Fortive",
-      4677
+      7466
     ],
     [
       "Cambia",
       "Fuerst Group",
-      433
+      700
     ],
     [
       "Cambia",
       "Litehouse Inc",
-      917
+      1409
     ],
     [
       "Cambia",
       "Options for Southern Oregon",
-      458
+      646
     ],
     [
       "Cambia",
       "Ralliant Corporation",
-      3190
+      5006
     ],
     [
       "Cambia",
       "Small Mine Development",
-      380
+      707
     ],
     [
       "Cambia",
       "Supplemental Health Care",
-      1200
+      1483
     ],
     [
       "Cambia",
       "Washington State Health Care Authority",
-      193792
+      310879
     ],
     [
       "Carters",
       null,
-      1
+      2943
     ],
     [
       "Cheesecake Factory",
       null,
-      1
+      12990
     ],
     [
-      "Cobalt Benefits Group",
-      "SharkNinja",
-      2984
+      "Corning",
+      null,
+      26432
     ],
     [
       "Curative",
       null,
-      166589
+      168156
+    ],
+    [
+      "Dollar Tree",
+      null,
+      16769
     ],
     [
       "Evry Health",
       null,
-      5591
+      8912
+    ],
+    [
+      "Express Scripts",
+      "B&G Foods",
+      1917
+    ],
+    [
+      "Express Scripts",
+      "Benjamin Moore",
+      2272
+    ],
+    [
+      "Express Scripts",
+      "Bimbo Bakeries USA (BBU, Inc.)",
+      29040
+    ],
+    [
+      "Express Scripts",
+      "Carpenters H&W Trust Fund",
+      55827
+    ],
+    [
+      "Express Scripts",
+      "Christian Brothers",
+      34705
+    ],
+    [
+      "Express Scripts",
+      "Cincinnati Children's Hospital Medical Center",
+      20900
+    ],
+    [
+      "Express Scripts",
+      "Dick's Sporting Goods",
+      18537
+    ],
+    [
+      "Express Scripts",
+      "Gerdau",
+      7563
+    ],
+    [
+      "Express Scripts",
+      "JM Huber",
+      3963
+    ],
+    [
+      "Express Scripts",
+      "MetLife",
+      21240
+    ],
+    [
+      "Express Scripts",
+      "New Balance",
+      4703
+    ],
+    [
+      "Express Scripts",
+      "OPEH&W",
+      4004
+    ],
+    [
+      "Express Scripts",
+      "Piedmont Healthcare",
+      34949
+    ],
+    [
+      "Express Scripts",
+      "Red Bull",
+      9030
+    ],
+    [
+      "Express Scripts",
+      "Redner's Markets",
+      1745
+    ],
+    [
+      "Express Scripts",
+      "Solvay",
+      6898
+    ],
+    [
+      "Express Scripts",
+      "SugarCreek",
+      2001
+    ],
+    [
+      "Express Scripts",
+      "TTEC",
+      5175
+    ],
+    [
+      "Express Scripts",
+      "The Doe Run Company",
+      1870
+    ],
+    [
+      "Express Scripts",
+      "Whataburger",
+      7588
+    ],
+    [
+      "Express Scripts",
+      "Windstream",
+      10221
+    ],
+    [
+      "Family Dollar",
+      null,
+      10710
     ],
     [
       "GE Appliances",
       null,
-      1
+      18390
     ],
     [
-      "Guitar Center",
+      "Gray Television",
       null,
-      3792
+      8245
     ],
     [
       "HPE",
       null,
-      1
+      30739
     ],
     [
       "Hubbell",
       null,
-      386
+      475
+    ],
+    [
+      "Hunter Douglas",
+      null,
+      5604
     ],
     [
       "K&L Gates",
       "K&L Gates US",
-      1996
+      3073
     ],
     [
-      "Loews Hotels",
+      "KKR",
       null,
-      5319
+      3895
+    ],
+    [
+      "Live Nation",
+      null,
+      22522
+    ],
+    [
+      "Lumen",
+      null,
+      29277
     ],
     [
       "MPI",
       "MPI-Alcohol",
-      40448
+      63577
+    ],
+    [
+      "MPI",
+      "MPI-Tobacco",
+      98829
     ],
     [
       "Personify",
       "City of Minneapolis",
-      1
+      3523
     ],
     [
       "Philips",
       null,
-      20851
+      21078
     ],
     [
       "RPM International",
       null,
-      9824
+      17841
     ],
     [
-      "SRS Distribution",
+      "SPX",
       null,
-      12469
+      5528
+    ],
+    [
+      "Schreiber Foods",
+      null,
+      12462
+    ],
+    [
+      "Securitas",
+      null,
+      82748
+    ],
+    [
+      "Silgan Containers",
+      null,
+      3095
+    ],
+    [
+      "Southcoast Health",
+      null,
+      7695
+    ],
+    [
+      "Southern Company",
+      null,
+      57260
+    ],
+    [
+      "Stanley Black & Decker",
+      null,
+      22287
     ],
     [
       "Toyoda Gosei",
       null,
-      4427
+      7194
+    ],
+    [
+      "Tractor Supply Company",
+      null,
+      22192
+    ],
+    [
+      "U.S. Venture",
+      null,
+      6858
+    ],
+    [
+      "Under Armour",
+      null,
+      4110
+    ],
+    [
+      "Wellstar",
+      null,
+      938
+    ],
+    [
+      "Yanfeng",
+      null,
+      7589
+    ],
+    [
+      "Yokohama",
+      null,
+      2604
     ]
   ],
   "raw_py_el": [
@@ -3692,26 +3467,26 @@
     [
       "3M",
       "3M - BCBSMN",
-      15475.0,
-      113320.0,
-      41935.0,
-      51920.0,
-      94340.0,
-      40420.0,
-      15970.0,
-      2995.0
+      19128.97,
+      140077.22,
+      51836.73,
+      64179.4,
+      116615.64,
+      49964.01,
+      19740.85,
+      3702.18
     ],
     [
       "3M",
       "3M - Health Partner",
-      13179.0,
-      80471.0,
-      56510.0,
-      58607.0,
-      54516.0,
-      59904.0,
-      53114.0,
-      21864.0
+      12954.29,
+      79098.91,
+      55546.46,
+      57607.71,
+      53586.46,
+      58882.59,
+      52208.37,
+      21491.2
     ],
     [
       "7-Eleven",
@@ -3740,14 +3515,14 @@
     [
       "ADUSA Services",
       "ADUSA - Multi",
-      53796.89,
-      18505.78,
-      26893.66,
-      8255.98,
-      10335.49,
-      28459.99,
-      18180.97,
-      26011.98
+      53840.96,
+      18520.94,
+      26915.69,
+      8262.74,
+      10343.96,
+      28483.3,
+      18195.86,
+      26033.29
     ],
     [
       "Aetna",
@@ -3784,68 +3559,3632 @@
       42925.0,
       10475.0,
       9975.0
+    ],
+    [
+      "Alight",
+      "AT&T",
+      4665.5,
+      4665.5,
+      4665.5,
+      4665.5,
+      4665.5,
+      4665.5,
+      4665.5,
+      4665.5
+    ],
+    [
+      "Alight",
+      "Alcon",
+      5673.12,
+      5673.12,
+      5673.12,
+      5673.12,
+      5673.12,
+      5673.12,
+      5673.12,
+      5673.12
+    ],
+    [
+      "Alight",
+      "Alex Lee",
+      7618.92,
+      7618.92,
+      7618.92,
+      7618.92,
+      7618.92,
+      7618.92,
+      7618.92,
+      7618.92
+    ],
+    [
+      "Alight",
+      "BD",
+      32891.18,
+      32891.18,
+      32891.18,
+      32891.18,
+      32891.18,
+      32891.18,
+      32891.18,
+      32891.18
+    ],
+    [
+      "Alight",
+      "KnitWell Group",
+      14274.33,
+      14274.33,
+      14274.33,
+      14274.33,
+      14274.33,
+      14274.33,
+      14274.33,
+      14274.33
+    ],
+    [
+      "Alight",
+      "Maximus",
+      40446.62,
+      40446.62,
+      40446.62,
+      40446.62,
+      40446.62,
+      40446.62,
+      40446.62,
+      40446.62
+    ],
+    [
+      "Alight",
+      "Sanofi",
+      93976.5,
+      93976.5,
+      93976.5,
+      93976.5,
+      93976.5,
+      93976.5,
+      93976.5,
+      93976.5
+    ],
+    [
+      "Amazon",
+      "",
+      131275.37,
+      131275.37,
+      131275.37,
+      131275.37,
+      131275.37,
+      131275.37,
+      131275.37,
+      131275.37
+    ],
+    [
+      "Beacon Health",
+      "",
+      100943.38,
+      100943.38,
+      100943.38,
+      100943.38,
+      100943.38,
+      100943.38,
+      100943.38,
+      100943.38
+    ],
+    [
+      "Bimbo Bakeries USA (BBU, Inc.)",
+      "",
+      3195.13,
+      3195.13,
+      3195.13,
+      3195.13,
+      3195.13,
+      3195.13,
+      3195.13,
+      3195.13
+    ],
+    [
+      "Blue Cross & Blue Shield of Rhode Island",
+      "",
+      21340.0,
+      21340.0,
+      21340.0,
+      21340.0,
+      21340.0,
+      21340.0,
+      21340.0,
+      21340.0
+    ],
+    [
+      "Blue Cross and Blue Shield of Minnesota Plan",
+      "Blue Cross and Blue Shield of Minnesota",
+      13353.12,
+      13353.12,
+      13353.12,
+      13353.12,
+      13353.12,
+      13353.12,
+      13353.12,
+      13353.12
+    ],
+    [
+      "Blue Cross and Blue Shield of Minnesota Plan",
+      "Polaris",
+      37180.0,
+      37180.0,
+      37180.0,
+      37180.0,
+      37180.0,
+      37180.0,
+      37180.0,
+      37180.0
+    ],
+    [
+      "CACI",
+      "",
+      38494.19,
+      38494.19,
+      38494.19,
+      38494.19,
+      38494.19,
+      38494.19,
+      38494.19,
+      38494.19
+    ],
+    [
+      "CNH Industrial",
+      "",
+      76108.25,
+      76108.25,
+      76108.25,
+      76108.25,
+      76108.25,
+      76108.25,
+      76108.25,
+      76108.25
+    ],
+    [
+      "CVS Health",
+      "Archer Daniels Midland",
+      131186.85,
+      131186.85,
+      131186.85,
+      131186.85,
+      131186.85,
+      131186.85,
+      131186.85,
+      131186.85
+    ],
+    [
+      "CVS Health",
+      "Chicago Public Schools",
+      190552.12,
+      190552.12,
+      190552.12,
+      190552.12,
+      190552.12,
+      190552.12,
+      190552.12,
+      190552.12
+    ],
+    [
+      "CVS Health",
+      "Fidelity National Financial",
+      103815.31,
+      103815.31,
+      103815.31,
+      103815.31,
+      103815.31,
+      103815.31,
+      103815.31,
+      103815.31
+    ],
+    [
+      "CVS Health",
+      "Hubbell CVS",
+      69256.43,
+      69256.43,
+      69256.43,
+      69256.43,
+      69256.43,
+      69256.43,
+      69256.43,
+      69256.43
+    ],
+    [
+      "CVS Health",
+      "Sprouts Farmers Market",
+      1123.12,
+      1123.12,
+      1123.12,
+      1123.12,
+      1123.12,
+      1123.12,
+      1123.12,
+      1123.12
+    ],
+    [
+      "Cambia",
+      "Fortive",
+      181.5,
+      181.5,
+      181.5,
+      181.5,
+      181.5,
+      181.5,
+      181.5,
+      181.5
+    ],
+    [
+      "Cambia",
+      "Litehouse Inc",
+      210.26,
+      210.26,
+      210.26,
+      210.26,
+      210.26,
+      210.26,
+      210.26,
+      210.26
+    ],
+    [
+      "Cambia",
+      "Ralliant Corporation",
+      490.31,
+      490.31,
+      490.31,
+      490.31,
+      490.31,
+      490.31,
+      490.31,
+      490.31
+    ],
+    [
+      "Cambia",
+      "Small Mine Development",
+      53.33,
+      53.33,
+      53.33,
+      53.33,
+      53.33,
+      53.33,
+      53.33,
+      53.33
+    ],
+    [
+      "Cambia",
+      "Washington State Health Care Authority",
+      1122.18,
+      1122.18,
+      1122.18,
+      1122.18,
+      1122.18,
+      1122.18,
+      1122.18,
+      1122.18
+    ],
+    [
+      "Cambia",
+      "Weyerhaeuser",
+      94.38,
+      94.38,
+      94.38,
+      94.38,
+      94.38,
+      94.38,
+      94.38,
+      94.38
+    ],
+    [
+      "Carters",
+      "",
+      15090.62,
+      15090.62,
+      15090.62,
+      15090.62,
+      15090.62,
+      15090.62,
+      15090.62,
+      15090.62
+    ],
+    [
+      "Cheesecake Factory",
+      "",
+      40002.27,
+      40002.27,
+      40002.27,
+      40002.27,
+      40002.27,
+      40002.27,
+      40002.27,
+      40002.27
+    ],
+    [
+      "Cobalt Benefits Group",
+      "SharkNinja",
+      6934.62,
+      6934.62,
+      6934.62,
+      6934.62,
+      6934.62,
+      6934.62,
+      6934.62,
+      6934.62
+    ],
+    [
+      "Corning",
+      "",
+      78619.26,
+      78619.26,
+      78619.26,
+      78619.26,
+      78619.26,
+      78619.26,
+      78619.26,
+      78619.26
+    ],
+    [
+      "Curative",
+      "",
+      113722.5,
+      113722.5,
+      113722.5,
+      113722.5,
+      113722.5,
+      113722.5,
+      113722.5,
+      113722.5
+    ],
+    [
+      "Dollar Tree",
+      "",
+      86627.0,
+      86627.0,
+      86627.0,
+      86627.0,
+      86627.0,
+      86627.0,
+      86627.0,
+      86627.0
+    ],
+    [
+      "Evry Health",
+      "",
+      46299.22,
+      46299.22,
+      46299.22,
+      46299.22,
+      46299.22,
+      46299.22,
+      46299.22,
+      46299.22
+    ],
+    [
+      "Express Scripts",
+      "B&G Foods",
+      2666.53,
+      2666.53,
+      2666.53,
+      2666.53,
+      2666.53,
+      2666.53,
+      2666.53,
+      2666.53
+    ],
+    [
+      "Express Scripts",
+      "Benjamin Moore",
+      5759.72,
+      5759.72,
+      5759.72,
+      5759.72,
+      5759.72,
+      5759.72,
+      5759.72,
+      5759.72
+    ],
+    [
+      "Express Scripts",
+      "Carpenters H&W Trust Fund",
+      14413.28,
+      14413.28,
+      14413.28,
+      14413.28,
+      14413.28,
+      14413.28,
+      14413.28,
+      14413.28
+    ],
+    [
+      "Express Scripts",
+      "Cascade Drilling",
+      1787.28,
+      1787.28,
+      1787.28,
+      1787.28,
+      1787.28,
+      1787.28,
+      1787.28,
+      1787.28
+    ],
+    [
+      "Express Scripts",
+      "Christian Brothers",
+      217.85,
+      217.85,
+      217.85,
+      217.85,
+      217.85,
+      217.85,
+      217.85,
+      217.85
+    ],
+    [
+      "Express Scripts",
+      "Cincinnati Children's Hospital Medical Center",
+      198.59,
+      198.59,
+      198.59,
+      198.59,
+      198.59,
+      198.59,
+      198.59,
+      198.59
+    ],
+    [
+      "Express Scripts",
+      "Dick's Sporting Goods",
+      90456.69,
+      90456.69,
+      90456.69,
+      90456.69,
+      90456.69,
+      90456.69,
+      90456.69,
+      90456.69
+    ],
+    [
+      "Express Scripts",
+      "Gerdau",
+      7046.37,
+      7046.37,
+      7046.37,
+      7046.37,
+      7046.37,
+      7046.37,
+      7046.37,
+      7046.37
+    ],
+    [
+      "Express Scripts",
+      "JM Huber",
+      20159.15,
+      20159.15,
+      20159.15,
+      20159.15,
+      20159.15,
+      20159.15,
+      20159.15,
+      20159.15
+    ],
+    [
+      "Express Scripts",
+      "MetLife",
+      75612.4,
+      75612.4,
+      75612.4,
+      75612.4,
+      75612.4,
+      75612.4,
+      75612.4,
+      75612.4
+    ],
+    [
+      "Express Scripts",
+      "Micron",
+      355.66,
+      355.66,
+      355.66,
+      355.66,
+      355.66,
+      355.66,
+      355.66,
+      355.66
+    ],
+    [
+      "Express Scripts",
+      "New Balance",
+      11812.0,
+      11812.0,
+      11812.0,
+      11812.0,
+      11812.0,
+      11812.0,
+      11812.0,
+      11812.0
+    ],
+    [
+      "Express Scripts",
+      "OPEH&W",
+      11035.65,
+      11035.65,
+      11035.65,
+      11035.65,
+      11035.65,
+      11035.65,
+      11035.65,
+      11035.65
+    ],
+    [
+      "Express Scripts",
+      "Piedmont Healthcare",
+      65282.6,
+      65282.6,
+      65282.6,
+      65282.6,
+      65282.6,
+      65282.6,
+      65282.6,
+      65282.6
+    ],
+    [
+      "Express Scripts",
+      "Red Bull",
+      44832.28,
+      44832.28,
+      44832.28,
+      44832.28,
+      44832.28,
+      44832.28,
+      44832.28,
+      44832.28
+    ],
+    [
+      "Express Scripts",
+      "Redner's Markets",
+      7585.16,
+      7585.16,
+      7585.16,
+      7585.16,
+      7585.16,
+      7585.16,
+      7585.16,
+      7585.16
+    ],
+    [
+      "Express Scripts",
+      "Solvay",
+      2245.56,
+      2245.56,
+      2245.56,
+      2245.56,
+      2245.56,
+      2245.56,
+      2245.56,
+      2245.56
+    ],
+    [
+      "Express Scripts",
+      "SugarCreek",
+      14922.43,
+      14922.43,
+      14922.43,
+      14922.43,
+      14922.43,
+      14922.43,
+      14922.43,
+      14922.43
+    ],
+    [
+      "Express Scripts",
+      "TTEC",
+      45098.17,
+      45098.17,
+      45098.17,
+      45098.17,
+      45098.17,
+      45098.17,
+      45098.17,
+      45098.17
+    ],
+    [
+      "Express Scripts",
+      "The Doe Run Company",
+      2020.28,
+      2020.28,
+      2020.28,
+      2020.28,
+      2020.28,
+      2020.28,
+      2020.28,
+      2020.28
+    ],
+    [
+      "Express Scripts",
+      "VNS Health",
+      11496.19,
+      11496.19,
+      11496.19,
+      11496.19,
+      11496.19,
+      11496.19,
+      11496.19,
+      11496.19
+    ],
+    [
+      "Express Scripts",
+      "Windstream",
+      13262.59,
+      13262.59,
+      13262.59,
+      13262.59,
+      13262.59,
+      13262.59,
+      13262.59,
+      13262.59
+    ],
+    [
+      "Express Scripts",
+      "Yokohama",
+      3554.78,
+      3554.78,
+      3554.78,
+      3554.78,
+      3554.78,
+      3554.78,
+      3554.78,
+      3554.78
+    ],
+    [
+      "FAMD25DIR",
+      "",
+      61.88,
+      61.88,
+      61.88,
+      61.88,
+      61.88,
+      61.88,
+      61.88,
+      61.88
+    ],
+    [
+      "Family Dollar",
+      "",
+      71295.28,
+      71295.28,
+      71295.28,
+      71295.28,
+      71295.28,
+      71295.28,
+      71295.28,
+      71295.28
+    ],
+    [
+      "GE Appliances",
+      "",
+      54204.05,
+      54204.05,
+      54204.05,
+      54204.05,
+      54204.05,
+      54204.05,
+      54204.05,
+      54204.05
+    ],
+    [
+      "Gray Television",
+      "",
+      12136.5,
+      12136.5,
+      12136.5,
+      12136.5,
+      12136.5,
+      12136.5,
+      12136.5,
+      12136.5
+    ],
+    [
+      "Guitar Center",
+      "",
+      31767.25,
+      31767.25,
+      31767.25,
+      31767.25,
+      31767.25,
+      31767.25,
+      31767.25,
+      31767.25
+    ],
+    [
+      "HPE",
+      "",
+      101622.53,
+      101622.53,
+      101622.53,
+      101622.53,
+      101622.53,
+      101622.53,
+      101622.53,
+      101622.53
+    ],
+    [
+      "HealthPartners Plan",
+      "HealthPartners",
+      2096.5,
+      2096.5,
+      2096.5,
+      2096.5,
+      2096.5,
+      2096.5,
+      2096.5,
+      2096.5
+    ],
+    [
+      "Hubbell",
+      "",
+      3107.19,
+      3107.19,
+      3107.19,
+      3107.19,
+      3107.19,
+      3107.19,
+      3107.19,
+      3107.19
+    ],
+    [
+      "Hunter Douglas",
+      "",
+      24455.82,
+      24455.82,
+      24455.82,
+      24455.82,
+      24455.82,
+      24455.82,
+      24455.82,
+      24455.82
+    ],
+    [
+      "Independence",
+      "AmeriHealth",
+      811.25,
+      811.25,
+      811.25,
+      811.25,
+      811.25,
+      811.25,
+      811.25,
+      811.25
+    ],
+    [
+      "Independence",
+      "AmeriHealth Administrators",
+      374.38,
+      374.38,
+      374.38,
+      374.38,
+      374.38,
+      374.38,
+      374.38,
+      374.38
+    ],
+    [
+      "Independence",
+      "BlueLink",
+      1248.12,
+      1248.12,
+      1248.12,
+      1248.12,
+      1248.12,
+      1248.12,
+      1248.12,
+      1248.12
+    ],
+    [
+      "Independence",
+      "Independence Administrators",
+      374.38,
+      374.38,
+      374.38,
+      374.38,
+      374.38,
+      374.38,
+      374.38,
+      374.38
+    ],
+    [
+      "Independence",
+      "Independence Blue Cross",
+      12355.62,
+      12355.62,
+      12355.62,
+      12355.62,
+      12355.62,
+      12355.62,
+      12355.62,
+      12355.62
+    ],
+    [
+      "Independence Blue Cross",
+      "",
+      8050.0,
+      8050.0,
+      8050.0,
+      8050.0,
+      8050.0,
+      8050.0,
+      8050.0,
+      8050.0
+    ],
+    [
+      "K&L Gates",
+      "K&L Gates US",
+      13081.04,
+      13081.04,
+      13081.04,
+      13081.04,
+      13081.04,
+      13081.04,
+      13081.04,
+      13081.04
+    ],
+    [
+      "KKR",
+      "",
+      6239.38,
+      6239.38,
+      6239.38,
+      6239.38,
+      6239.38,
+      6239.38,
+      6239.38,
+      6239.38
+    ],
+    [
+      "Kraft Heinz",
+      "",
+      174342.26,
+      174342.26,
+      174342.26,
+      174342.26,
+      174342.26,
+      174342.26,
+      174342.26,
+      174342.26
+    ],
+    [
+      "Live Nation",
+      "",
+      84128.48,
+      84128.48,
+      84128.48,
+      84128.48,
+      84128.48,
+      84128.48,
+      84128.48,
+      84128.48
+    ],
+    [
+      "Loews Hotels",
+      "",
+      132218.97,
+      132218.97,
+      132218.97,
+      132218.97,
+      132218.97,
+      132218.97,
+      132218.97,
+      132218.97
+    ],
+    [
+      "Lumen",
+      "",
+      201113.32,
+      201113.32,
+      201113.32,
+      201113.32,
+      201113.32,
+      201113.32,
+      201113.32,
+      201113.32
+    ],
+    [
+      "MPI",
+      "MPI-Alcohol",
+      63354.38,
+      63354.38,
+      63354.38,
+      63354.38,
+      63354.38,
+      63354.38,
+      63354.38,
+      63354.38
+    ],
+    [
+      "MPI",
+      "MPI-Tobacco",
+      766.29,
+      766.29,
+      766.29,
+      766.29,
+      766.29,
+      766.29,
+      766.29,
+      766.29
+    ],
+    [
+      "Perdue Farms",
+      "",
+      41837.66,
+      41837.66,
+      41837.66,
+      41837.66,
+      41837.66,
+      41837.66,
+      41837.66,
+      41837.66
+    ],
+    [
+      "Personify",
+      "City of Minneapolis",
+      65411.39,
+      65411.39,
+      65411.39,
+      65411.39,
+      65411.39,
+      65411.39,
+      65411.39,
+      65411.39
+    ],
+    [
+      "Philips",
+      "",
+      179928.64,
+      179928.64,
+      179928.64,
+      179928.64,
+      179928.64,
+      179928.64,
+      179928.64,
+      179928.64
+    ],
+    [
+      "RPM International",
+      "",
+      49996.91,
+      49996.91,
+      49996.91,
+      49996.91,
+      49996.91,
+      49996.91,
+      49996.91,
+      49996.91
+    ],
+    [
+      "SPX",
+      "",
+      40709.0,
+      40709.0,
+      40709.0,
+      40709.0,
+      40709.0,
+      40709.0,
+      40709.0,
+      40709.0
+    ],
+    [
+      "SRS Distribution",
+      "",
+      46760.36,
+      46760.36,
+      46760.36,
+      46760.36,
+      46760.36,
+      46760.36,
+      46760.36,
+      46760.36
+    ],
+    [
+      "Schreiber Foods",
+      "",
+      12766.69,
+      12766.69,
+      12766.69,
+      12766.69,
+      12766.69,
+      12766.69,
+      12766.69,
+      12766.69
+    ],
+    [
+      "Securitas",
+      "",
+      26477.4,
+      26477.4,
+      26477.4,
+      26477.4,
+      26477.4,
+      26477.4,
+      26477.4,
+      26477.4
+    ],
+    [
+      "Sequoia Multiprogram",
+      "",
+      1107.15,
+      1107.15,
+      1107.15,
+      1107.15,
+      1107.15,
+      1107.15,
+      1107.15,
+      1107.15
+    ],
+    [
+      "Silgan Containers",
+      "",
+      29324.9,
+      29324.9,
+      29324.9,
+      29324.9,
+      29324.9,
+      29324.9,
+      29324.9,
+      29324.9
+    ],
+    [
+      "Southcoast Health",
+      "",
+      68247.5,
+      68247.5,
+      68247.5,
+      68247.5,
+      68247.5,
+      68247.5,
+      68247.5,
+      68247.5
+    ],
+    [
+      "Southern Company",
+      "",
+      82793.44,
+      82793.44,
+      82793.44,
+      82793.44,
+      82793.44,
+      82793.44,
+      82793.44,
+      82793.44
+    ],
+    [
+      "Stanley Black & Decker",
+      "",
+      21068.64,
+      21068.64,
+      21068.64,
+      21068.64,
+      21068.64,
+      21068.64,
+      21068.64,
+      21068.64
+    ],
+    [
+      "Toyoda Gosei",
+      "",
+      37218.8,
+      37218.8,
+      37218.8,
+      37218.8,
+      37218.8,
+      37218.8,
+      37218.8,
+      37218.8
+    ],
+    [
+      "Tractor Supply Company",
+      "",
+      17013.25,
+      17013.25,
+      17013.25,
+      17013.25,
+      17013.25,
+      17013.25,
+      17013.25,
+      17013.25
+    ],
+    [
+      "U.S. Venture",
+      "",
+      64372.18,
+      64372.18,
+      64372.18,
+      64372.18,
+      64372.18,
+      64372.18,
+      64372.18,
+      64372.18
+    ],
+    [
+      "Under Armour",
+      "",
+      5248.19,
+      5248.19,
+      5248.19,
+      5248.19,
+      5248.19,
+      5248.19,
+      5248.19,
+      5248.19
+    ],
+    [
+      "Wellstar",
+      "",
+      6496.88,
+      6496.88,
+      6496.88,
+      6496.88,
+      6496.88,
+      6496.88,
+      6496.88,
+      6496.88
+    ],
+    [
+      "Whataburger",
+      "",
+      123.75,
+      123.75,
+      123.75,
+      123.75,
+      123.75,
+      123.75,
+      123.75,
+      123.75
+    ],
+    [
+      "Yanfeng",
+      "",
+      37775.23,
+      37775.23,
+      37775.23,
+      37775.23,
+      37775.23,
+      37775.23,
+      37775.23,
+      37775.23
     ]
   ],
   "raw_py_m": [
     [
       "7-Eleven",
       null,
-      5531.29,
-      2785.04,
-      169813.04,
-      166681.24,
-      58029.1,
-      135580.94,
-      30141.46,
-      46132.6
+      5294.08,
+      2665.6,
+      162530.57,
+      159533.08,
+      55540.51,
+      129766.52,
+      28848.84,
+      44154.19
     ],
     [
       "ADUSA Services",
       "ADUSA - Limited",
-      31320.0,
-      4480.4,
-      2239.76,
-      53076.1,
-      -2590.23,
-      1526.32,
-      980.86,
-      3667.3
+      33598.64,
+      4806.37,
+      2402.71,
+      56937.58,
+      -2778.68,
+      1637.37,
+      1052.22,
+      3934.11
     ],
     [
       "ADUSA Services",
       "ADUSA - Multi",
-      140521.78,
-      49432.77,
-      41996.43,
-      153756.76,
-      30768.67,
-      220125.54,
-      43144.55,
-      19114.89
+      139047.52,
+      48914.15,
+      41555.83,
+      152143.64,
+      30445.87,
+      217816.13,
+      42691.91,
+      18914.35
     ],
     [
       "Amazon",
       null,
-      246938.15,
-      143513.94,
-      118820.37,
-      184186.42,
-      142071.72,
-      93927.46,
-      123195.55,
-      136837.37
+      233583.85,
+      135752.78,
+      112394.62,
+      174225.71,
+      134388.55,
+      88847.91,
+      116533.19,
+      129437.27
     ],
     [
       "CNH Industrial",
       null,
-      145037.0,
-      9589.0,
-      58348.0,
-      67948.0,
-      86419.0,
-      59125.0,
-      21554.0,
-      7292.0
+      144082.96,
+      9525.92,
+      57964.19,
+      67501.04,
+      85850.54,
+      58736.08,
+      21412.22,
+      7244.03
+    ],
+    [
+      "3M",
+      "3M - BCBSMN",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "3M",
+      "3M - Health Partner",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Aetna",
+      "Builders FirstSource",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Aetna",
+      "Costco Wholesale",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Aetna",
+      "Panasonic",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Alight",
+      "AT&T",
+      3429.72,
+      3429.72,
+      3429.72,
+      3429.72,
+      3429.72,
+      3429.72,
+      3429.72,
+      3429.72
+    ],
+    [
+      "Alight",
+      "Alcon",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Alight",
+      "Alex Lee",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Alight",
+      "BD",
+      15435.83,
+      15435.83,
+      15435.83,
+      15435.83,
+      15435.83,
+      15435.83,
+      15435.83,
+      15435.83
+    ],
+    [
+      "Alight",
+      "KnitWell Group",
+      3971.28,
+      3971.28,
+      3971.28,
+      3971.28,
+      3971.28,
+      3971.28,
+      3971.28,
+      3971.28
+    ],
+    [
+      "Alight",
+      "Maximus",
+      39157.12,
+      39157.12,
+      39157.12,
+      39157.12,
+      39157.12,
+      39157.12,
+      39157.12,
+      39157.12
+    ],
+    [
+      "Alight",
+      "Sanofi",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Beacon Health",
+      "",
+      45021.77,
+      45021.77,
+      45021.77,
+      45021.77,
+      45021.77,
+      45021.77,
+      45021.77,
+      45021.77
+    ],
+    [
+      "Bimbo Bakeries USA (BBU, Inc.)",
+      "",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Blue Cross & Blue Shield of Rhode Island",
+      "",
+      7425.62,
+      7425.62,
+      7425.62,
+      7425.62,
+      7425.62,
+      7425.62,
+      7425.62,
+      7425.62
+    ],
+    [
+      "Blue Cross and Blue Shield of Minnesota Plan",
+      "Blue Cross and Blue Shield of Minnesota",
+      1123.12,
+      1123.12,
+      1123.12,
+      1123.12,
+      1123.12,
+      1123.12,
+      1123.12,
+      1123.12
+    ],
+    [
+      "Blue Cross and Blue Shield of Minnesota Plan",
+      "Polaris",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "CACI",
+      "",
+      1842.28,
+      1842.28,
+      1842.28,
+      1842.28,
+      1842.28,
+      1842.28,
+      1842.28,
+      1842.28
+    ],
+    [
+      "CVS Health",
+      "Archer Daniels Midland",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "CVS Health",
+      "Chicago Public Schools",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "CVS Health",
+      "Fidelity National Financial",
+      26829.47,
+      26829.47,
+      26829.47,
+      26829.47,
+      26829.47,
+      26829.47,
+      26829.47,
+      26829.47
+    ],
+    [
+      "CVS Health",
+      "Hubbell CVS",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "CVS Health",
+      "Sprouts Farmers Market",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Cambia",
+      "Fortive",
+      493.73,
+      493.73,
+      493.73,
+      493.73,
+      493.73,
+      493.73,
+      493.73,
+      493.73
+    ],
+    [
+      "Cambia",
+      "Litehouse Inc",
+      524.94,
+      524.94,
+      524.94,
+      524.94,
+      524.94,
+      524.94,
+      524.94,
+      524.94
+    ],
+    [
+      "Cambia",
+      "Ralliant Corporation",
+      39.81,
+      39.81,
+      39.81,
+      39.81,
+      39.81,
+      39.81,
+      39.81,
+      39.81
+    ],
+    [
+      "Cambia",
+      "Small Mine Development",
+      278.69,
+      278.69,
+      278.69,
+      278.69,
+      278.69,
+      278.69,
+      278.69,
+      278.69
+    ],
+    [
+      "Cambia",
+      "Washington State Health Care Authority",
+      637.0,
+      637.0,
+      637.0,
+      637.0,
+      637.0,
+      637.0,
+      637.0,
+      637.0
+    ],
+    [
+      "Cambia",
+      "Weyerhaeuser",
+      119.44,
+      119.44,
+      119.44,
+      119.44,
+      119.44,
+      119.44,
+      119.44,
+      119.44
+    ],
+    [
+      "Carters",
+      "",
+      8045.0,
+      8045.0,
+      8045.0,
+      8045.0,
+      8045.0,
+      8045.0,
+      8045.0,
+      8045.0
+    ],
+    [
+      "Cheesecake Factory",
+      "",
+      11734.5,
+      11734.5,
+      11734.5,
+      11734.5,
+      11734.5,
+      11734.5,
+      11734.5,
+      11734.5
+    ],
+    [
+      "Cobalt Benefits Group",
+      "SharkNinja",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Corning",
+      "",
+      37012.92,
+      37012.92,
+      37012.92,
+      37012.92,
+      37012.92,
+      37012.92,
+      37012.92,
+      37012.92
+    ],
+    [
+      "Curative",
+      "",
+      65480.0,
+      65480.0,
+      65480.0,
+      65480.0,
+      65480.0,
+      65480.0,
+      65480.0,
+      65480.0
+    ],
+    [
+      "Dollar Tree",
+      "",
+      69917.35,
+      69917.35,
+      69917.35,
+      69917.35,
+      69917.35,
+      69917.35,
+      69917.35,
+      69917.35
+    ],
+    [
+      "Evry Health",
+      "",
+      437.18,
+      437.18,
+      437.18,
+      437.18,
+      437.18,
+      437.18,
+      437.18,
+      437.18
+    ],
+    [
+      "Express Scripts",
+      "B&G Foods",
+      857.99,
+      857.99,
+      857.99,
+      857.99,
+      857.99,
+      857.99,
+      857.99,
+      857.99
+    ],
+    [
+      "Express Scripts",
+      "Benjamin Moore",
+      1542.19,
+      1542.19,
+      1542.19,
+      1542.19,
+      1542.19,
+      1542.19,
+      1542.19,
+      1542.19
+    ],
+    [
+      "Express Scripts",
+      "Carpenters H&W Trust Fund",
+      765.62,
+      765.62,
+      765.62,
+      765.62,
+      765.62,
+      765.62,
+      765.62,
+      765.62
+    ],
+    [
+      "Express Scripts",
+      "Cascade Drilling",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Express Scripts",
+      "Christian Brothers",
+      747.4,
+      747.4,
+      747.4,
+      747.4,
+      747.4,
+      747.4,
+      747.4,
+      747.4
+    ],
+    [
+      "Express Scripts",
+      "Cincinnati Children's Hospital Medical Center",
+      389.84,
+      389.84,
+      389.84,
+      389.84,
+      389.84,
+      389.84,
+      389.84,
+      389.84
+    ],
+    [
+      "Express Scripts",
+      "Dick's Sporting Goods",
+      47750.24,
+      47750.24,
+      47750.24,
+      47750.24,
+      47750.24,
+      47750.24,
+      47750.24,
+      47750.24
+    ],
+    [
+      "Express Scripts",
+      "Gerdau",
+      1724.31,
+      1724.31,
+      1724.31,
+      1724.31,
+      1724.31,
+      1724.31,
+      1724.31,
+      1724.31
+    ],
+    [
+      "Express Scripts",
+      "JM Huber",
+      9089.53,
+      9089.53,
+      9089.53,
+      9089.53,
+      9089.53,
+      9089.53,
+      9089.53,
+      9089.53
+    ],
+    [
+      "Express Scripts",
+      "MetLife",
+      15381.12,
+      15381.12,
+      15381.12,
+      15381.12,
+      15381.12,
+      15381.12,
+      15381.12,
+      15381.12
+    ],
+    [
+      "Express Scripts",
+      "Micron",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Express Scripts",
+      "New Balance",
+      5072.71,
+      5072.71,
+      5072.71,
+      5072.71,
+      5072.71,
+      5072.71,
+      5072.71,
+      5072.71
+    ],
+    [
+      "Express Scripts",
+      "OPEH&W",
+      5745.99,
+      5745.99,
+      5745.99,
+      5745.99,
+      5745.99,
+      5745.99,
+      5745.99,
+      5745.99
+    ],
+    [
+      "Express Scripts",
+      "Piedmont Healthcare",
+      2441.68,
+      2441.68,
+      2441.68,
+      2441.68,
+      2441.68,
+      2441.68,
+      2441.68,
+      2441.68
+    ],
+    [
+      "Express Scripts",
+      "Red Bull",
+      20036.59,
+      20036.59,
+      20036.59,
+      20036.59,
+      20036.59,
+      20036.59,
+      20036.59,
+      20036.59
+    ],
+    [
+      "Express Scripts",
+      "Redner's Markets",
+      743.62,
+      743.62,
+      743.62,
+      743.62,
+      743.62,
+      743.62,
+      743.62,
+      743.62
+    ],
+    [
+      "Express Scripts",
+      "Solvay",
+      463.75,
+      463.75,
+      463.75,
+      463.75,
+      463.75,
+      463.75,
+      463.75,
+      463.75
+    ],
+    [
+      "Express Scripts",
+      "SugarCreek",
+      6249.66,
+      6249.66,
+      6249.66,
+      6249.66,
+      6249.66,
+      6249.66,
+      6249.66,
+      6249.66
+    ],
+    [
+      "Express Scripts",
+      "TTEC",
+      37769.14,
+      37769.14,
+      37769.14,
+      37769.14,
+      37769.14,
+      37769.14,
+      37769.14,
+      37769.14
+    ],
+    [
+      "Express Scripts",
+      "The Doe Run Company",
+      936.05,
+      936.05,
+      936.05,
+      936.05,
+      936.05,
+      936.05,
+      936.05,
+      936.05
+    ],
+    [
+      "Express Scripts",
+      "VNS Health",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Express Scripts",
+      "Windstream",
+      504.46,
+      504.46,
+      504.46,
+      504.46,
+      504.46,
+      504.46,
+      504.46,
+      504.46
+    ],
+    [
+      "Express Scripts",
+      "Yokohama",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "FAMD25DIR",
+      "",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Family Dollar",
+      "",
+      696.86,
+      696.86,
+      696.86,
+      696.86,
+      696.86,
+      696.86,
+      696.86,
+      696.86
+    ],
+    [
+      "GE Appliances",
+      "",
+      37984.57,
+      37984.57,
+      37984.57,
+      37984.57,
+      37984.57,
+      37984.57,
+      37984.57,
+      37984.57
+    ],
+    [
+      "Gray Television",
+      "",
+      11453.45,
+      11453.45,
+      11453.45,
+      11453.45,
+      11453.45,
+      11453.45,
+      11453.45,
+      11453.45
+    ],
+    [
+      "Guitar Center",
+      "",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "HPE",
+      "",
+      92749.69,
+      92749.69,
+      92749.69,
+      92749.69,
+      92749.69,
+      92749.69,
+      92749.69,
+      92749.69
+    ],
+    [
+      "HealthPartners Plan",
+      "HealthPartners",
+      1185.62,
+      1185.62,
+      1185.62,
+      1185.62,
+      1185.62,
+      1185.62,
+      1185.62,
+      1185.62
+    ],
+    [
+      "Hubbell",
+      "",
+      4709.14,
+      4709.14,
+      4709.14,
+      4709.14,
+      4709.14,
+      4709.14,
+      4709.14,
+      4709.14
+    ],
+    [
+      "Hunter Douglas",
+      "",
+      22599.21,
+      22599.21,
+      22599.21,
+      22599.21,
+      22599.21,
+      22599.21,
+      22599.21,
+      22599.21
+    ],
+    [
+      "Independence",
+      "AmeriHealth",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Independence",
+      "AmeriHealth Administrators",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Independence",
+      "BlueLink",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Independence",
+      "Independence Administrators",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Independence",
+      "Independence Blue Cross",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Independence Blue Cross",
+      "",
+      23400.62,
+      23400.62,
+      23400.62,
+      23400.62,
+      23400.62,
+      23400.62,
+      23400.62,
+      23400.62
+    ],
+    [
+      "K&L Gates",
+      "K&L Gates US",
+      14712.34,
+      14712.34,
+      14712.34,
+      14712.34,
+      14712.34,
+      14712.34,
+      14712.34,
+      14712.34
+    ],
+    [
+      "KKR",
+      "",
+      1374.91,
+      1374.91,
+      1374.91,
+      1374.91,
+      1374.91,
+      1374.91,
+      1374.91,
+      1374.91
+    ],
+    [
+      "Kraft Heinz",
+      "",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Live Nation",
+      "",
+      24251.71,
+      24251.71,
+      24251.71,
+      24251.71,
+      24251.71,
+      24251.71,
+      24251.71,
+      24251.71
+    ],
+    [
+      "Loews Hotels",
+      "",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Lumen",
+      "",
+      136534.86,
+      136534.86,
+      136534.86,
+      136534.86,
+      136534.86,
+      136534.86,
+      136534.86,
+      136534.86
+    ],
+    [
+      "MPI",
+      "MPI-Alcohol",
+      34169.49,
+      34169.49,
+      34169.49,
+      34169.49,
+      34169.49,
+      34169.49,
+      34169.49,
+      34169.49
+    ],
+    [
+      "MPI",
+      "MPI-Tobacco",
+      1337.73,
+      1337.73,
+      1337.73,
+      1337.73,
+      1337.73,
+      1337.73,
+      1337.73,
+      1337.73
+    ],
+    [
+      "Perdue Farms",
+      "",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Personify",
+      "City of Minneapolis",
+      14723.75,
+      14723.75,
+      14723.75,
+      14723.75,
+      14723.75,
+      14723.75,
+      14723.75,
+      14723.75
+    ],
+    [
+      "Philips",
+      "",
+      102674.77,
+      102674.77,
+      102674.77,
+      102674.77,
+      102674.77,
+      102674.77,
+      102674.77,
+      102674.77
+    ],
+    [
+      "RPM International",
+      "",
+      54078.83,
+      54078.83,
+      54078.83,
+      54078.83,
+      54078.83,
+      54078.83,
+      54078.83,
+      54078.83
+    ],
+    [
+      "SPX",
+      "",
+      24918.45,
+      24918.45,
+      24918.45,
+      24918.45,
+      24918.45,
+      24918.45,
+      24918.45,
+      24918.45
+    ],
+    [
+      "SRS Distribution",
+      "",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Schreiber Foods",
+      "",
+      31373.68,
+      31373.68,
+      31373.68,
+      31373.68,
+      31373.68,
+      31373.68,
+      31373.68,
+      31373.68
+    ],
+    [
+      "Securitas",
+      "",
+      18151.81,
+      18151.81,
+      18151.81,
+      18151.81,
+      18151.81,
+      18151.81,
+      18151.81,
+      18151.81
+    ],
+    [
+      "Sequoia Multiprogram",
+      "",
+      3970.31,
+      3970.31,
+      3970.31,
+      3970.31,
+      3970.31,
+      3970.31,
+      3970.31,
+      3970.31
+    ],
+    [
+      "Silgan Containers",
+      "",
+      13983.37,
+      13983.37,
+      13983.37,
+      13983.37,
+      13983.37,
+      13983.37,
+      13983.37,
+      13983.37
+    ],
+    [
+      "Southcoast Health",
+      "",
+      37606.19,
+      37606.19,
+      37606.19,
+      37606.19,
+      37606.19,
+      37606.19,
+      37606.19,
+      37606.19
+    ],
+    [
+      "Southern Company",
+      "",
+      109481.58,
+      109481.58,
+      109481.58,
+      109481.58,
+      109481.58,
+      109481.58,
+      109481.58,
+      109481.58
+    ],
+    [
+      "Stanley Black & Decker",
+      "",
+      18999.19,
+      18999.19,
+      18999.19,
+      18999.19,
+      18999.19,
+      18999.19,
+      18999.19,
+      18999.19
+    ],
+    [
+      "Toyoda Gosei",
+      "",
+      42697.43,
+      42697.43,
+      42697.43,
+      42697.43,
+      42697.43,
+      42697.43,
+      42697.43,
+      42697.43
+    ],
+    [
+      "Tractor Supply Company",
+      "",
+      38525.34,
+      38525.34,
+      38525.34,
+      38525.34,
+      38525.34,
+      38525.34,
+      38525.34,
+      38525.34
+    ],
+    [
+      "U.S. Venture",
+      "",
+      35516.78,
+      35516.78,
+      35516.78,
+      35516.78,
+      35516.78,
+      35516.78,
+      35516.78,
+      35516.78
+    ],
+    [
+      "Under Armour",
+      "",
+      4800.81,
+      4800.81,
+      4800.81,
+      4800.81,
+      4800.81,
+      4800.81,
+      4800.81,
+      4800.81
+    ],
+    [
+      "Wellstar",
+      "",
+      24131.25,
+      24131.25,
+      24131.25,
+      24131.25,
+      24131.25,
+      24131.25,
+      24131.25,
+      24131.25
+    ],
+    [
+      "Whataburger",
+      "",
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      "Yanfeng",
+      "",
+      21904.12,
+      21904.12,
+      21904.12,
+      21904.12,
+      21904.12,
+      21904.12,
+      21904.12,
+      21904.12
+    ],
+    [
+      "Alight",
+      "AT&T",
+      3429.72,
+      3429.72,
+      3429.72,
+      3429.72,
+      3429.72,
+      3429.72,
+      3429.72,
+      3429.72
+    ],
+    [
+      "Alight",
+      "BD",
+      15435.83,
+      15435.83,
+      15435.83,
+      15435.83,
+      15435.83,
+      15435.83,
+      15435.83,
+      15435.83
+    ],
+    [
+      "Alight",
+      "KnitWell Group",
+      3971.28,
+      3971.28,
+      3971.28,
+      3971.28,
+      3971.28,
+      3971.28,
+      3971.28,
+      3971.28
+    ],
+    [
+      "Alight",
+      "Maximus",
+      39157.12,
+      39157.12,
+      39157.12,
+      39157.12,
+      39157.12,
+      39157.12,
+      39157.12,
+      39157.12
+    ],
+    [
+      "Appalachian Regional Healthcare",
+      "",
+      515.12,
+      515.12,
+      515.12,
+      515.12,
+      515.12,
+      515.12,
+      515.12,
+      515.12
+    ],
+    [
+      "Apree Health",
+      "Kraft Heinz",
+      35963.75,
+      35963.75,
+      35963.75,
+      35963.75,
+      35963.75,
+      35963.75,
+      35963.75,
+      35963.75
+    ],
+    [
+      "Beacon Health",
+      "",
+      45021.77,
+      45021.77,
+      45021.77,
+      45021.77,
+      45021.77,
+      45021.77,
+      45021.77,
+      45021.77
+    ],
+    [
+      "Blue Cross & Blue Shield of Rhode Island",
+      "",
+      7425.62,
+      7425.62,
+      7425.62,
+      7425.62,
+      7425.62,
+      7425.62,
+      7425.62,
+      7425.62
+    ],
+    [
+      "Blue Cross and Blue Shield of Minnesota Plan",
+      "Blue Cross and Blue Shield of Minnesota",
+      1123.12,
+      1123.12,
+      1123.12,
+      1123.12,
+      1123.12,
+      1123.12,
+      1123.12,
+      1123.12
+    ],
+    [
+      "CACI",
+      "",
+      1842.28,
+      1842.28,
+      1842.28,
+      1842.28,
+      1842.28,
+      1842.28,
+      1842.28,
+      1842.28
+    ],
+    [
+      "CVS Health",
+      "Fidelity National Financial",
+      26829.47,
+      26829.47,
+      26829.47,
+      26829.47,
+      26829.47,
+      26829.47,
+      26829.47,
+      26829.47
+    ],
+    [
+      "Cambia",
+      "Fortive",
+      493.73,
+      493.73,
+      493.73,
+      493.73,
+      493.73,
+      493.73,
+      493.73,
+      493.73
+    ],
+    [
+      "Cambia",
+      "Litehouse Inc",
+      524.94,
+      524.94,
+      524.94,
+      524.94,
+      524.94,
+      524.94,
+      524.94,
+      524.94
+    ],
+    [
+      "Cambia",
+      "Ralliant Corporation",
+      39.81,
+      39.81,
+      39.81,
+      39.81,
+      39.81,
+      39.81,
+      39.81,
+      39.81
+    ],
+    [
+      "Cambia",
+      "Small Mine Development",
+      278.69,
+      278.69,
+      278.69,
+      278.69,
+      278.69,
+      278.69,
+      278.69,
+      278.69
+    ],
+    [
+      "Cambia",
+      "Washington State Health Care Authority",
+      637.0,
+      637.0,
+      637.0,
+      637.0,
+      637.0,
+      637.0,
+      637.0,
+      637.0
+    ],
+    [
+      "Cambia",
+      "Weyerhaeuser",
+      119.44,
+      119.44,
+      119.44,
+      119.44,
+      119.44,
+      119.44,
+      119.44,
+      119.44
+    ],
+    [
+      "Carters",
+      "",
+      8045.0,
+      8045.0,
+      8045.0,
+      8045.0,
+      8045.0,
+      8045.0,
+      8045.0,
+      8045.0
+    ],
+    [
+      "Cheesecake Factory",
+      "",
+      11734.5,
+      11734.5,
+      11734.5,
+      11734.5,
+      11734.5,
+      11734.5,
+      11734.5,
+      11734.5
+    ],
+    [
+      "Chegg",
+      "",
+      93.75,
+      93.75,
+      93.75,
+      93.75,
+      93.75,
+      93.75,
+      93.75,
+      93.75
+    ],
+    [
+      "Chobani",
+      "",
+      12859.82,
+      12859.82,
+      12859.82,
+      12859.82,
+      12859.82,
+      12859.82,
+      12859.82,
+      12859.82
+    ],
+    [
+      "Corning",
+      "",
+      37012.92,
+      37012.92,
+      37012.92,
+      37012.92,
+      37012.92,
+      37012.92,
+      37012.92,
+      37012.92
+    ],
+    [
+      "Curative",
+      "",
+      65480.0,
+      65480.0,
+      65480.0,
+      65480.0,
+      65480.0,
+      65480.0,
+      65480.0,
+      65480.0
+    ],
+    [
+      "Dollar Tree",
+      "",
+      69917.35,
+      69917.35,
+      69917.35,
+      69917.35,
+      69917.35,
+      69917.35,
+      69917.35,
+      69917.35
+    ],
+    [
+      "Evry Health",
+      "",
+      437.18,
+      437.18,
+      437.18,
+      437.18,
+      437.18,
+      437.18,
+      437.18,
+      437.18
+    ],
+    [
+      "Express Scripts",
+      "American Eagle Outfitters Inc.",
+      5442.19,
+      5442.19,
+      5442.19,
+      5442.19,
+      5442.19,
+      5442.19,
+      5442.19,
+      5442.19
+    ],
+    [
+      "Express Scripts",
+      "AvalonBay Communities",
+      338.44,
+      338.44,
+      338.44,
+      338.44,
+      338.44,
+      338.44,
+      338.44,
+      338.44
+    ],
+    [
+      "Express Scripts",
+      "B&G Foods",
+      857.99,
+      857.99,
+      857.99,
+      857.99,
+      857.99,
+      857.99,
+      857.99,
+      857.99
+    ],
+    [
+      "Express Scripts",
+      "Benjamin Moore",
+      1542.19,
+      1542.19,
+      1542.19,
+      1542.19,
+      1542.19,
+      1542.19,
+      1542.19,
+      1542.19
+    ],
+    [
+      "Express Scripts",
+      "Bimbo Bakeries USA (BBU, Inc.)",
+      5770.78,
+      5770.78,
+      5770.78,
+      5770.78,
+      5770.78,
+      5770.78,
+      5770.78,
+      5770.78
+    ],
+    [
+      "Express Scripts",
+      "CACI",
+      1855.0,
+      1855.0,
+      1855.0,
+      1855.0,
+      1855.0,
+      1855.0,
+      1855.0,
+      1855.0
+    ],
+    [
+      "Express Scripts",
+      "Carpenters H&W Trust Fund",
+      765.62,
+      765.62,
+      765.62,
+      765.62,
+      765.62,
+      765.62,
+      765.62,
+      765.62
+    ],
+    [
+      "Express Scripts",
+      "Chico's",
+      2144.87,
+      2144.87,
+      2144.87,
+      2144.87,
+      2144.87,
+      2144.87,
+      2144.87,
+      2144.87
+    ],
+    [
+      "Express Scripts",
+      "Christian Brothers",
+      747.4,
+      747.4,
+      747.4,
+      747.4,
+      747.4,
+      747.4,
+      747.4,
+      747.4
+    ],
+    [
+      "Express Scripts",
+      "Cincinnati Children's Hospital Medical Center",
+      389.84,
+      389.84,
+      389.84,
+      389.84,
+      389.84,
+      389.84,
+      389.84,
+      389.84
+    ],
+    [
+      "Express Scripts",
+      "Dick's Sporting Goods",
+      47750.24,
+      47750.24,
+      47750.24,
+      47750.24,
+      47750.24,
+      47750.24,
+      47750.24,
+      47750.24
+    ],
+    [
+      "Express Scripts",
+      "Gerdau",
+      1724.31,
+      1724.31,
+      1724.31,
+      1724.31,
+      1724.31,
+      1724.31,
+      1724.31,
+      1724.31
+    ],
+    [
+      "Express Scripts",
+      "JM Huber",
+      9089.53,
+      9089.53,
+      9089.53,
+      9089.53,
+      9089.53,
+      9089.53,
+      9089.53,
+      9089.53
+    ],
+    [
+      "Express Scripts",
+      "Mattress Firm",
+      410.31,
+      410.31,
+      410.31,
+      410.31,
+      410.31,
+      410.31,
+      410.31,
+      410.31
+    ],
+    [
+      "Express Scripts",
+      "MetLife",
+      15381.12,
+      15381.12,
+      15381.12,
+      15381.12,
+      15381.12,
+      15381.12,
+      15381.12,
+      15381.12
+    ],
+    [
+      "Express Scripts",
+      "New Balance",
+      5072.71,
+      5072.71,
+      5072.71,
+      5072.71,
+      5072.71,
+      5072.71,
+      5072.71,
+      5072.71
+    ],
+    [
+      "Express Scripts",
+      "OPEH&W",
+      5745.99,
+      5745.99,
+      5745.99,
+      5745.99,
+      5745.99,
+      5745.99,
+      5745.99,
+      5745.99
+    ],
+    [
+      "Express Scripts",
+      "Piedmont Healthcare",
+      2441.68,
+      2441.68,
+      2441.68,
+      2441.68,
+      2441.68,
+      2441.68,
+      2441.68,
+      2441.68
+    ],
+    [
+      "Express Scripts",
+      "Red Bull",
+      20036.59,
+      20036.59,
+      20036.59,
+      20036.59,
+      20036.59,
+      20036.59,
+      20036.59,
+      20036.59
+    ],
+    [
+      "Express Scripts",
+      "Redner's Markets",
+      743.62,
+      743.62,
+      743.62,
+      743.62,
+      743.62,
+      743.62,
+      743.62,
+      743.62
+    ],
+    [
+      "Express Scripts",
+      "Solvay",
+      463.75,
+      463.75,
+      463.75,
+      463.75,
+      463.75,
+      463.75,
+      463.75,
+      463.75
+    ],
+    [
+      "Express Scripts",
+      "Southeastern Grocers",
+      2439.55,
+      2439.55,
+      2439.55,
+      2439.55,
+      2439.55,
+      2439.55,
+      2439.55,
+      2439.55
+    ],
+    [
+      "Express Scripts",
+      "SugarCreek",
+      6249.66,
+      6249.66,
+      6249.66,
+      6249.66,
+      6249.66,
+      6249.66,
+      6249.66,
+      6249.66
+    ],
+    [
+      "Express Scripts",
+      "TTEC",
+      37769.14,
+      37769.14,
+      37769.14,
+      37769.14,
+      37769.14,
+      37769.14,
+      37769.14,
+      37769.14
+    ],
+    [
+      "Express Scripts",
+      "The Doe Run Company",
+      936.05,
+      936.05,
+      936.05,
+      936.05,
+      936.05,
+      936.05,
+      936.05,
+      936.05
+    ],
+    [
+      "Express Scripts",
+      "The Fresh Market",
+      705.31,
+      705.31,
+      705.31,
+      705.31,
+      705.31,
+      705.31,
+      705.31,
+      705.31
+    ],
+    [
+      "Express Scripts",
+      "Valvoline",
+      13.12,
+      13.12,
+      13.12,
+      13.12,
+      13.12,
+      13.12,
+      13.12,
+      13.12
+    ],
+    [
+      "Express Scripts",
+      "Whataburger",
+      1803.91,
+      1803.91,
+      1803.91,
+      1803.91,
+      1803.91,
+      1803.91,
+      1803.91,
+      1803.91
+    ],
+    [
+      "Express Scripts",
+      "Windstream",
+      504.46,
+      504.46,
+      504.46,
+      504.46,
+      504.46,
+      504.46,
+      504.46,
+      504.46
+    ],
+    [
+      "Family Dollar",
+      "",
+      696.86,
+      696.86,
+      696.86,
+      696.86,
+      696.86,
+      696.86,
+      696.86,
+      696.86
+    ],
+    [
+      "Farm Bureau",
+      "Farm Bureau Health Plans",
+      4615.62,
+      4615.62,
+      4615.62,
+      4615.62,
+      4615.62,
+      4615.62,
+      4615.62,
+      4615.62
+    ],
+    [
+      "Farm Bureau",
+      "Farm Bureau Home Office",
+      393.75,
+      393.75,
+      393.75,
+      393.75,
+      393.75,
+      393.75,
+      393.75,
+      393.75
+    ],
+    [
+      "GE Appliances",
+      "",
+      37984.57,
+      37984.57,
+      37984.57,
+      37984.57,
+      37984.57,
+      37984.57,
+      37984.57,
+      37984.57
+    ],
+    [
+      "Garmin",
+      "",
+      13.41,
+      13.41,
+      13.41,
+      13.41,
+      13.41,
+      13.41,
+      13.41,
+      13.41
+    ],
+    [
+      "Gray Television",
+      "",
+      11453.45,
+      11453.45,
+      11453.45,
+      11453.45,
+      11453.45,
+      11453.45,
+      11453.45,
+      11453.45
+    ],
+    [
+      "Guardian",
+      "",
+      48078.66,
+      48078.66,
+      48078.66,
+      48078.66,
+      48078.66,
+      48078.66,
+      48078.66,
+      48078.66
+    ],
+    [
+      "HPE",
+      "",
+      92749.69,
+      92749.69,
+      92749.69,
+      92749.69,
+      92749.69,
+      92749.69,
+      92749.69,
+      92749.69
+    ],
+    [
+      "HealthPartners Plan",
+      "HealthPartners",
+      1185.62,
+      1185.62,
+      1185.62,
+      1185.62,
+      1185.62,
+      1185.62,
+      1185.62,
+      1185.62
+    ],
+    [
+      "Hubbell",
+      "",
+      4709.14,
+      4709.14,
+      4709.14,
+      4709.14,
+      4709.14,
+      4709.14,
+      4709.14,
+      4709.14
+    ],
+    [
+      "Hunter Douglas",
+      "",
+      22599.21,
+      22599.21,
+      22599.21,
+      22599.21,
+      22599.21,
+      22599.21,
+      22599.21,
+      22599.21
+    ],
+    [
+      "Independence Blue Cross",
+      "",
+      23400.62,
+      23400.62,
+      23400.62,
+      23400.62,
+      23400.62,
+      23400.62,
+      23400.62,
+      23400.62
+    ],
+    [
+      "K&L Gates",
+      "K&L Gates US",
+      14712.34,
+      14712.34,
+      14712.34,
+      14712.34,
+      14712.34,
+      14712.34,
+      14712.34,
+      14712.34
+    ],
+    [
+      "KKR",
+      "",
+      1374.91,
+      1374.91,
+      1374.91,
+      1374.91,
+      1374.91,
+      1374.91,
+      1374.91,
+      1374.91
+    ],
+    [
+      "Live Nation",
+      "",
+      24251.71,
+      24251.71,
+      24251.71,
+      24251.71,
+      24251.71,
+      24251.71,
+      24251.71,
+      24251.71
+    ],
+    [
+      "Lumen",
+      "",
+      136534.86,
+      136534.86,
+      136534.86,
+      136534.86,
+      136534.86,
+      136534.86,
+      136534.86,
+      136534.86
+    ],
+    [
+      "MPI",
+      "MPI-Alcohol",
+      34169.49,
+      34169.49,
+      34169.49,
+      34169.49,
+      34169.49,
+      34169.49,
+      34169.49,
+      34169.49
+    ],
+    [
+      "MPI",
+      "MPI-Tobacco",
+      1337.73,
+      1337.73,
+      1337.73,
+      1337.73,
+      1337.73,
+      1337.73,
+      1337.73,
+      1337.73
+    ],
+    [
+      "Mortenson",
+      "",
+      2172.5,
+      2172.5,
+      2172.5,
+      2172.5,
+      2172.5,
+      2172.5,
+      2172.5,
+      2172.5
+    ],
+    [
+      "Orano",
+      "",
+      8.75,
+      8.75,
+      8.75,
+      8.75,
+      8.75,
+      8.75,
+      8.75,
+      8.75
+    ],
+    [
+      "Personify",
+      "City of Minneapolis",
+      14723.75,
+      14723.75,
+      14723.75,
+      14723.75,
+      14723.75,
+      14723.75,
+      14723.75,
+      14723.75
+    ],
+    [
+      "Philips",
+      "",
+      102674.77,
+      102674.77,
+      102674.77,
+      102674.77,
+      102674.77,
+      102674.77,
+      102674.77,
+      102674.77
+    ],
+    [
+      "RPM International",
+      "",
+      54078.83,
+      54078.83,
+      54078.83,
+      54078.83,
+      54078.83,
+      54078.83,
+      54078.83,
+      54078.83
+    ],
+    [
+      "Rice University",
+      "",
+      116.25,
+      116.25,
+      116.25,
+      116.25,
+      116.25,
+      116.25,
+      116.25,
+      116.25
+    ],
+    [
+      "SPX",
+      "",
+      24918.45,
+      24918.45,
+      24918.45,
+      24918.45,
+      24918.45,
+      24918.45,
+      24918.45,
+      24918.45
+    ],
+    [
+      "Schnuck Markets",
+      "",
+      1726.89,
+      1726.89,
+      1726.89,
+      1726.89,
+      1726.89,
+      1726.89,
+      1726.89,
+      1726.89
+    ],
+    [
+      "Schreiber Foods",
+      "",
+      31373.68,
+      31373.68,
+      31373.68,
+      31373.68,
+      31373.68,
+      31373.68,
+      31373.68,
+      31373.68
+    ],
+    [
+      "Securitas",
+      "",
+      18151.81,
+      18151.81,
+      18151.81,
+      18151.81,
+      18151.81,
+      18151.81,
+      18151.81,
+      18151.81
+    ],
+    [
+      "Sequoia Multiprogram",
+      "",
+      3970.31,
+      3970.31,
+      3970.31,
+      3970.31,
+      3970.31,
+      3970.31,
+      3970.31,
+      3970.31
+    ],
+    [
+      "Silgan Containers",
+      "",
+      13983.37,
+      13983.37,
+      13983.37,
+      13983.37,
+      13983.37,
+      13983.37,
+      13983.37,
+      13983.37
+    ],
+    [
+      "Southcoast Health",
+      "",
+      37606.19,
+      37606.19,
+      37606.19,
+      37606.19,
+      37606.19,
+      37606.19,
+      37606.19,
+      37606.19
+    ],
+    [
+      "Southern Company",
+      "",
+      109481.58,
+      109481.58,
+      109481.58,
+      109481.58,
+      109481.58,
+      109481.58,
+      109481.58,
+      109481.58
+    ],
+    [
+      "Stanley Black & Decker",
+      "",
+      18999.19,
+      18999.19,
+      18999.19,
+      18999.19,
+      18999.19,
+      18999.19,
+      18999.19,
+      18999.19
+    ],
+    [
+      "Stanley Decker",
+      "",
+      25029.32,
+      25029.32,
+      25029.32,
+      25029.32,
+      25029.32,
+      25029.32,
+      25029.32,
+      25029.32
+    ],
+    [
+      "Toyoda Gosei",
+      "",
+      42697.43,
+      42697.43,
+      42697.43,
+      42697.43,
+      42697.43,
+      42697.43,
+      42697.43,
+      42697.43
+    ],
+    [
+      "Tractor Supply Company",
+      "",
+      38525.34,
+      38525.34,
+      38525.34,
+      38525.34,
+      38525.34,
+      38525.34,
+      38525.34,
+      38525.34
+    ],
+    [
+      "U.S. Venture",
+      "",
+      35516.78,
+      35516.78,
+      35516.78,
+      35516.78,
+      35516.78,
+      35516.78,
+      35516.78,
+      35516.78
+    ],
+    [
+      "Under Armour",
+      "",
+      4800.81,
+      4800.81,
+      4800.81,
+      4800.81,
+      4800.81,
+      4800.81,
+      4800.81,
+      4800.81
+    ],
+    [
+      "Valmont",
+      "",
+      10125.0,
+      10125.0,
+      10125.0,
+      10125.0,
+      10125.0,
+      10125.0,
+      10125.0,
+      10125.0
+    ],
+    [
+      "WEI",
+      "",
+      2000.0,
+      2000.0,
+      2000.0,
+      2000.0,
+      2000.0,
+      2000.0,
+      2000.0,
+      2000.0
+    ],
+    [
+      "Wellstar",
+      "",
+      24131.25,
+      24131.25,
+      24131.25,
+      24131.25,
+      24131.25,
+      24131.25,
+      24131.25,
+      24131.25
+    ],
+    [
+      "Yanfeng",
+      "",
+      21904.12,
+      21904.12,
+      21904.12,
+      21904.12,
+      21904.12,
+      21904.12,
+      21904.12,
+      21904.12
     ]
   ],
   "raw_cy_ren_m": [
@@ -4142,8 +7481,8 @@
     "K&L Gates": 1
   },
   "_meta": {
-    "source": "dw_marts.billing, dw_marts.eligibility_member_snap (non-governed — direct Redshift enrichment)",
+    "source": "dw_marts.billing, dw_marts.eligibility_lives_weekly (non-governed \u2014 direct Redshift enrichment)",
     "cube_unavailable": true,
-    "notes": "Monthly renewal data set to 0 (Cube unavailable). EL monthly arrays use point-in-time from latest file. Growth/TPS data unavailable."
+    "notes": "Monthly renewal data set to 0 (Cube unavailable). EL from latest month-end eligibility snapshot. Growth/TPS data unavailable."
   }
 }
